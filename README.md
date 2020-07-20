@@ -13,7 +13,8 @@ The output files included here are the results of tools, scripts and Windows com
    
 2. Reconnaissance 
    ➤ AD and Windows domain information gathering (very limited in black-box pentest)
-     
+   ➤ Targeted network scans
+
 3. Gaining Access (black-box)
    ➤ LLMNR & NBT-NS poisonning attacks (collect password hashes from other systems on the network + offline password cracking or relay attack)
    ➤ Password spraying attacks
