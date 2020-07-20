@@ -58,6 +58,7 @@ The output files included here are the results of tools, scripts and Windows com
 ➤ ADRecon - Active Directory gathering information tool (https://github.com/adrecon/ADRecon)
 ➤ BloodHound - Tool to easily identify complex Windows domain attack paths (https://github.com/BloodHoundAD/BloodHound)
 ➤ ACLight - A tool for advanced discovery of privileged accounts including Shadow Admins (https://github.com/cyberark/ACLight)
+➤ Liza - Active Directory Security, Permission and ACL Analysis (http://www.ldapexplorer.com/en/liza.htm)
 ➤ Responder - LLMNR/NBTNS/mDNS poisoner and NTLMv1/2 relay (https://github.com/lgandx/Responder)
 ➤ PowerSploit (incl. PowerView & PowerUp) - PowerShell offensive security framework (https://github.com/PowerShellMafia/PowerSploit)
 ➤ Impacket (incl. SecretDump & WMIexec) - Python offensive security framework (https://github.com/SecureAuthCorp/impacket)
