@@ -17,10 +17,10 @@ The output files included here are the results of tools, scripts and Windows com
 
 3. Gaining Access (black-box)
    ➤ LLMNR & NBT-NS poisonning attacks (collect password hashes from other systems on the network + offline password cracking or relay attack)
-   ➤ Password spraying attacks
+   ➤ Windows password spray attacks
    ➤ Unpatched known (remote) vulnerability with a public exploit available (e.g. CVE-2020-0688, MS17_010, MS14_068)
    ➤ Anonymous access to data storage spaces containing scripts and/or configuration files with clear-text passwords hardcoded (e.g. ftp, tftp, NAS, internal github)
-     
+
 4. Gaining Access (grey-box)
    ➤ Kerberoasting attack (collect Kerberos service tickets for any service + offline password cracking of service accounts)
    ➤ Windows network shares, SYSVOL/GPP, NAS, SharePoint sites, internal github (accessible to any authenticated user) containing scripts and/or configuration files with clear-text passwords hardcoded
