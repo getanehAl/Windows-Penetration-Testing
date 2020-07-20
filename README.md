@@ -38,7 +38,7 @@ The output files included here are the results of tools, scripts and Windows com
    ➤ Password dumping techniques (ProcDump, Mimikatz, SecretDump..)
    ➤ Pivoting techniques (e.g. meterpreter pivoting techniques)
      
-7. Privilege escalation AD 
+7. Privilege escalation to become "Domain Admin", "Entreprise Admin"
    ➤ The same password is used to protect the built-in local administrator account of the Windows servers and Domain Controllers (i.e. no hardening, no LAPS or CyberArk)
    ➤ Dumping from a Windows server's memory the clear-text password of a higly privilged acccount (e.g. Domain Admins, Entreprise Admins, DC BUILTIN\Administrators),.. 
    ➤ AD / Windows domain misconfiguration (e.g. weak ACLs configuration, LAPS misconfiguration, weak passwords, password re-use between privileged and standard accounts, weak GPO permissions, ...)
