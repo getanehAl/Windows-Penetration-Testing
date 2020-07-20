@@ -65,7 +65,7 @@ The output files included here are the results of tools, scripts and Windows com
 ➤ CrackMapExec - Swiss army knife for pentesting Windows networks (https://github.com/byt3bl33d3r/CrackMapExec)
 ➤ Metasploit penetration testing framework (https://www.metasploit.com)
 ➤ Rubeus - Toolset for raw Kerberos interaction and abuses (https://github.com/GhostPack/Rubeus)
-➤ Mimikatz - Dump clear-text credentials from Windows memory (https://github.com/gentilkiwi/mimikatz)
+➤ Mimikatz - Extract plaintexts passwords, hash, PIN code and kerberos tickets from memory (https://github.com/gentilkiwi/mimikatz)
 ➤ Powercat - PowerShell TCP/IP swiss army knife like netcat (https://github.com/besimorhino/powercat)
 ➤ LAPSToolkit - LAPS auditing for pentesters (https://github.com/leoloobeek/LAPSToolkit)
 ➤ PingCastle - Active Directory security audit tool (https://www.pingcastle.com)
