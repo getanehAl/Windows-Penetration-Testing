@@ -16,9 +16,7 @@ The output files included here are the results of tools, scripts and Windows com
    ➤ Targeted network scans
 
 3. Gaining Access (black-box tests - i.e. no account)
-   ➤ LLMNR & NBT-NS poisonning attacks
-      - Collect password hashes from other systems on the network
-      - Offline password cracking or SMB relay attacks
+   ➤ LLMNR & NBT-NS poisonning attacks (collect password hashes from the network + Offline password cracking or SMB relay attacks)
    ➤ Default/weak admin credentials for a software installed on a Windows server that will lead to a RCE
       Examples:
       - Web servers (e.g. Tomcat, WebLogic), CMS => Webshell upload
@@ -33,9 +31,7 @@ The output files included here are the results of tools, scripts and Windows com
       - Citrix NetScaler: CVE-2019-19781
    
 4. Gaining Access (grey-box tests i.e. with 1 standard Windows account)
-   ➤ Kerberoasting attack
-      - Collect Kerberos service tickets for any service with an SPN
-      - Offline password cracking of service accounts
+   ➤ Kerberoasting attack (collect Kerberos service tickets for any service with an SPN + Offline password cracking of service accounts)
    ➤ Windows network shares, SYSVOL/GPP, NAS, SharePoint sites, internal github (accessible to any authenticated user) + Windows clear-text credentials hardcoded in scripts, logs and configuration files 
    ➤ Clear-text passwords stored in AD fields (e.g. account description, comments)
    ➤ Citrix servers accessible to any employee + Citrix jailbreak to get a Windows CMD or PowerShell console
