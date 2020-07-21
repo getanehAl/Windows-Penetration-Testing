@@ -15,31 +15,50 @@ The output files included here are the results of tools, scripts and Windows com
    ➤ AD and Windows domain information gathering (very limited in black-box pentest)
    ➤ Targeted network scans
 
-3. Gaining Access (black-box)
-   ➤ LLMNR & NBT-NS poisonning attacks (collect password hashes from other systems on the network + offline password cracking or relay attack)
+3. Gaining Access (black-box tests - i.e. no account)
+   ➤ LLMNR & NBT-NS poisonning attacks
+      - Collect password hashes from other systems on the network
+      - Offline password cracking or SMB relay attacks
+   ➤ Default/weak admin credentials for a software installed on a Windows server that will lead to a RCE
+      Examples:
+      - Web servers (e.g. Tomcat, WebLogic), CMS => Webshell upload
+      - Databases (e.g. MSSQL, Oracle, PostgresSQL) => OS command execution
+      - Jenkins => OS command execution
    ➤ Windows password spray attacks
-   ➤ Unpatched known (remote) vulnerability with a public exploit available (e.g. CVE-2020-0688, MS17_010, MS14_068)
-   ➤ Anonymous access to data storage spaces containing scripts and/or configuration files with clear-text passwords hardcoded (e.g. ftp, tftp, NAS, internal github)
-
-4. Gaining Access (grey-box)
-   ➤ Kerberoasting attack (collect Kerberos service tickets for any service + offline password cracking of service accounts)
-   ➤ Windows network shares, SYSVOL/GPP, NAS, SharePoint sites, internal github (accessible to any authenticated user) containing scripts and/or configuration files with clear-text passwords hardcoded
+   ➤ Anonymous access to data storage spaces (e.g. FTP/TFTP/NFS) + Windows clear-text credentials hardcoded in scripts, logs and configuration files 
+   ➤ Unpatched known vulnerability with a public RCE exploit for Windows OS, Web servers, databases, FTP servers…  
+      Examples:
+      - Windows: CVE-2020-0688, MS17-010, MS14-068, MS08-067 
+      - Web servers: Apache Struts RCE (CVE-2017-9805), JBoss RCE (CVE-2017-12149), WebLogic RCE (CVE-2017-10271),... 
+      - Citrix NetScaler: CVE-2019-19781
+   
+4. Gaining Access (grey-box tests i.e. with 1 standard Windows account)
+   ➤ Kerberoasting attack
+      - Collect Kerberos service tickets for any service with an SPN
+      - Offline password cracking of service accounts
+   ➤ Windows network shares, SYSVOL/GPP, NAS, SharePoint sites, internal github (accessible to any authenticated user) + Windows clear-text credentials hardcoded in scripts, logs and configuration files 
    ➤ Clear-text passwords stored in AD fields (e.g. account description, comments)
-     
+   ➤ Citrix servers accessible to any employee + Citrix jailbreak to get a Windows CMD or PowerShell console
+   ➤ ...
+
 5. Post-exploitation and privilege escalation to become "Local Administrator" and "Local System"
-   ➤ Security misconfiguration (e.g. weak service permissions, weak file permissions, weak registry permissions, weak passwords, password reuse, clear-text passwords stored in scripts, unattended install files, AlwaysInstallElevated trick..)
-   ➤ Unpatched known vulnerability with a public exploit available (e.g. Hot/Rotten/Juicy Potato exploits, MS16-032)
+   ➤ Exploiting OS security misconfiguration 
+      Examples:
+      - weak service permissions, weak file permissions, weak registry permissions, 
+      - weak passwords, password re-use, clear-text passwords stored in scripts, unattended install files, 
+      - AlwaysInstallElevated trick
+   ➤ Exploiting an unpatched known vulnerability with a public exploit (e.g. Hot/Rotten/Juicy Potato exploits, MS16-032)
    ➤ Dumping Local Windows credentials (SAM/SYSTEM/SECURITY, LSASS)
      
 6. Network lateral movement and "Domain Admin" credentials hunting
-   ➤ WMIexec, Evil WinRM, RDP, SMBexec, PsExec..
-   ➤ Reconnaissance with BloodHound, PowerShell scripts/commands..
+   ➤ RDP, WMIexec, Evil WinRM, SMBexec, PsExec..
+   ➤ Pivoting techniques (e.g. meterpreter pivoting techniques)
    ➤ Pass-The-Hash & Pass-The-Ticket techniques (e.g. using the built-in local admin account and/or domain accounts member of the "Local Adminstrators" group)
    ➤ Password dumping techniques (ProcDump, Mimikatz, SecretDump..)
-   ➤ Pivoting techniques (e.g. meterpreter pivoting techniques)
-     
+   ➤ Reconnaissance ("Domain Admin" credentials hunting) with BloodHound, PowerShell scripts/commands..
+
 7. Privilege escalation to become "Domain Admin", "Entreprise Admin"
-   ➤ The same password is used to protect the built-in local administrator account of the Windows servers and Domain Controllers (i.e. no hardening, no LAPS or CyberArk)
+   ➤ The same password is used to protect the built-in local administrator account of the Windows servers and Domain Controllers (i.e. no hardening, no LAPS)
    ➤ Dumping from a Windows server's memory the clear-text password of a higly privilged acccount (e.g. Domain Admins, Entreprise Admins, DC BUILTIN\Administrators),.. 
    ➤ AD / Windows domain misconfiguration (e.g. weak ACLs configuration, LAPS misconfiguration, weak passwords, password re-use between privileged and standard accounts, weak GPO permissions, ...)
      
@@ -48,6 +67,7 @@ The output files included here are the results of tools, scripts and Windows com
    ➤ Persistance with the KRBTGT account’s password hash and the creation of Golden tickets 
    ➤ Take over other Windows domains due to password re-use across domains for higly privileged accounts
    ➤ Take over the Forest root domain thanks to AD Forest Trusts and/or misconfiguration (e.g. no SID filtering = SID history attack) 
+   ➤ ...
 ```
 
 #### Useful tools and scripts
