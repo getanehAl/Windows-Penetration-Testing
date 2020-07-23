@@ -26,7 +26,7 @@ The output files included here are the results of tools, scripts and Windows com
    ➤ Anonymous access to data storage spaces (e.g. FTP/TFTP/NFS) + Windows clear-text credentials hardcoded in scripts, logs and configuration files 
    ➤ Unpatched known vulnerability with a public RCE exploit for Windows OS, Web servers, databases, FTP servers…  
       Examples:
-      - Windows: CVE-2020-0688, MS17-010, MS14-068, MS08-067 
+      - Windows: CVE-2020-0688, MS17-010, MS08-067 
       - Web servers: Apache Struts RCE (CVE-2017-9805), JBoss RCE (CVE-2017-12149), WebLogic RCE (CVE-2017-10271),... 
       - Citrix NetScaler: CVE-2019-19781
    
@@ -40,10 +40,10 @@ The output files included here are the results of tools, scripts and Windows com
 5. Post-exploitation and privilege escalation to become "Local Administrator" and "Local System"
    ➤ Exploiting OS security misconfiguration 
       Examples:
-      - weak service permissions, weak file permissions, weak registry permissions, 
+      - weak service permissions, weak file permissions, weak registry permissions, dll hijacking,
       - weak passwords, password re-use, clear-text passwords stored in scripts, unattended install files, 
       - AlwaysInstallElevated trick
-   ➤ Exploiting an unpatched known vulnerability with a public exploit (e.g. Hot/Rotten/Juicy Potato exploits, MS16-032)
+   ➤ Exploiting an unpatched known vulnerability with a public exploit (e.g.  MS16-032, Hot/Rotten/Juicy Potato exploits)
    ➤ Dumping Local Windows credentials (SAM/SYSTEM/SECURITY, LSASS)
      
 6. Network lateral movement and "Domain Admin" credentials hunting
@@ -94,7 +94,7 @@ The output files included here are the results of tools, scripts and Windows com
 ➤ John the Ripper - Offline password cracker (https://www.openwall.com/john/)
 ➤ Hashcat - Offline password cracker (https://hashcat.net/hashcat/)
 ➤ Enum4linux - Tool for enumerating information from Windows and Samba systems (https://tools.kali.org/information-gathering/enum4linux)
-➤ Vulnerability scanners (e.g. OpenVAS, Nessus, Qualys, ...)
+➤ Vulnerability scanners (e.g. OpenVAS, Nessus, Qualys, Nexpose, ...)
 ➤ Various scripts (source:kali/Github/your owns)
 ```
 
