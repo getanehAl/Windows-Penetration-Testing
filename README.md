@@ -20,7 +20,7 @@ The output files included here are the results of tools, scripts and Windows com
    ➤ Default/weak admin credentials for a software installed on a Windows server that will lead to a RCE
       Examples:
       - Web servers (e.g. Tomcat, WebLogic), CMS => Webshell upload
-      - Databases (e.g. MSSQL, Oracle, PostgresSQL) => OS command execution
+      - Databases (e.g. MSSQL, Oracle, PostgreSQL) => OS command execution
       - Jenkins => OS command execution
    ➤ Windows password spray attacks
    ➤ Anonymous access to data storage spaces (e.g. FTP/TFTP/NFS) + Windows clear-text credentials hardcoded in scripts, logs and configuration files 
@@ -50,7 +50,7 @@ The output files included here are the results of tools, scripts and Windows com
    ➤ RDP, WMIexec, Evil WinRM, SMBexec, PsExec..
    ➤ Pivoting techniques (e.g. meterpreter pivoting techniques)
    ➤ Pass-The-Hash & Pass-The-Ticket techniques (e.g. using the built-in local admin account and/or domain accounts member of the "Local Adminstrators" group)
-   ➤ Password dumping techniques (ProcDump, Mimikatz, SecretDump..)
+   ➤ Password dumping techniques (ProcDump, Mimikatz, SecretsDump..)
    ➤ Reconnaissance ("Domain Admin" credentials hunting) with BloodHound, PowerShell scripts/commands..
 
 7. Privilege escalation to become "Domain Admin", "Entreprise Admin"
@@ -60,12 +60,14 @@ The output files included here are the results of tools, scripts and Windows com
       Examples:
       - weak ACLs configuration,  weak GPO permissions,
       - LAPS misconfiguration, password re-use between privileged and standard accounts, ...
+   ➤ Compromise an account member of the built-in group "DNSAdmins" or "Account Operators" and then use it to take over the AD
    ➤ Find a backup/snapshot of a Windows Domain Controller on a NAS/FTP/Share and extract the password hashes (NTDS.DIT + SYSTEM) of high privileged acccounts (e.g. Domain Admins, Entreprise Admins, DC BUILTIN\Administrators)
+   ➤ Hack the Hypervsior on which the Domain Controllers are running, then peform a snapshot or dump just their memory and finally extract the password hashes of high privileged acccounts (e.g. Domain Admins, Entreprise Admins, DC BUILTIN\Administrators)
    ➤ ...
    
 8. Post-exploitation AD
-   ➤ Dumping Domain Windows credentials (NTDS.DIT)
-   ➤ Persistance with the KRBTGT account’s password hash and the creation of Golden tickets 
+   ➤ Dumping Domain Windows credentials (NTDS.DIT + SYSTEM reg hive)
+   ➤ Persistance with the KRBTGT account’s password hash and the creation of a Golden ticket
    ➤ Take over other Windows domains due to password re-use across domains for high privileged accounts
    ➤ Take over the Forest root domain thanks to AD Forest Trusts and/or misconfiguration (e.g. no SID filtering = SID history attack) 
    ➤ ...
