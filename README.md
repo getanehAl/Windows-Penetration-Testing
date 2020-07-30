@@ -91,6 +91,8 @@ The output files included here are the results of tools, scripts and Windows com
 ➤ Mimikatz - Extract plaintexts passwords, hash, PIN code and kerberos tickets from memory (https://github.com/gentilkiwi/mimikatz)
 ➤ Powercat - PowerShell TCP/IP swiss army knife like netcat (https://github.com/besimorhino/powercat)
 ➤ LAPSToolkit - LAPS auditing for pentesters (https://github.com/leoloobeek/LAPSToolkit)
+➤ Juicy potato exploit (https://github.com/ohpe/juicy-potato)
+➤ Rotten potato  exploit (https://github.com/breenmachine/RottenPotatoNG)
 ➤ PingCastle - Active Directory security audit tool (https://www.pingcastle.com)
 ➤ Hydra - Online password bruteforce tool (https://github.com/vanhauser-thc/thc-hydra)
 ➤ John the Ripper - Offline password cracker (https://www.openwall.com/john/)
