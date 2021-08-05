@@ -89,7 +89,7 @@ Grey-box penetration test (We start with 1 low-privileged Windows account)
   - password re-use between privileged and standard accounts, 
 ➤ Compromise an account member of the built-in group 'DNSAdmins' or 'Account Operators' and then use it to take over the AD (privesc)
 ➤ Find a backup/snapshot of a Windows Domain Controller on a NAS/FTP/Share and extract the password hashes (NTDS.DIT + SYSTEM) of high privileged acccounts (e.g. Domain Admins, Enterprise Admins, krbtgt account)
-➤ Hack the Hypervisor (e.g. vCenter) on which the Domain Controllers are running, then peform a snapshot of the DCs, copy/download their memory dump files (.vmsn & .vmem) and finally extract the password hashes of high privileged acccounts (e.g. Domain Admins, Enterprise Admins, DC BUILTIN\Administrators, krbtgt account)
+➤ Hack the Hypervisor (e.g. vCenter) on which the Domain Controllers are running, then perform a snapshot of the DCs, copy/download their memory dump files (.vmsn & .vmem) and finally extract the password hashes of high privileged acccounts (e.g. Domain Admins, Enterprise Admins, DC BUILTIN\Administrators, krbtgt account)
 ➤ Kerberos Unconstrained Delegation attack (+ Printer Bug)
 ➤ Kerberos Constrained Delegation attack
 ➤ Kerberos Resource-based Constrained Delegation attack
@@ -98,7 +98,7 @@ Grey-box penetration test (We start with 1 low-privileged Windows account)
 
 #### Step 7. Post-exploitation AD - Persistence and Forest root domain compromise
 ```
-➤ Dump, extract and crack the password hashes of all the Windows domain accounts (NTDS.DIT + SYSTEM registry hive)
+➤ Dump, extract and crack the password hashes of all the Windows domain accounts (file 'NTDS.DIT' + SYSTEM registry hive)
 ➤ Persistence with the KRBTGT account’s password hash and the creation of a Kerberos Golden ticket
 ➤ Persistence by modifying ACLs or by setting a Kerberos Resource-Based Constrained Delegation (RBCD)
 ➤ Take over the Forest root domain
@@ -121,7 +121,7 @@ Grey-box penetration test (We start with 1 low-privileged Windows account)
 ➤ Liza - Active Directory Security, Permission and ACL Analysis (http://www.ldapexplorer.com/en/liza.htm)
 ➤ Responder - LLMNR/NBTNS/mDNS poisoner and NTLMv1/2 relay (https://github.com/lgandx/Responder)
 ➤ PowerSploit (incl. PowerView & PowerUp) - PowerShell offensive security framework (https://github.com/PowerShellMafia/PowerSploit)
-➤ Impacket (incl. SecretDump & WMIexec) - Python offensive security framework (https://github.com/SecureAuthCorp/impacket)
+➤ Impacket (incl. Secretsdump & WMIexec) - Python offensive security framework (https://github.com/SecureAuthCorp/impacket)
 ➤ CrackMapExec - Swiss army knife for pentesting Windows networks (https://github.com/byt3bl33d3r/CrackMapExec)
 ➤ Metasploit penetration testing framework (https://www.metasploit.com)
 ➤ Rubeus - Toolset for raw Kerberos interaction and abuses (https://github.com/GhostPack/Rubeus)
