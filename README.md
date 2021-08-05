@@ -26,7 +26,7 @@ The output files included here are the results of tools, scripts and Windows com
     + PingCastle
     + ADCollector
     + PowerView framework / SharpView
-➤ Reconnaissance using DNS queries and the hostnames of servers
+➤ Reconnaissance using DNS queries and the naming convention of the hostnames
   Examples:
   - Domain Controllers have often a hostname like 'pr<bla>dc1', 'dv<bla>ad2', 'usdc02', 'prodfrdc3', etc.
   - Web servers have often a hostname like 'prweb01', 'wwwserver02', 'win2k16iis03', 'devJBOSS04', etc.
@@ -57,7 +57,7 @@ Black-box penetration test (we start with no account)
   - CMS: Telerik (CVE 2019-18935), Drupal (DrupalGeddon2/CVE-2018-7600), DotNetNuke (CVE-2017-9822), ...
   - Citrix NetScaler: CVE-2019-19781
   
-Grey-box penetration test (We start with 1 low-privileged Windows account)
+Grey-box penetration test (we start with 1 low-privileged Windows account)
 --------------------------------------------------------------------------
 ➤ Kerberoasting attack (collect Kerberos service tickets for any service with an SPN + offline service account credential hashes cracking)
 ➤ ASREPRoast attack (retrieve crackable hashes from KRB5 AS-REP responses for users without kerberoast pre-authentication enabled + offline password cracking)
@@ -80,7 +80,7 @@ Grey-box penetration test (We start with 1 low-privileged Windows account)
   - weak passwords, password re-use, clear-text passwords stored in scripts, unattended install files, 
   - AlwaysInstallElevated trick
  ➤ Exploiting an unpatched local privesc vulnerability with a public exploit (e.g. PrintNightmare, HiveNightmare, CVE-2020-0787, Juicy/Rotten/Hot Potato exploits, MS16-032)
- ➤ Dumping Windows credentials (SAM/SYSTEM/SECURITY, LSASS) - Password dumping techniques: ProcDump, Mimikatz, SecretsDump, Reg save, ...
+ ➤ Dumping Windows credentials (SAM/SYSTEM/SECURITY, LSASS) - Password dumping techniques: ProcDump, Mimikatz, SecretsDump, Reg save, VSS shadow copy, ...
 ```
 
 #### Step 5. Network lateral movement and 'Domain Admin' credentials hunting
