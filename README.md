@@ -13,10 +13,22 @@ The output files included here are the results of tools, scripts and Windows com
 ➤ ...
 ```
 
-#### Step 2. Scanning and Reconnaissance
+#### Step 2. Reconnaissance and Scanning
 ```
+Black-box penetration test (we start with no account)
+-----------------------------------------------------
+➤ Reconnaissance using DNS queries and the naming convention of the hostnames
+  Examples:
+  - Domain Controllers have often a hostname like 'pr<bla>dc1', 'dv<bla>ad2', 'usdc02', 'prodfrdc3', etc.
+  - Web servers have often a hostname like 'prweb01', 'wwwserver02', 'win2k16iis03', 'devJBOSS04', etc.
+  - Database servers have often a hostname like 'sqlsrv01', 'prdbserver02', 'prodorasrv08', 'devmongodb14', etc. 
+  - Citrix servers have often a hostname like 'prctxsrv1', 'printctx02', 'citrixsrv02', etc.
+➤ Targeted network scans
+➤ Network sniffing
+
+Grey-box penetration test (we start with 1 low-privileged Windows account)
+--------------------------------------------------------------------------
 ➤ AD and Windows domain information gathering 
-  - Very limited when we start during a black-box penetration test
   - When we have at least 1 Windows account, there are numerous tools and scripts that can be used to enumerate a Windows domain
     Examples:
     + Windows native DOS and Powershell commands (e.g. net commands, PowerShell ActiveDirectory module)
@@ -26,14 +38,6 @@ The output files included here are the results of tools, scripts and Windows com
     + PingCastle
     + ADCollector
     + PowerView framework / SharpView
-➤ Reconnaissance using DNS queries and the naming convention of the hostnames
-  Examples:
-  - Domain Controllers have often a hostname like 'pr<bla>dc1', 'dv<bla>ad2', 'usdc02', 'prodfrdc3', etc.
-  - Web servers have often a hostname like 'prweb01', 'wwwserver02', 'win2k16iis03', 'devJBOSS04', etc.
-  - Database servers have often a hostname like 'sqlsrv01', 'prdbserver02', 'prodorasrv08', 'devmongodb14', etc. 
-  - Citrix servers have often a hostname like 'prctxsrv1', 'printctx02', 'citrixsrv02', etc.
-➤ Targeted network scans
-➤ Network sniffing
 ```
 
 #### Step 3. Gaining Access 
@@ -59,6 +63,7 @@ Black-box penetration test (we start with no account)
   
 Grey-box penetration test (we start with 1 low-privileged Windows account)
 --------------------------------------------------------------------------
+➤ All the attacks listed above in the 'black-box pentest' section
 ➤ Kerberoasting attack (collect Kerberos service tickets for any service with an SPN + offline service account credential hashes cracking)
 ➤ ASREPRoast attack (retrieve crackable hashes from KRB5 AS-REP responses for users without kerberoast pre-authentication enabled + offline password cracking)
 ➤ Windows network shares, SYSVOL/GPP, NAS, SharePoint sites, internal github (accessible to any authenticated user) + Windows clear-text credentials hardcoded in scripts, logs and configuration files 
