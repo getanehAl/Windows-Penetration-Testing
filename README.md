@@ -17,13 +17,16 @@ The output files included here are the results of tools, scripts and Windows com
 ```
 Black-box penetration test (we start with no account)
 -----------------------------------------------------
-➤ Reconnaissance using DNS queries and the naming convention of the hostnames
+➤ On our laptop connected to the LAN or Wifi, we run commands like 'ipconfig /all' and 'nslookup' to identify:
+ - the IP address range of the user network (our laptop IP address is part of it)
+ - the IP address range of a production (server) network (thanks to the IP address of the DNS server which is usually also the IP address of a Domain Controller) 
+➤ Reconnaissance using DNS queries (reverse IP lookup) and the naming convention of the hostnames
   Examples:
   - Domain Controllers have often a hostname like 'pr<bla>dc1', 'dv<bla>ad2', 'usdc02', 'prodfrdc3', etc.
   - Web servers have often a hostname like 'prweb01', 'wwwserver02', 'win2k16iis03', 'devJBOSS04', etc.
   - Database servers have often a hostname like 'sqlsrv01', 'prdbserver02', 'prodorasrv08', 'devmongodb14', etc. 
   - Citrix servers have often a hostname like 'prctxsrv1', 'printctx02', 'citrixsrv02', etc.
-➤ Targeted network scans
+➤ Targeted network scans (e.g. Nmap and NSE scripts)
 ➤ Network sniffing
 
 Grey-box penetration test (we start with 1 low-privileged Windows account)
@@ -31,7 +34,7 @@ Grey-box penetration test (we start with 1 low-privileged Windows account)
 ➤ AD and Windows domain information gathering 
   - When we have at least 1 Windows account, there are numerous tools and scripts that can be used to enumerate a Windows domain
     Examples:
-    + Windows native DOS and Powershell commands (e.g. net commands, PowerShell ActiveDirectory module)
+    + Windows native DOS and Powershell commands (e.g. 'net' commands, PowerShell ActiveDirectory module)
     + Sysinternals tools (e.g. ADexplorer.exe)
     + Powershell scripts like ADrecon.ps1
     + BloodHound 
@@ -109,7 +112,7 @@ Grey-box penetration test (we start with 1 low-privileged Windows account)
   - weak ACL or GPO permissions, 
   - LAPS misconfiguration, 
   - password re-use between privileged and standard accounts, 
-➤ Compromise an account member of the built-in group 'DNSAdmins' or 'Account Operators' and then use it to take over the AD (privesc)
+➤ Compromise an account member of the default security group 'DNSAdmins' or 'Account Operators' and then use it to take over the AD (privesc)
 ➤ Find a backup/snapshot of a Windows Domain Controller on a NAS/FTP/Share and extract the password hashes (NTDS.DIT + SYSTEM) of high privileged acccounts (e.g. Domain Admins, Enterprise Admins, krbtgt account)
 ➤ Hack the Hypervisor (e.g. vCenter) on which the Domain Controllers are running, then perform a snapshot of the DCs, copy/download their memory dump files (.vmsn & .vmem) and finally extract the password hashes of high privileged acccounts (e.g. Domain Admins, Enterprise Admins, DC BUILTIN\Administrators, krbtgt account)
 ➤ Kerberos Unconstrained Delegation attack (+ Printer Bug)
