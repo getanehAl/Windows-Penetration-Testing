@@ -20,7 +20,7 @@ Black-box penetration test (we start with no account)
 ➤ On our laptop connected to the LAN or Wifi, we run commands like 'ipconfig /all' and 'nslookup' to identify:
  - the IP address range of the user network (our laptop IP address is part of it)
  - the IP address range of a production (server) network (thanks to the IP address of the DNS server which is usually also the IP address of a Domain Controller) 
-➤ Reconnaissance using DNS queries (reverse IP lookup) and the naming convention of the hostnames
+➤ Reconnaissance using DNS queries (e.g. reverse IP lookup, DNS zone transfer) and the naming convention of the hostnames
   Examples:
   - Domain Controllers have often a hostname like 'pr<bla>dc1', 'dv<bla>ad2', 'usdc02', 'prodfrdc3', etc.
   - Web servers have often a hostname like 'prweb01', 'wwwserver02', 'win2k16iis03', 'devJBOSS04', etc.
