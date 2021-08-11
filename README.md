@@ -94,8 +94,11 @@ Grey-box penetration test (we start with 1 low-privileged Windows account)
 #### Step 5. Network lateral movement and 'Domain Admin' credentials hunting
 ```
 ➤ Network lateral movement using RDP, WMIexec, PowerShell remoting, Evil WinRM, SMBexec, PsExec..
-➤ Pivoting techniques (e.g. meterpreter pivoting techniques - post/multi/manage/autoroute + socks5 proxy + use of proxychains)
-➤ Pass-The-Hash & Pass-The-Ticket techniques (e.g. using the built-in local admin account and/or domain accounts member of the local 'Adminstrators' group)
+➤ Pass-The-Hash, Pass-The-Ticket and Over-Pass-The-Hash techniques 
+➤ Pivoting techniques
+  Examples:
+  - Meterpreter with 'post/multi/manage/autoroute' + socks proxy + use of proxychains
+  - SSH tunnelling (dynamic port forwarding, local port forwarding, remote port forwarding)
 ➤ 'Domain Admin' credentials hunting
   Examples:
   - BloodHound
