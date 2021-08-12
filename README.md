@@ -98,7 +98,7 @@ Grey-box penetration test (we start with 1 low-privileged Windows account)
 ➤ Pivoting techniques
   Examples:
   - Meterpreter with 'post/multi/manage/autoroute' + socks proxy + use of proxychains
-  - SSH tunnelling (dynamic port forwarding, local port forwarding, remote port forwarding)
+  - SSH tunnelling (dynamic port forwarding + use of proxychains, local port forwarding, remote port forwarding)
 ➤ 'Domain Admin' credentials hunting
   Examples:
   - BloodHound
