@@ -56,6 +56,7 @@ Black-box penetration test (we start with no account)
   - Web servers (e.g. Tomcat, WebLogic), CMS => Webshell upload
   - Databases (e.g. MSSQL, Oracle, PostgreSQL) => OS command execution
   - Jenkins => OS command execution
+  - SAP => OS command execution
 ➤ Windows password spray attacks
 ➤ Anonymous access to data storage spaces (e.g. FTP/TFTP/NFS) + Windows clear-text credentials hardcoded in scripts, logs and configuration files 
 ➤ Upload of malicious SCF files to anonymously writable Windows network shares + collect NTLMv2 password hashes + Offline password cracking (tools: John, hashcat)
@@ -74,7 +75,7 @@ Grey-box penetration test (we start with 1 low-privileged Windows account)
 ➤ Find clear-text passwords in files shared on Domain Shares, NAS, SharePoint sites, internal github accessible to all Domain users
 ➤ Find a Windows server that is insecurely sharing configuration files, cron job scripts and executable files with write permissions granted to all Domain users 
   + Privesc by adding a backdoor in a cron job script or modifying a configuration file, ...
-➤ Upload of malicious SCF files to Windows network shares (writable for any authenticated users) + collect NTLMv2 password hashes + offline password cracking
+➤ Upload of malicious SCF files to Windows network shares (writable by any authenticated users) + collect NTLMv2 password hashes + offline password cracking (tools: John, hashcat)
 ➤ Clear-text passwords stored in AD fields (e.g. account description, comments)
 ➤ Citrix servers accessible to all Domain users + Citrix jailbreak to get a Windows CMD or PowerShell console + Local privesc 
 ➤ Unpatched/obsolete systems prone to an authenticated Remote Code Execution vulnerability with a public exploit available 
@@ -97,7 +98,7 @@ Grey-box penetration test (we start with 1 low-privileged Windows account)
 
 #### Step 5. Network lateral movement and 'Domain Admin' credentials hunting
 ```
-➤ Network lateral movement using RDP, WMIexec, PowerShell remoting, Evil WinRM, SMBexec, PsExec..
+➤ Network lateral movement using RDP, WMIexec, PowerShell remoting, Evil-WinRM, SMBexec, PsExec, ...
 ➤ Pass-The-Hash, Pass-The-Ticket and Over-Pass-The-Hash techniques 
 ➤ Pivoting techniques
   Examples:
