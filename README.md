@@ -17,9 +17,10 @@ The output files included here are the results of tools, scripts and Windows com
 ```
 Black-box penetration test (we start with no account)
 -----------------------------------------------------
-➤ On our laptop connected to the LAN or Wifi, we run commands like 'ipconfig /all' and 'nslookup' to identify:
+➤ On our laptop connected to the LAN or Wifi, we run commands like 'ipconfig /all', 'ip a' and 'nslookup' to identify:
  - the IP address range of the user network (our laptop IP address is part of it)
- - the IP address range of a production (server) network (thanks to the IP address of the DNS server which is usually also the IP address of a Domain Controller) 
+ - the IP address range of a production (server) network/VLAN (thanks to the IP address of the DNS server which is usually also the IP address of a Domain Controller)
+➤ Network sniffing
 ➤ Reconnaissance using DNS queries (e.g. reverse IP lookup, DNS zone transfer) and the naming convention of the hostnames
   Examples:
   - Domain Controllers have often a hostname like 'pr<bla>dc1', 'dv<bla>ad2', 'usdc02', 'prodfrdc3', etc.
@@ -27,7 +28,6 @@ Black-box penetration test (we start with no account)
   - Database servers have often a hostname like 'sqlsrv01', 'prdbserver02', 'prodorasrv08', 'devmongodb14', etc. 
   - Citrix servers have often a hostname like 'prctxsrv1', 'printctx02', 'citrixsrv02', etc.
 ➤ Targeted network scans (e.g. Nmap and NSE scripts)
-➤ Network sniffing
 
 Grey-box penetration test (we start with 1 low-privileged Windows account)
 --------------------------------------------------------------------------
@@ -36,19 +36,21 @@ Grey-box penetration test (we start with 1 low-privileged Windows account)
     Examples:
     + Windows native DOS and Powershell commands (e.g. 'net' commands, PowerShell ActiveDirectory module)
     + Sysinternals tools (e.g. ADexplorer.exe)
+    + PowerView framework / SharpView
     + Powershell scripts like ADrecon.ps1
     + BloodHound 
     + PingCastle
     + ADCollector
-    + PowerView framework / SharpView
+    + ...
 ```
 
 #### Step 3. Gaining Access 
 ```
 Black-box penetration test (we start with no account)
 -----------------------------------------------------
-➤ LLMNR & NBT-NS poisonning attacks using the tool Responder (poison name services + collect NTLMv2 password hashes from the network + offline password cracking or SMB relay attacks)
-➤ DNS poisoning attacks via IPv6 DHCP requests using the tool MITM6 (spoof DNS replies + collect NTLMv2 password hashes from the network + offline password cracking or SMB relay attacks)    
+➤ LLMNR & NBT-NS poisonning attacks (tool: Responder) to collect NTLMv2 password hashes from the network + offline password cracking (tools: John, hashcat)
+➤ DNS poisoning attacks via IPv6 DHCP requests (tool: MITM6) to collect NTLMv2 password hashes from the network + offline password cracking (tools: John, hashcat)
+➤ NTLM relay attacks (tool Ntlmrelayx) by exploiting vulnerabilities like PetitPotam and PrinterBug or poisonning attacks (LLMNR / NBT-NS / DNS & IPV6)
 ➤ Default/weak admin credentials for a software installed on a Windows server that will lead to a RCE
   Examples:
   - Web servers (e.g. Tomcat, WebLogic), CMS => Webshell upload
@@ -56,10 +58,10 @@ Black-box penetration test (we start with no account)
   - Jenkins => OS command execution
 ➤ Windows password spray attacks
 ➤ Anonymous access to data storage spaces (e.g. FTP/TFTP/NFS) + Windows clear-text credentials hardcoded in scripts, logs and configuration files 
-➤ Upload of malicious SCF files to anonymously writable Windows network shares + collect NTLMv2 password hashes + offline password cracking
-➤ Unpatched unauthenticated Remote Code Execution vulnerability with a public exploit for Windows OS, Web servers, databases, FTP servers…  
+➤ Upload of malicious SCF files to anonymously writable Windows network shares + collect NTLMv2 password hashes + Offline password cracking (tools: John, hashcat)
+➤ Unpatched/obsolete systems prone to an unauthenticated Remote Code Execution vulnerability with a public exploit available
   Examples:
-  - Windows: PetitPotam vulnerability, CVE-2020-1472 (zerologon - not recommended), MS17-010 (EternalBlue), MS08-067, ... 
+  - Windows: MS17-010 (EternalBlue), CVE-2020-1472 (Zerologon, risky to run against a prod environment), old MS08-067, ...
   - Web servers: WebLogic RCE (CVE-2020-14882, CVE-2017-10271), Apache Struts RCE (CVE-2017-9805), JBoss RCE (CVE-2017-12149), Java RMI RCE, ...
   - CMS: Telerik (CVE 2019-18935, CVE-2017-9248), Drupal (DrupalGeddon2/CVE-2018-7600), DotNetNuke (CVE-2017-9822), ...
   - Citrix NetScaler: CVE-2019-19781
@@ -67,15 +69,17 @@ Black-box penetration test (we start with no account)
 Grey-box penetration test (we start with 1 low-privileged Windows account)
 --------------------------------------------------------------------------
 ➤ All the attacks listed above in the 'black-box pentest' section
-➤ Kerberoasting attack (collect Kerberos service tickets for any service with an SPN + offline service account credential hashes cracking)
-➤ ASREPRoast attack (retrieve crackable hashes from KRB5 AS-REP responses for users without kerberoast pre-authentication enabled + offline password cracking)
-➤ Windows network shares, SYSVOL/GPP, NAS, SharePoint sites, internal github (accessible to any authenticated user) + Windows clear-text credentials hardcoded in scripts, logs and configuration files 
+➤ Kerberoasting attack (request Kerberos TGS for services with an SPN and retrieve crackable hashes) + Offline password cracking (tools: John, hashcat)
+➤ AS-REP Roasting attack (retrieve crackable hashes/encrypted TGT for users without kerberoast pre-authentication enabled) + Offline password cracking (tools: John, hashcat)
+➤ Find clear-text passwords in files shared on Domain Shares, NAS, SharePoint sites, internal github accessible to all Domain users
+➤ Find a Windows server that is insecurely sharing configuration files, cron job scripts and executable files with write permissions granted to all Domain users 
+  + Privesc by adding a backdoor in a cron job script or modifying a configuration file, ...
 ➤ Upload of malicious SCF files to Windows network shares (writable for any authenticated users) + collect NTLMv2 password hashes + offline password cracking
 ➤ Clear-text passwords stored in AD fields (e.g. account description, comments)
-➤ Citrix servers accessible to any employee + Citrix jailbreak to get a Windows CMD or PowerShell console
-➤ Unpatched authenticated Remote Code Execution vulnerability with a public exploit for Windows OS, Web servers, databases, FTP servers…  
+➤ Citrix servers accessible to all Domain users + Citrix jailbreak to get a Windows CMD or PowerShell console + Local privesc 
+➤ Unpatched/obsolete systems prone to an authenticated Remote Code Execution vulnerability with a public exploit available 
   Examples:
-  - Windows: PrintNightmare (CVE-2021-1675 & CVE-2021-34527), MS14-068
+  - Windows: PrintNightmare (CVE-2021-1675 & CVE-2021-34527), MS14-068, ...
   - Outlook server: CVE-2020-0688
   ➤ ...
 ```
@@ -87,7 +91,7 @@ Grey-box penetration test (we start with 1 low-privileged Windows account)
   - weak service permissions, weak file permissions, weak registry permissions, dll hijacking,
   - weak passwords, password re-use, clear-text passwords stored in scripts, unattended install files, 
   - AlwaysInstallElevated trick
- ➤ Exploiting an unpatched local privesc vulnerability with a public exploit (e.g. PrintNightmare, HiveNightmare, CVE-2020-0787, Juicy/Rotten/Hot Potato exploits, MS16-032)
+ ➤ Exploiting an unpatched local privesc vulnerability with a public exploit (e.g. PrintNightmare, SeriousSam/HiveNightmare, Juicy/Rotten/Hot Potato exploits, MS16-032)
  ➤ Dumping Windows credentials (SAM/SYSTEM/SECURITY, LSASS) - Password dumping techniques: ProcDump, Mimikatz, SecretsDump, Reg save, VSS shadow copy, ...
 ```
 
@@ -117,6 +121,7 @@ Grey-box penetration test (we start with 1 low-privileged Windows account)
   - password re-use between privileged and standard accounts, 
 ➤ Compromise an account member of the default security group 'DNSAdmins' or 'Account Operators' and then use it to take over the AD (privesc)
 ➤ Find a backup/snapshot of a Windows Domain Controller on a NAS/FTP/Share and extract the password hashes (NTDS.DIT + SYSTEM) of high privileged acccounts (e.g. Domain Admins, Enterprise Admins, krbtgt account)
+➤ Abusing Microsoft Exchange for privilege escalation ('PrivExchange' vulnerability)
 ➤ Hack the Hypervisor (e.g. vCenter) on which the Domain Controllers are running, then perform a snapshot of the DCs, copy/download their memory dump files (.vmsn & .vmem) and finally extract the password hashes of high privileged acccounts (e.g. Domain Admins, Enterprise Admins, DC BUILTIN\Administrators, krbtgt account)
 ➤ Kerberos Unconstrained Delegation attack (+ Printer Bug)
 ➤ Kerberos Constrained Delegation attack
