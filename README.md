@@ -138,8 +138,12 @@ Grey-box penetration test (we start with 1 low-privileged Windows account)
 #### Step 7. Post-exploitation AD - Persistence and Forest root domain compromise
 ```
 ➤ Dump, extract and crack the password hashes of all the Windows domain accounts (file 'NTDS.DIT' + SYSTEM registry hive)
-➤ Persistence with the KRBTGT account’s password hash and the creation of a Kerberos Golden ticket
-➤ Persistence by modifying ACLs or by setting a Kerberos Resource-Based Constrained Delegation (RBCD)
+➤ Persistence techniques
+   Examples:
+   - Use of the KRBTGT account’s password hash to create of a Kerberos Golden ticket
+   - Add temporarily an account in a default AD security group such as 'Domain Admins', 'BUILTIN\Administrators' or 'Account Operators' 
+   - Keep temporarily the password hash of a highly-privileged service account (e.g. Domain Admin) with a password that never expire
+   - Modify temporarily ACLs
 ➤ Take over the Forest root domain
    - Forge a Kerberos Golden Ticket (TGT) with a 'SID History' for the Forest Enterprise Admins group
    - Forge an inter-realm trust ticket (cross-domain trust kerberos ticket) and then create TGS for the services LDAP/CIFS/HOST/... in the parent domain 
