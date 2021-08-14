@@ -32,7 +32,7 @@ Black-box penetration test (we start with no account)
 Grey-box penetration test (we start with 1 low-privileged Windows account)
 --------------------------------------------------------------------------
 ➤ AD and Windows domain information gathering 
-   When we have at least 1 Windows account, there are numerous tools and scripts that can be used to enumerate a Windows domain
+   When we have at least 1 Windows domain account, there are numerous tools and scripts that can be used to enumerate a Windows domain
    Examples:
    - Windows native DOS and Powershell commands (e.g. 'net' commands, PowerShell ActiveDirectory module)
    - Sysinternals tools (e.g. ADexplorer.exe)
