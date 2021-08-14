@@ -78,6 +78,7 @@ Grey-box penetration test (we start with 1 low-privileged Windows account)
 ➤ Upload of malicious SCF files to Windows network shares (writable by any authenticated users) + collect NTLMv2 password hashes + offline password cracking (tools: John, hashcat)
 ➤ Clear-text passwords stored in AD fields (e.g. account description, comments)
 ➤ Citrix servers accessible to all Domain users + Citrix jailbreak to get a Windows CMD or PowerShell console + Local privesc 
+➤ WsuXploit attack – Compromising Windows machines via malicious Windows Update (i.e. inject 'fake' updates into non-SSL WSUS traffic)
 ➤ Unpatched/obsolete systems prone to an authenticated Remote Code Execution vulnerability with a public exploit available 
   Examples:
   - Windows: PrintNightmare (CVE-2021-1675 & CVE-2021-34527), MS14-068, ...
