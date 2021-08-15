@@ -13,7 +13,7 @@ The output files included here are the results of tools, scripts and Windows com
 ➤ ...
 ```
 
-#### Step 2. Reconnaissance and Scanning
+#### Step 2. Reconnaissance, Scanning and Domain Enumeration 
 ```
 Black-box penetration test (we start with no account)
 -----------------------------------------------------
@@ -31,8 +31,8 @@ Black-box penetration test (we start with no account)
 
 Grey-box penetration test (we start with 1 low-privileged Windows account)
 --------------------------------------------------------------------------
-➤ AD and Windows domain information gathering 
-   When we have at least 1 Windows domain account, there are numerous tools and scripts that can be used to enumerate a Windows domain
+➤ AD and Windows domain information gathering (enumerate accounts, groups, computers, ACLs, password policies, GPOs, Kerberos delegation, ...)
+➤ Numerous tools and scripts can be used to enumerate a Windows domain
    Examples:
    - Windows native DOS and Powershell commands (e.g. 'net' commands, PowerShell ActiveDirectory module)
    - Sysinternals tools (e.g. ADexplorer.exe)
