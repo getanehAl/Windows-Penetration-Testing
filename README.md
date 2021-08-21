@@ -52,9 +52,10 @@ Black-box penetration test (we start with no account)
 ➤ NTLM relay attacks (tool: Ntlmrelayx) by exploiting vulnerabilities like PetitPotam and PrinterBug or poisonning attacks (LLMNR / NBT-NS / DNS & IPV6)
 ➤ Default/weak admin credentials for a software installed on a Windows server that will lead to a RCE
    Examples:
-   - Web servers (e.g. Tomcat, WebLogic), CMS => Webshell upload
-   - Databases (e.g. MSSQL, Oracle, PostgreSQL) => OS command execution
+   - Web servers (e.g. Tomcat, WebLogic, JBoss) => Webshell upload
    - Jenkins, JIRA => OS command execution
+   - CMS (e.g. WordPress) => Webshell upload
+   - Databases (e.g. MSSQL, Oracle, PostgreSQL) => OS command execution
    - SAP => OS command execution
 ➤ Windows password spray attacks
 ➤ Anonymous access to data storage spaces (e.g. FTP/TFTP/NFS) + Windows clear-text credentials hardcoded in scripts, logs and configuration files 
