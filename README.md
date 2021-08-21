@@ -54,7 +54,7 @@ Black-box penetration test (we start with no account)
    Examples:
    - Web servers (e.g. Tomcat, WebLogic), CMS => Webshell upload
    - Databases (e.g. MSSQL, Oracle, PostgreSQL) => OS command execution
-   - Jenkins => OS command execution
+   - Jenkins, JIRA => OS command execution
    - SAP => OS command execution
 ➤ Windows password spray attacks
 ➤ Anonymous access to data storage spaces (e.g. FTP/TFTP/NFS) + Windows clear-text credentials hardcoded in scripts, logs and configuration files 
