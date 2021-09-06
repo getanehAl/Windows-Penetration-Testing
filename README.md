@@ -185,9 +185,11 @@ Grey-box penetration test (we start with 1 low-privileged Windows account)
 #### Useful resources
 ```
 ➤ ADsecurity website (https://adsecurity.org)
+➤ MITRE (https://attack.mitre.org/tactics/enterprise/; https://attack.mitre.org/mitigations/M1015/)
 ➤ GitHub - swisskyrepo/PayloadsAllTheThings (https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Active%20Directory%20Attack.md)
-➤ MITRE (https://attack.mitre.org/mitigations/M1015/)
+➤ GitHub - https://github.com/infosecn1nja/AD-Attack-Defense
 ➤ Att&cking Active Directory for fun and profit (https://identityaccessdotmanagement.files.wordpress.com/2020/01/attcking-ad-for-fun-and-profit.pdf)
 ➤ Windows / Linux Local Privilege Escalation Workshop (https://github.com/sagishahar/lpeworkshop)
+➤ CIS benchmarks (https://www.cisecurity.org/benchmark/microsoft_windows_server/)
 ➤ ...
 ```
