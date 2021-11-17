@@ -108,13 +108,13 @@ Local privesc
    Examples:
    - Reg save
    - Volume Shadow Copy (VSSadmin)
-   - SecretsDump 
+   - SecretsDump (Impacket)
  ➤ Memory dumping of the LSASS process 
    Examples:
-   - ProcDump, 
+   - ProcDump (Windows Sysinternal)
    - Task manager + "Create dump file" of lsass.exe
-   - SecretsDump
-   - Mimikatz /  Invoke-mimikatz.ps1
+   - SecretsDump (Impacket)
+   - Mimikatz / Invoke-mimikatz.ps1
    - ...
 ```
 
