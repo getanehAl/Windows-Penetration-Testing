@@ -97,7 +97,7 @@ Local privesc
    - weak registry permissions
    - dll hijacking
    - weak passwords and password re-use
-   - clear-text passwords stored in scripts, unattended install files, ...
+   - clear-text passwords stored in scripts, unattended install files, Web.config, ...
    - AlwaysInstallElevated trick
  ➤ Exploiting an unpatched local privesc vulnerability with a public exploit 
     (e.g. PrintNightmare, SeriousSam/HiveNightmare, Juicy/Rotten/Hot Potato exploits, MS16-032, ...)
@@ -111,11 +111,14 @@ Local privesc
    - SecretsDump (Impacket)
  ➤ Memory dumping of the LSASS process 
    Examples:
-   - ProcDump (Windows Sysinternal)
+   - ProcDump (Windows Sysinternals)
    - Task manager + "Create dump file" of lsass.exe
    - SecretsDump (Impacket)
    - Mimikatz / Invoke-mimikatz.ps1
    - ...
+  ➤ Other
+   - The LaZagne application can be used to retrieve passwords stored in browsers, DBA tools (e.g. dbvis, SQLdevelopper) and Sysadmin tools (e.g. WinSCP, PuttyCM, OpenSSH, VNC, OpenVPN)
+   - Dumping KeePass master password from memory using tools like 'Keethief' or 'KeePassHax'
 ```
 
 #### Step 5. Network lateral movement and 'Domain Admin' credentials hunting
