@@ -88,6 +88,8 @@ Grey-box penetration test (we start with 1 low-privileged Windows account)
 
 #### Step 4. Post-exploitation and privilege escalation to become "Local Administrator" and/or "Local System"
 ```
+Local privesc 
+-------------
 ➤ Exploiting OS security misconfiguration 
    Examples:
    - weak service permissions
@@ -99,13 +101,26 @@ Grey-box penetration test (we start with 1 low-privileged Windows account)
    - AlwaysInstallElevated trick
  ➤ Exploiting an unpatched local privesc vulnerability with a public exploit 
     (e.g. PrintNightmare, SeriousSam/HiveNightmare, Juicy/Rotten/Hot Potato exploits, MS16-032, ...)
- ➤ Dumping Windows credentials (SAM/SYSTEM/SECURITY, LSASS)
-    Password dumping techniques: ProcDump, Mimikatz, SecretsDump, Reg save, VSS shadow copy, ...
+ 
+ Dumping Windows credentials
+ ---------------------------
+ ➤ Dumping the registry hives (SAM, SYSTEM, SECURITY)
+   Examples:
+   - Reg save
+   - Volume Shadow Copy (VSSadmin)
+   - SecretsDump 
+ ➤ Memory dumping of the LSASS process 
+   Examples:
+   - ProcDump, 
+   - Task manager + "Create dump file" of lsass.exe
+   - SecretsDump
+   - Mimikatz /  Invoke-mimikatz.ps1
+   - ...
 ```
 
 #### Step 5. Network lateral movement and 'Domain Admin' credentials hunting
 ```
-➤ Network lateral movement using RDP, WMIexec, PowerShell remoting, Evil-WinRM, SMBexec, PsExec, ...
+➤ Network lateral movement using RDP, PowerShell remoting, WMIexec, SMBexec, PsExec, ...
 ➤ Pass-The-Hash, Pass-The-Ticket and Over-Pass-The-Hash techniques 
 ➤ Pivoting techniques
    Examples:
