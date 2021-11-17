@@ -130,7 +130,8 @@ Local privesc
    Examples:
    - BloodHound
    - PowerView and various PowerShell scripts
-   - Windows native commands such as 'qwinsta /server:hostname'
+   - Windows native commands such as 'qwinsta /server:hostname' and 'net session'
+   - Windows Sysinternals command-line tool 'PsLoggedOn' (e.g. psloggedon.exe \\computername username)
 ```
 #### Step 6. Privilege escalation to become "Domain Admin"
 ```
