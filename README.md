@@ -3,7 +3,7 @@ Technical notes and list of tools, scripts and Windows commands that I find usef
 The output files included here are the results of tools, scripts and Windows commands that I ran against a vulnerable Windows AD lab that I created to test attacks/exploits and deliver hands-on penetration testing training sessions to security auditors at my job.
 
 
-### <i>************** Classic Windows Active Directory attack paths - Internal penetration test ************** </i>
+### <i>**** Classic Windows Active Directory attack paths - Internal penetration test **** </i>
 
 #### Step 1. Bypassing Network Access Control (NAC) - if any
 ```
