@@ -13,7 +13,7 @@ The output files included here are the results of tools, scripts and Windows com
 ```
 
 #### Step 2. Reconnaissance
-<i>The purpose of the reconnaissance phase is to gather as much as possible information about the target (Windows domains and internal network) while minimizing the probability of being detected. It includes Windows domain(s) enumeration, DNS enumeration, targeted network scans...</i>
+<i>The purpose of the reconnaissance phase is to gather as much as possible information about the target (Windows domains and internal network). It includes Windows domain(s) enumeration, DNS enumeration, targeted network scans...</i>
 ```
 Black-box penetration test (we start with no account)
 -----------------------------------------------------
