@@ -148,13 +148,16 @@ Windows local privilege escalation to become local administrator and/or "NT AUTH
 
 ```
 ➤ Dumping from a Windows server's memory the clear-text password (or hash) of an acccount member of the group 'Domain Admins' or 'Administrators' of the Domain Controller
-➤ The same password is used to protect the local administrator account of the Windows servers and the Domain Controllers (i.e. no hardening, no LAPS)
-➤ Exploiting AD / Windows domain misconfiguration
+➤ Exploiting AD / Windows domain security misconfiguration
    Examples:
-   - weak ACL or GPO permissions, 
-   - LAPS misconfiguration, 
-   - password re-use between privileged and standard accounts, 
-➤ Compromise an account member of the default security groups such as 'DNSAdmins', 'Account Operators', 'Backup Operators', 'Server Operators' that can be used to privesc and take over the AD
+   - abusing weak ACL or GPO permissions, 
+   - abusing LAPS misconfiguration, 
+   - identifying password reuse 
+     > the same password is used to protect multiple high privileged accounts and low-privileged accounts, 
+     > the same password is used to protect the default local administrator account of the Windows servers and the Domain Controllers (i.e. no hardening, no LAPS)
+➤ Compromise an account member of the default security group 'DNSAdmins' and take over the Windows domain by executing a DLL as 'NT AUTHORITY\SYSTEM' on the Domain Controller (known privesc)
+➤ Compromise an account member of the default security groups 'Backup Operators' or 'Server Operators' and take over the Windows domain by backuping the NTDS.dit file and HKLM\SYSTEM and then extracting the password hash of 'Domain admins' accounts (known privesc)
+➤ Compromise an account member of the default security group 'Account Operators' that can be used to privesc and take over the Windows domain (known privesc)
 ➤ Find a backup/snapshot of a Windows Domain Controller on a NAS/FTP/Share and extract the password hashes (NTDS.DIT + SYSTEM) of high privileged acccounts (e.g. Domain Admins, Enterprise Admins, krbtgt account)
 ➤ Abusing Microsoft Exchange for privilege escalation ('PrivExchange' vulnerability)
 ➤ Hack the Hypervisor (e.g. vCenter) on which the Domain Controllers are running, then perform a snapshot of the DCs, copy/download their memory dump files (.vmsn & .vmem) and finally extract the password hashes of high privileged acccounts (e.g. Domain Admins, Administrators of DC, krbtgt account)
@@ -164,7 +167,7 @@ Windows local privilege escalation to become local administrator and/or "NT AUTH
 ➤ ...
 ```
 
-#### Step 7. Forest root domain compromise
+#### Step 7. Forest root domain compromise (privilege escalation to become "Enterprise Admin")
 <i>The purpose of this phase is to take full control over the Forest root domain and all the other domains in the target network.</i>
 ```
 ➤ Post-exploitation AD
@@ -176,7 +179,7 @@ Windows local privilege escalation to become local administrator and/or "NT AUTH
    - Keep temporarily the password hash of a highly-privileged service account (e.g. Domain Admin) with a password that never expire
    - Modify temporarily ACLs
 ➤ Take over the Forest root domain
-   - Forge a Kerberos Golden Ticket (TGT) with a 'SID History' for the Forest Enterprise Admins group
+   - Forge a Kerberos Golden Ticket (TGT) with a 'SID History' for the Forest 'Enterprise Admins' group
    - Forge an inter-realm trust ticket (cross-domain trust kerberos ticket) and then create TGS for the services LDAP/CIFS/HOST/... in the parent domain 
 ➤ Take over other Windows domains due to password re-use across domains for high privileged accounts
 ➤ Take over other Windows domains thanks to AD Forest Trusts and/or misconfiguration (e.g. the group 'Domain Admins' of the domain A is member of the group 'Domain Admins' of the domain B) 
