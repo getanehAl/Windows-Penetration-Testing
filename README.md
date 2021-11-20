@@ -1,10 +1,9 @@
 ## Windows Active Directory penetration testing
-Technical notes and list of tools, scripts and Windows commands that I find useful during internal penetration tests (Windows environment/Active Directory).
+Technical notes and list of tools, scripts and Windows commands that I find useful during internal penetration tests (Windows environment/Active Directory).  
+The output files included here are the results of tools, scripts and Windows commands that I ran against a vulnerable Windows AD lab that I created to test attacks/exploits and deliver hands-on penetration testing training sessions to security auditors at my job.
 
-The output files included here are the results of tools, scripts and Windows commands that I ran against a vulnerable Windows AD lab that I created to deliver hands-on penetration testing training sessions to security auditors at my job. In addition to the misconfiguration and security flaws that I created on purpose, I used the awesome tools "BadBlood" and "lpeworkshop" to create my vulnerable Windows lab (thank you guys!).
 
-
-### Internal penetration test - Classic Windows Active Directory attack paths
+### <i>************** Classic Windows Active Directory attack paths - Internal penetration test ************** </i>
 
 #### Step 1. Bypassing Network Access Control (NAC) - if any
 ```
@@ -13,7 +12,8 @@ The output files included here are the results of tools, scripts and Windows com
 ➤ ...
 ```
 
-#### Step 2. Reconnaissance, Scanning and Domain Enumeration 
+#### Step 2. Reconnaissance
+<i>The purpose of the reconnaissance phase is to gather as much as possible information about the target (Windows domains and internal network) while minimizing the probability of being detected. It includes Windows domain(s) enumeration, DNS enumeration, targeted network scans...</i>
 ```
 Black-box penetration test (we start with no account)
 -----------------------------------------------------
@@ -43,7 +43,8 @@ Grey-box penetration test (we start with 1 low-privileged Windows account)
    - ADCollector
 ```
 
-#### Step 3. Gaining Access 
+#### Step 3. Gaining Access
+<i>The purpose of this phase is to gain (unauthorized) access to several internal systems (e.g. servers, file shares, databases) by exploiting common security issues such as: default/weak passwords, OS security misconfiguration, insecure network protocols and unpatched known vulnerabilities.</i>
 ```
 Black-box penetration test (we start with no account)
 -----------------------------------------------------
@@ -86,10 +87,12 @@ Grey-box penetration test (we start with 1 low-privileged Windows account)
 ➤ ...
 ```
 
-#### Step 4. Post-exploitation and privilege escalation to become "Local Administrator" and/or "Local System"
+#### Step 4. Post-exploitation and local privilege escalation
+<i>The purpose of the post-exploitation phase is to determine the value of the systems compromised during the previous phase (e.g. sensitivity of the data stored on it, usefulness in further compromising the network) and to escalate privileges to harvest credentials (e.g. to steal the password of a privileged account from the memory of a Windows server/laptop).</i>
+
 ```
-Local privesc 
--------------
+Windows local privilege escalation to become local administrator and/or "NT AUTHORITY\SYSTEM"
+---------------------------------------------------------------------------------------------
 ➤ Exploiting OS security misconfiguration 
    Examples:
    - weak service permissions
@@ -97,13 +100,13 @@ Local privesc
    - weak registry permissions
    - dll hijacking
    - weak passwords and password re-use
-   - clear-text passwords stored in scripts, unattended install files, Web.config, ...
+   - clear-text passwords stored in scripts, unattended install files, configuration files (e.g. Web.config), ...
    - AlwaysInstallElevated trick
  ➤ Exploiting an unpatched local privesc vulnerability with a public exploit 
     (e.g. PrintNightmare, SeriousSam/HiveNightmare, Juicy/Rotten/Hot Potato exploits, MS16-032, ...)
  
- Dumping Windows credentials
- ---------------------------
+ Dumping Windows credentials from memory and registry hives 
+ ----------------------------------------------------------
  ➤ Dumping the registry hives (SAM, SYSTEM, SECURITY)
    Examples:
    - Reg save
@@ -116,12 +119,16 @@ Local privesc
    - SecretsDump (Impacket)
    - Mimikatz / Invoke-mimikatz.ps1
    - ...
-  ➤ Other
+
+ Dumping credentials
+ --------------------
    - The LaZagne application can be used to retrieve passwords stored in browsers, DBA tools (e.g. dbvis, SQLdevelopper) and Sysadmin tools (e.g. WinSCP, PuttyCM, OpenSSH, VNC, OpenVPN)
    - Dumping KeePass master password from memory using tools like 'Keethief' or 'KeePassHax'
+   - Clear-text passwords hardcoded in scripts, configuration files (e.g. Web.config, tomcat-users.xml), backup files, log files, ...
 ```
 
 #### Step 5. Network lateral movement and 'Domain Admin' credentials hunting
+<i>The purpose of the lateral movement phase is to identify sensitive Windows servers and laptops on which the credentials of high privileged accounts (e.g. Domain admins) are stored in memory and then try to get access to them (for example by re-using the credentials harvested during the previous phase). </i>
 ```
 ➤ Network lateral movement using RDP, PowerShell remoting, WMIexec, SMBexec, PsExec, ...
 ➤ Pass-The-Hash, Pass-The-Ticket and Over-Pass-The-Hash techniques 
@@ -136,28 +143,32 @@ Local privesc
    - Windows native commands such as 'qwinsta /server:hostname' and 'net session'
    - Windows Sysinternals command-line tool 'PsLoggedOn' (e.g. psloggedon.exe \\computername username)
 ```
-#### Step 6. Privilege escalation to become "Domain Admin"
+#### Step 6. Windows domain compromise (privilege escalation to become "Domain Admin")
+<i>The purpose of this phase is to take full control over the target Windows domain.</i>
+
 ```
+➤ Dumping from a Windows server's memory the clear-text password (or hash) of an acccount member of the group 'Domain Admins' or 'Administrators' of the Domain Controller
 ➤ The same password is used to protect the local administrator account of the Windows servers and the Domain Controllers (i.e. no hardening, no LAPS)
-➤ Dumping from a Windows server's memory the clear-text password (or hash) of a high privileged acccount (e.g. Domain Admins, Administrators of DC, ...) 
 ➤ Exploiting AD / Windows domain misconfiguration
    Examples:
    - weak ACL or GPO permissions, 
    - LAPS misconfiguration, 
    - password re-use between privileged and standard accounts, 
-➤ Compromise an account member of the default security group 'DNSAdmins' or 'Account Operators' and then use it to take over the AD (privesc)
+➤ Compromise an account member of the default security groups such as 'DNSAdmins', 'Account Operators', 'Backup Operators', 'Server Operators' that can be used to privesc and take over the AD
 ➤ Find a backup/snapshot of a Windows Domain Controller on a NAS/FTP/Share and extract the password hashes (NTDS.DIT + SYSTEM) of high privileged acccounts (e.g. Domain Admins, Enterprise Admins, krbtgt account)
 ➤ Abusing Microsoft Exchange for privilege escalation ('PrivExchange' vulnerability)
-➤ Hack the Hypervisor (e.g. vCenter) on which the Domain Controllers are running, then perform a snapshot of the DCs, copy/download their memory dump files (.vmsn & .vmem) and finally extract the password hashes of high privileged acccounts (e.g. Domain Admins, Enterprise Admins, DC BUILTIN\Administrators, krbtgt account)
+➤ Hack the Hypervisor (e.g. vCenter) on which the Domain Controllers are running, then perform a snapshot of the DCs, copy/download their memory dump files (.vmsn & .vmem) and finally extract the password hashes of high privileged acccounts (e.g. Domain Admins, Administrators of DC, krbtgt account)
 ➤ Kerberos Unconstrained Delegation attack (+ Printer Bug)
 ➤ Kerberos Constrained Delegation attack
 ➤ Kerberos Resource-based Constrained Delegation attack
 ➤ ...
 ```
 
-#### Step 7. Post-exploitation AD - Persistence and Forest root domain compromise
+#### Step 7. Forest root domain compromise
+<i>The purpose of this phase is to take full control over the Forest root domain and all the other domains in the target network.</i>
 ```
-➤ Dump, extract and crack the password hashes of all the Windows domain accounts (file 'NTDS.DIT' + SYSTEM registry hive)
+➤ Post-exploitation AD
+  - Dump, extract and crack the password hashes of all the Windows domain accounts (file 'NTDS.DIT' + SYSTEM registry hive)
 ➤ Persistence techniques
    Examples:
    - Use of the KRBTGT account’s password hash to create of a Kerberos Golden ticket
