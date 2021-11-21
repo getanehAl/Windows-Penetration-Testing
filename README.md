@@ -123,6 +123,7 @@ Windows local privilege escalation to become local administrator and/or "NT AUTH
  Dumping credentials
  --------------------
    - The LaZagne application can be used to retrieve passwords stored in browsers, DBA tools (e.g. dbvis, SQLdevelopper) and Sysadmin tools (e.g. WinSCP, PuttyCM, OpenSSH, VNC, OpenVPN)
+   - The script SessionGopher.ps1 can be used to find and decrypt saved session information for remote access tools (PuTTY, WinSCP, FileZilla, SuperPuTTY, RDP)
    - Dumping KeePass master password from memory using tools like 'Keethief' or 'KeePassHax'
    - Clear-text passwords hardcoded in scripts, configuration files (e.g. Web.config, tomcat-users.xml), backup files, log files, ...
 ```
