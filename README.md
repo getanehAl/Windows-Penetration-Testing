@@ -63,7 +63,7 @@ Black-box penetration test (we start with no account)
 ➤ Upload of malicious SCF files to anonymously writable Windows network shares + collect NTLMv2 password hashes + Offline password cracking (tools: John, hashcat)
 ➤ Unpatched/obsolete systems prone to an unauthenticated Remote Code Execution vulnerability with a public exploit available
    Examples:
-   - Windows: MS17-010 (EternalBlue), CVE-2020-1472 (Zerologon, risky to run against a prod environment), old MS08-067, ...
+   - Windows: MS17-010 (EternalBlue), CVE-2020-1472 (Zerologon, risky to run in a production environment), old MS08-067, ...
    - Web servers: WebLogic RCE (CVE-2020-14882, CVE-2017-10271), Apache Struts RCE (CVE-2017-9805), JBoss RCE (CVE-2017-12149), Java RMI RCE, ...
    - CMS: Telerik (CVE 2019-18935, CVE-2017-9248), Drupal (DrupalGeddon2/CVE-2018-7600), DotNetNuke (CVE-2017-9822), ...
    - Citrix NetScaler: CVE-2019-19781
@@ -82,7 +82,7 @@ Grey-box penetration test (we start with 1 low-privileged Windows account)
 ➤ WsuXploit attack – Compromising Windows machines via malicious Windows Update (i.e. tru to inject 'fake' updates into non-SSL WSUS traffic)
 ➤ Unpatched/obsolete systems prone to an authenticated Remote Code Execution vulnerability with a public exploit available 
    Examples:
-   - Windows: PrintNightmare (CVE-2021-1675 & CVE-2021-34527), MS14-068, ...
+   - Windows: SamAccountName impersonation vulnerability (CVE-2021-42278/CVE-2021-42287), PrintNightmare (CVE-2021-1675 & CVE-2021-34527), ADCS + PetitPotam + NLTM Relay technique (CVE-2021-44228), MS14-068, ...
    - Outlook server: CVE-2020-0688
 ➤ ...
 ```
@@ -103,7 +103,7 @@ Windows local privilege escalation to become local administrator and/or "NT AUTH
    - clear-text passwords stored in scripts, unattended install files, configuration files (e.g. Web.config), ...
    - AlwaysInstallElevated trick
  ➤ Exploiting an unpatched local privesc vulnerability with a public exploit 
-    (e.g. PrintNightmare, SeriousSam/HiveNightmare, Juicy/Rotten/Hot Potato exploits, MS16-032, ...)
+    (e.g. PrintNightmare, SeriousSam/HiveNightmare, Windows Installer LPE, Juicy/Rotten/Hot Potato exploits, MS16-032, ...)
  
  Dumping Windows credentials from memory and registry hives 
  ----------------------------------------------------------
@@ -162,7 +162,7 @@ Windows local privilege escalation to become local administrator and/or "NT AUTH
 ➤ Find a backup/snapshot of a Windows Domain Controller on a NAS/FTP/Share and extract the password hashes (NTDS.DIT + SYSTEM) of high privileged acccounts (e.g. Domain Admins, Enterprise Admins, krbtgt account)
 ➤ Abusing Microsoft Exchange for privilege escalation ('PrivExchange' vulnerability)
 ➤ Hack the Hypervisor (e.g. vCenter) on which the Domain Controllers are running, then perform a snapshot of the DCs, copy/download their memory dump files (.vmsn & .vmem) and finally extract the password hashes of high privileged acccounts (e.g. Domain Admins, Administrators of DC, krbtgt account)
-➤ Kerberos Unconstrained Delegation attack (+ Printer Bug)
+➤ Kerberos Unconstrained Delegation attack (+ Printer Bug or PetitPotam)
 ➤ Kerberos Constrained Delegation attack
 ➤ Kerberos Resource-based Constrained Delegation attack
 ➤ ...
@@ -189,30 +189,34 @@ Windows local privilege escalation to become local administrator and/or "NT AUTH
 
 #### Useful tools and scripts
 ```
-➤ NMAP - Network port scanner and (NSE) scripts (https://nmap.org)
 ➤ Windows Sysinternals (https://docs.microsoft.com/en-us/sysinternals/)
-➤ Windows native DOS cmd and PowerShell commands
+➤ Windows native DOS commands and PowerShell commands (including AD module)
 ➤ ADRecon - Active Directory gathering information tool (https://github.com/adrecon/ADRecon)
+➤ ADCollector - Tool to quickly extract valuable information from the AD environment for both attacking and defending (https://github.com/dev-2null/ADCollector)
 ➤ PingCastle - Active Directory security audit tool (https://www.pingcastle.com)
 ➤ BloodHound - Tool to easily identify complex Windows domain attack paths (https://github.com/BloodHoundAD/BloodHound)
-➤ ACLight - A tool for advanced discovery of privileged accounts including Shadow Admins (https://github.com/cyberark/ACLight)
-➤ Liza - Active Directory Security, Permission and ACL Analysis (http://www.ldapexplorer.com/en/liza.htm)
-➤ Responder - LLMNR/NBTNS/mDNS poisoner and NTLMv1/2 relay (https://github.com/lgandx/Responder)
-➤ PowerSploit (incl. PowerView & PowerUp) - PowerShell offensive security framework (https://github.com/PowerShellMafia/PowerSploit)
-➤ Impacket (incl. Secretsdump & WMIexec) - Python offensive security framework (https://github.com/SecureAuthCorp/impacket)
-➤ CrackMapExec - Swiss army knife for pentesting Windows networks (https://github.com/byt3bl33d3r/CrackMapExec)
-➤ Metasploit penetration testing framework (https://www.metasploit.com)
 ➤ Rubeus - Toolset for raw Kerberos interaction and abuses (https://github.com/GhostPack/Rubeus)
 ➤ Mimikatz - Extract plaintexts passwords, hash, PIN code and kerberos tickets from memory (https://github.com/gentilkiwi/mimikatz)
 ➤ Powercat - PowerShell TCP/IP swiss army knife like netcat (https://github.com/besimorhino/powercat)
+➤ Responder - LLMNR/NBTNS/mDNS poisoner and NTLMv1/2 relay (https://github.com/lgandx/Responder)
+➤ PowerSploit (incl. PowerView & PowerUp) - PowerShell offensive security framework (https://github.com/PowerShellMafia/PowerSploit)
+➤ Impacket (incl. Secretsdump, SMBrelayx & WMIexec) - Python offensive security framework (https://github.com/SecureAuthCorp/impacket)
+➤ CrackMapExec - Swiss army knife for pentesting Windows networks (https://github.com/byt3bl33d3r/CrackMapExec)
+➤ PowerSharpPack - Many usefull offensive CSharp Projects wraped into Powershell for easy usage (https://github.com/S3cur3Th1sSh1t/PowerSharpPack)
+➤ ACLight - A tool for advanced discovery of privileged accounts including Shadow Admins (https://github.com/cyberark/ACLight)
+➤ ADACLScanner - A tool with GUI used to create reports of access control lists (DACLs) and system access control lists (SACLs) in Active Directory (https://github.com/canix1/ADACLScanner).
+➤ Liza - Active Directory Security, Permission and ACL Analysis (http://www.ldapexplorer.com/en/liza.htm)
 ➤ LAPSToolkit - LAPS auditing for pentesters (https://github.com/leoloobeek/LAPSToolkit)
+➤ PrivescCheck.ps1 - This script aims to enumerate common Windows configuration issues that can be leveraged for local privilege escalation (https://github.com/itm4n/PrivescCheck)
 ➤ Juicy potato exploit (https://github.com/ohpe/juicy-potato)
 ➤ Rotten potato exploit (https://github.com/breenmachine/RottenPotatoNG)
 ➤ Hydra - Online password bruteforce tool (https://github.com/vanhauser-thc/thc-hydra)
 ➤ John the Ripper - Offline password cracker (https://www.openwall.com/john/)
 ➤ Hashcat - Offline password cracker (https://hashcat.net/hashcat/)
 ➤ Enum4linux - Tool for enumerating information from Windows and Samba systems (https://tools.kali.org/information-gathering/enum4linux)
+➤ Metasploit penetration testing framework (https://www.metasploit.com)
 ➤ Vulnerability scanners (e.g. OpenVAS, Nessus, Qualys, Nexpose, ...)
+➤ NMAP - Network port scanner and (NSE) scripts (https://nmap.org)
 ➤ Various scripts (source:kali/Github/your owns)
 ```
 
