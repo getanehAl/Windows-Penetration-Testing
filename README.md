@@ -56,7 +56,7 @@ Black-box penetration test (we start with no account)
    - Web servers (e.g. Tomcat, WebLogic, JBoss) => Webshell upload
    - Jenkins, JIRA => OS command execution
    - CMS (e.g. WordPress) => Webshell upload
-   - Databases (e.g. MSSQL, Oracle, PostgreSQL) => OS command execution
+   - Databases (e.g. MSSQL, Oracle, PostgreSQL, Sybase) => OS command execution
    - SAP => OS command execution
 ➤ Windows password spray attacks
 ➤ Anonymous access to data storage spaces (e.g. FTP/TFTP/NFS) + Windows clear-text credentials hardcoded in scripts, logs and configuration files 
@@ -65,8 +65,9 @@ Black-box penetration test (we start with no account)
    Examples:
    - Windows: MS17-010 (EternalBlue), CVE-2020-1472 (Zerologon, risky to run in a production environment), old MS08-067, ...
    - Web servers: WebLogic RCE (CVE-2020-14882, CVE-2017-10271), Apache Struts RCE (CVE-2017-9805), JBoss RCE (CVE-2017-12149), Java RMI RCE, ...
-   - CMS: Telerik (CVE 2019-18935, CVE-2017-9248), Drupal (DrupalGeddon2/CVE-2018-7600), DotNetNuke (CVE-2017-9822), ...
+   - CMS: Telerik (CVE 2019-18935, CVE-2017-9248), Kentico (CVE-2019-10068), Drupal (DrupalGeddon2/CVE-2018-7600), DotNetNuke (CVE-2017-9822), ...
    - Citrix NetScaler: CVE-2019-19781
+   - Applications using the Java library Log4j: CVE-2021-44228 (Log4shell)
   
 Grey-box penetration test (we start with 1 low-privileged Windows account)
 --------------------------------------------------------------------------
