@@ -68,6 +68,7 @@ Black-box penetration test (we start with no account)
    - CMS: Telerik (CVE 2019-18935, CVE-2017-9248), Kentico (CVE-2019-10068), Drupal (DrupalGeddon2/CVE-2018-7600), DotNetNuke (CVE-2017-9822), ...
    - Citrix NetScaler: CVE-2019-19781
    - Applications using the Java library Log4j: CVE-2021-44228 (Log4shell)
+   - Outlook: ProxyLogon (CVE-2021-26855)
   
 Grey-box penetration test (we start with 1 low-privileged Windows account)
 --------------------------------------------------------------------------
@@ -83,8 +84,9 @@ Grey-box penetration test (we start with 1 low-privileged Windows account)
 ➤ WsuXploit attack – Compromising Windows machines via malicious Windows Update (i.e. tru to inject 'fake' updates into non-SSL WSUS traffic)
 ➤ Unpatched/obsolete systems prone to an authenticated Remote Code Execution vulnerability with a public exploit available 
    Examples:
-   - Windows: SamAccountName impersonation vulnerability (CVE-2021-42278/CVE-2021-42287), PrintNightmare (CVE-2021-1675 & CVE-2021-34527), ADCS + PetitPotam + NLTM Relay technique (CVE-2021-44228), MS14-068, ...
-   - Outlook server: CVE-2020-0688
+   - Windows: SamAccountName impersonation vulnerability (CVE-2021-42278/CVE-2021-42287), PrintNightmare (CVE-2021-1675 & CVE-2021-34527), 
+              KrbRelayUp local privesc technique, ADCS + PetitPotam + NLTM Relay technique (CVE-2021-44228), MS14-068, ...
+   - Outlook: CVE-2020-0688
 ➤ ...
 ```
 
