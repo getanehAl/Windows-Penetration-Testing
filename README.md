@@ -61,12 +61,12 @@ Black-box penetration test (we start with no account)
 ➤ Windows password spray attacks
 ➤ Anonymous access to data storage spaces (e.g. FTP/TFTP/NFS) + Windows clear-text credentials hardcoded in scripts, logs and configuration files 
 ➤ Upload of malicious SCF files to anonymously writable Windows network shares + collect NTLMv2 password hashes + Offline password cracking (tools: John, hashcat)
-➤ Unpatched/obsolete systems prone to an unauthenticated Remote Code Execution vulnerability with a public exploit available
+➤ Unpatched/obsolete systems prone to an unauthenticated Remote Code Execution (RCE) vulnerability with a public exploit available
    Examples:
    - Windows: MS17-010 (EternalBlue), CVE-2020-1472 (Zerologon, risky to run in a production environment), old MS08-067, ...
    - Web servers: WebLogic RCE (CVE-2020-14882, CVE-2017-10271), Apache Struts RCE (CVE-2017-9805), JBoss RCE (CVE-2017-12149), Java RMI RCE, ...
    - CMS: Telerik (CVE 2019-18935, CVE-2017-9248), Kentico (CVE-2019-10068), Drupal (DrupalGeddon2/CVE-2018-7600), DotNetNuke (CVE-2017-9822), ...
-   - Citrix NetScaler: CVE-2019-19781
+   - Citrix NetScaler: CVE-2020-8193, CVE-2019-19781
    - Applications using the Java library Log4j: CVE-2021-44228 (Log4shell)
    - Outlook: ProxyLogon (CVE-2021-26855)
   
