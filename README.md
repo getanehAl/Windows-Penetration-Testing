@@ -109,15 +109,16 @@ Windows local privilege escalation to become local administrator and/or "NT AUTH
  ➤ Exploiting an unpatched local privesc vulnerability with a public exploit 
    (e.g. PrintNightmare, SeriousSam/HiveNightmare, Windows Installer LPE, Juicy/Rotten/Hot Potato exploits, MS16-032, ...)
  
- ➤ Bypassing Antivirus and Endpoint Detection and Response (EDR) software 
+ ➤ Bypassing Antivirus and EDR software 
    Examples:
    - AMSI bypass techniques + Obfuscated offensive PowerShell scripts
-   - Write your own 'shellcode loader into memory' tool or obfuscate and recompile a good one that is open source
+   - Regularly obfuscate and recompile your favorite (open source) hacking tools 
    - Temporarily disable or uninstall the AV or EDR (once you are local admin or NT System)
    - Temporarily add rules in the local Windows firewall (once you are local admin or NT System) that will prevent the AV software and/or EDR agents to send alerts to the AV and/or EDR central console
    - Use as much as possible the same tools that the IT admins are using to 'blend in'. 
+   - Write your own hacking tools (e.g. shellcode loader/exec into memory)
    - ...
-
+   
  Dumping Windows credentials from memory and registry hives 
  ----------------------------------------------------------
  ➤ Dumping the registry hives (SAM, SYSTEM, SECURITY)
