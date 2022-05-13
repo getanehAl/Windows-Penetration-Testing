@@ -96,7 +96,7 @@ Grey-box penetration test (we start with 1 low-privileged Windows account)
 ```
 Windows local privilege escalation to become local administrator and/or "NT AUTHORITY\SYSTEM"
 ---------------------------------------------------------------------------------------------
-➤ Exploiting OS security misconfiguration 
+ ➤ Exploiting OS security misconfiguration 
    Examples:
    - weak service permissions
    - weak file permissions
@@ -105,9 +105,19 @@ Windows local privilege escalation to become local administrator and/or "NT AUTH
    - weak passwords and password re-use
    - clear-text passwords stored in scripts, unattended install files, configuration files (e.g. Web.config), ...
    - AlwaysInstallElevated trick
+  
  ➤ Exploiting an unpatched local privesc vulnerability with a public exploit 
-    (e.g. PrintNightmare, SeriousSam/HiveNightmare, Windows Installer LPE, Juicy/Rotten/Hot Potato exploits, MS16-032, ...)
+   (e.g. PrintNightmare, SeriousSam/HiveNightmare, Windows Installer LPE, Juicy/Rotten/Hot Potato exploits, MS16-032, ...)
  
+ ➤ Bypassing Antivirus and Endpoint Detection and Response (EDR) software 
+   Examples:
+   - AMSI bypass techniques + Obfuscated offensive PowerShell scripts
+   - Write your own 'shellcode loader into memory' tool or obfuscate and recompile a good one that is open source
+   - Temporarily disable or uninstall the AV or EDR (once you are local admin or NT System)
+   - Temporarily add rules in the local Windows firewall (once you are local admin or NT System) that will prevent the AV software and/or EDR agents to send alerts to the AV and/or EDR central console
+   - Use as much as possible the same tools that the IT admins are using to 'blend in'. 
+   - ...
+
  Dumping Windows credentials from memory and registry hives 
  ----------------------------------------------------------
  ➤ Dumping the registry hives (SAM, SYSTEM, SECURITY)
