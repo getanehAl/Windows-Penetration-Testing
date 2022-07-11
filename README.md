@@ -15,8 +15,8 @@ The output files included here are the results of tools, scripts and Windows com
 #### Step 2. Reconnaissance
 <i>The purpose of the reconnaissance phase is to gather as much as possible information about the target (Windows domains and internal network). It includes Windows domain(s) enumeration, DNS enumeration, targeted network scans...</i>
 ```
-Black-box penetration test (we start with no account)
------------------------------------------------------
+1. Black-box penetration test (we start with no account)
+--------------------------------------------------------
 ➤ On our laptop connected to the LAN or Wifi, we run commands like 'ipconfig /all', 'ip a' and 'nslookup' to identify:
    - the IP address range of the user network (our laptop IP address is part of it)
    - the IP address range of a production (server) network/VLAN (thanks to the IP address of the DNS server which is usually also the IP address of a Domain Controller)
@@ -29,8 +29,8 @@ Black-box penetration test (we start with no account)
    - Citrix servers have often a hostname like 'prctxsrv1', 'printctx02', 'citrixsrv02', etc.
 ➤ Targeted network scans (e.g. Nmap and NSE scripts)
 
-Grey-box penetration test (we start with 1 low-privileged Windows account)
---------------------------------------------------------------------------
+2. Grey-box penetration test (we start with 1 low-privileged Windows account)
+-----------------------------------------------------------------------------
 ➤ AD and Windows domain information gathering (enumerate accounts, groups, computers, ACLs, password policies, GPOs, Kerberos delegation, ...)
 ➤ Numerous tools and scripts can be used to enumerate a Windows domain
    Examples:
@@ -46,8 +46,8 @@ Grey-box penetration test (we start with 1 low-privileged Windows account)
 #### Step 3. Gaining Access
 <i>The purpose of this phase is to gain (unauthorized) access to several internal systems (e.g. servers, file shares, databases) by exploiting common security issues such as: default/weak passwords, OS security misconfiguration, insecure network protocols and unpatched known vulnerabilities.</i>
 ```
-Black-box penetration test (we start with no account)
------------------------------------------------------
+1. Black-box penetration test (we start with no account)
+--------------------------------------------------------
 ➤ LLMNR & NBT-NS poisonning attacks (tool: Responder) to collect NTLMv2 password hashes from the network + Offline password cracking (tools: John, hashcat)
 ➤ DNS poisoning attacks via IPv6 DHCP requests (tool: MITM6) to collect NTLMv2 password hashes from the network + Offline password cracking (tools: John, hashcat)
 ➤ NTLM relay attacks (tool: Ntlmrelayx) by exploiting vulnerabilities like PetitPotam and PrinterBug or poisonning attacks (LLMNR / NBT-NS / DNS & IPV6)
@@ -70,8 +70,8 @@ Black-box penetration test (we start with no account)
    - Applications using the Java library Log4j: CVE-2021-44228 (Log4shell)
    - Outlook: ProxyLogon (CVE-2021-26855)
   
-Grey-box penetration test (we start with 1 low-privileged Windows account)
---------------------------------------------------------------------------
+2. Grey-box penetration test (we start with 1 low-privileged Windows account)
+-----------------------------------------------------------------------------
 ➤ All the attacks listed above in the 'black-box pentest' section
 ➤ Kerberoasting attack (request Kerberos TGS for services with an SPN and retrieve crackable hashes) + Offline password cracking (tools: John, hashcat)
 ➤ AS-REP Roasting attack (retrieve crackable hashes/encrypted TGT for users without kerberoast pre-authentication enabled) + Offline password cracking (tools: John, hashcat)
@@ -95,11 +95,11 @@ Grey-box penetration test (we start with 1 low-privileged Windows account)
 ```
 
 #### Step 4. Post-exploitation and local privilege escalation
-<i>The purpose of the post-exploitation phase is to determine the value of the systems compromised during the previous phase (e.g. sensitivity of the data stored on it, usefulness in further compromising the network) and to escalate privileges to harvest credentials (e.g. to steal the password of a privileged account from the memory of a Windows server/laptop).</i>
+<i>The purpose of the post-exploitation phase is to determine the value of the systems compromised during the previous phase (e.g. sensitivity of the data stored on it, usefulness in further compromising the network) and to escalate privileges to harvest credentials (e.g. to steal the password of a privileged account from the memory of a Windows server/laptop). During this phase, the system(s) compromised can be used as a pivot to reach and hack machines that are located in other networks. </i>
 
 ```
-Windows local privilege escalation to become local administrator and/or "NT AUTHORITY\SYSTEM"
----------------------------------------------------------------------------------------------
+1. Windows local privilege escalation to become local administrator and/or "NT AUTHORITY\SYSTEM"
+------------------------------------------------------------------------------------------------
 ➤ Exploiting OS security misconfiguration 
    Examples:
    - weak service permissions
@@ -115,20 +115,21 @@ Windows local privilege escalation to become local administrator and/or "NT AUTH
  
 ➤ Bypassing Antivirus and EDR software 
    Examples:
-   - AMSI bypass techniques + Obfuscated offensive PowerShell scripts
+   - Use AMSI bypass techniques and obfuscated offensive PowerShell scripts
+   - Use as much as possible Windows native commands and the IT admin tools already installed on the target systems (to 'blend in' among the legitimate system administrators)
    - Regularly obfuscate and recompile your favorite (open source) hacking tools 
-   - Temporarily disable or uninstall the AV or EDR (once you are local admin or NT System)
-   - Temporarily add rules in the local Windows firewall (once you are local admin or NT System) that will prevent the AV software and/or EDR agents to send alerts to the AV and/or EDR central console
-   - Use as much as possible the same tools that the IT admins are using to 'blend in'. 
    - Write your own hacking tools (e.g. shellcode loader/exec into memory)
+   - Run into memory encrypted C2 agents (e.g. Cobalt Strike (commercial), Metasploit (Open SOurce), Sliver (Open Source))
+   - Temporarily disable or uninstall the AV or EDR (once you are local admin or Local System)
+   - Temporarily add rules in the local Windows firewall (once you are local admin or NT System) that will prevent the AV software and/or EDR agents to send alerts to the AV and/or EDR central console
    - ...
    
-Dumping Windows credentials from memory and registry hives (requires local admin priv)
---------------------------------------------------------------------------------------
+2. Dumping Windows credentials from memory and registry hives (requires local admin priv)
+-----------------------------------------------------------------------------------------
 ➤ Dumping the registry hives (SAM, SYSTEM, SECURITY)
    Examples:
    - Reg save
-   - Volume Shadow Copy (VSSadmin)
+   - Volume Sheradow Copy (VSSadmin)
    - SecretsDump (Impacket)
    - OLD/Legacy - pwdumpX
    
@@ -145,12 +146,23 @@ Dumping Windows credentials from memory and registry hives (requires local admin
    - OLD/Legacy - WCE (Windows Credentials Editor)
    - ...
 
-Dumping credentials
---------------------
+3. Dumping other credentials
+----------------------------
    - The LaZagne application can be used to retrieve passwords stored in browsers, DBA tools (e.g. dbvis, SQLdevelopper) and Sysadmin tools (e.g. WinSCP, PuttyCM, OpenSSH, VNC, OpenVPN)
    - The script SessionGopher.ps1 can be used to find and decrypt saved session information for remote access tools (PuTTY, WinSCP, FileZilla, SuperPuTTY, RDP)
    - Dumping KeePass master password from memory using tools like 'Keethief' or 'KeePassHax'
    - Clear-text passwords hardcoded in scripts, configuration files (e.g. Web.config, tomcat-users.xml), backup files, log files, ...
+   
+4. Network pivoting techniques 
+------------------------------
+➤ Use a C2 post-exploitation agent + SOCKS proxy pivoting
+   Exemples:
+   - Meterpreter session with 'post/multi/manage/autoroute' + socks proxy + use of proxychains
+   - Cobalt Strike beacon agent + SOCKS proxy pivoting 
+➤ SSH tunnelling using Putty.exe or Plink.exe (e.g. dynamic port forwarding + use of proxychains, local port forwarding, remote port forwarding)
+➤ Remote access control software such as TeamViewer portable 
+➤ Windows netsh Port Forwarding
+➤ ...
 ```
 
 #### Step 5. Network lateral movement and 'Domain Admin' credentials hunting
@@ -158,10 +170,6 @@ Dumping credentials
 ```
 ➤ Network lateral movement using RDP, PowerShell remoting, WMIexec, SMBexec, PsExec, ...
 ➤ Pass-The-Hash, Pass-The-Ticket and Over-Pass-The-Hash techniques 
-➤ Pivoting techniques
-   Examples:
-   - Meterpreter with 'post/multi/manage/autoroute' + socks proxy + use of proxychains
-   - SSH tunnelling (dynamic port forwarding + use of proxychains, local port forwarding, remote port forwarding)
 ➤ 'Domain Admin' credentials hunting
    Examples:
    - BloodHound
