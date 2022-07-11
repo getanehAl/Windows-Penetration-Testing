@@ -186,7 +186,7 @@ The output files included here are the results of tools, scripts and Windows com
    Examples:
    - abusing weak ACL or GPO permissions, 
    - abusing LAPS misconfiguration, 
-   - identifying password reuse 
+   - exploiting password reuse issues
      > the same password is used to protect multiple high privileged accounts and low-privileged accounts, 
      > the same password is used to protect the default local administrator account of the Windows servers and the Domain Controllers (i.e. no hardening, no LAPS)
 ➤ Compromise an account member of the default security group 'DNSAdmins' and take over the Windows domain by executing a DLL as 'NT AUTHORITY\SYSTEM' on the Domain Controller (known privesc)
@@ -194,6 +194,7 @@ The output files included here are the results of tools, scripts and Windows com
 ➤ Compromise an account member of the default security group 'Account Operators' that can be used to privesc and take over the Windows domain (known privesc)
 ➤ Find a backup/snapshot of a Windows Domain Controller on a NAS/FTP/Share and extract the password hashes (NTDS.DIT + SYSTEM) of high privileged acccounts (e.g. Domain Admins, Enterprise Admins, krbtgt account)
 ➤ Abusing Microsoft Exchange for privilege escalation ('PrivExchange' vulnerability)
+➤ Exploiting an unpatched vulnerability on a DC with a public exploit available (e.g. CVE-2020-1472  Zerologon, risky to run in a production environment)
 ➤ Hack the Hypervisor (e.g. vCenter) on which the Domain Controllers are running, then perform a snapshot of the DCs, copy/download their memory dump files (.vmsn & .vmem) and finally extract the password hashes of high privileged acccounts (e.g. Domain Admins, Administrators of DC, krbtgt account)
 ➤ Kerberos Unconstrained Delegation attack (+ Printer Bug or PetitPotam)
 ➤ Kerberos Constrained Delegation attack
