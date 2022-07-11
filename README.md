@@ -58,9 +58,9 @@ Black-box penetration test (we start with no account)
    - CMS (e.g. WordPress) => Webshell upload
    - Databases (e.g. MSSQL, Oracle, PostgreSQL, Sybase) => OS command execution
    - SAP => OS command execution
-➤ Windows password spray attacks
+➤ Windows password spray attacks (goal: find accounts protected by an easy guessable password or even a blank password / be careful not to lock accounts)
 ➤ Anonymous access to data storage spaces (e.g. FTP/TFTP/NFS) + Windows clear-text credentials hardcoded in scripts, logs and configuration files 
-➤ Upload of malicious SCF files to anonymously writable Windows network shares + collect NTLMv2 password hashes + Offline password cracking (tools: John, hashcat)
+➤ Upload of malicious SCF or URL files to anonymously writable Windows network shares + collect NTLMv2 password hashes + Offline password cracking (tools: John, hashcat)
 ➤ Unpatched/obsolete systems prone to an unauthenticated Remote Code Execution (RCE) vulnerability with a public exploit available
    Examples:
    - Windows: MS17-010 (EternalBlue), CVE-2020-1472 (Zerologon, risky to run in a production environment), old MS08-067, ...
@@ -78,14 +78,18 @@ Grey-box penetration test (we start with 1 low-privileged Windows account)
 ➤ Find clear-text passwords in files shared on Domain Shares, NAS, SharePoint sites, internal github accessible to all Domain users
 ➤ Find a Windows server that is insecurely sharing configuration files, cron job scripts and executable files with write permissions granted to all Domain users 
    + Privesc by adding a backdoor in a cron job script or modifying a configuration file, ...
-➤ Upload of malicious SCF files to Windows network shares (writable by any authenticated users) + collect NTLMv2 password hashes + Offline password cracking (tools: John, hashcat)
+➤ Upload of malicious SCF or URL files to Windows network shares (writable by any authenticated users) + collect NTLMv2 password hashes + Offline password cracking (tools: John, hashcat)
 ➤ Clear-text passwords stored in AD fields (e.g. account description, comments)
 ➤ Citrix servers accessible to all Domain users + Citrix jailbreak to get a Windows CMD or PowerShell console + Local privesc 
 ➤ WsuXploit attack – Compromising Windows machines via malicious Windows Update (i.e. tru to inject 'fake' updates into non-SSL WSUS traffic)
 ➤ Unpatched/obsolete systems prone to an authenticated Remote Code Execution vulnerability with a public exploit available 
    Examples:
-   - Windows: SamAccountName impersonation vulnerability (CVE-2021-42278/CVE-2021-42287), PrintNightmare (CVE-2021-1675 & CVE-2021-34527), 
-              KrbRelayUp local privesc technique, ADCS + PetitPotam + NLTM Relay technique (CVE-2021-44228), MS14-068, ...
+   - Windows: 
+     - noPAC / SamAccountName impersonation vulnerability (CVE-2021-42278/CVE-2021-42287), 
+     - PrintNightmare (CVE-2021-1675 & CVE-2021-34527), 
+     - KrbRelayUp local privesc technique, 
+     - ADCS + PetitPotam + NLTM Relay technique (CVE-2021-44228), 
+     - ...
    - Outlook: CVE-2020-0688
 ➤ ...
 ```
@@ -96,7 +100,7 @@ Grey-box penetration test (we start with 1 low-privileged Windows account)
 ```
 Windows local privilege escalation to become local administrator and/or "NT AUTHORITY\SYSTEM"
 ---------------------------------------------------------------------------------------------
- ➤ Exploiting OS security misconfiguration 
+➤ Exploiting OS security misconfiguration 
    Examples:
    - weak service permissions
    - weak file permissions
@@ -106,10 +110,10 @@ Windows local privilege escalation to become local administrator and/or "NT AUTH
    - clear-text passwords stored in scripts, unattended install files, configuration files (e.g. Web.config), ...
    - AlwaysInstallElevated trick
   
- ➤ Exploiting an unpatched local privesc vulnerability with a public exploit 
+➤ Exploiting an unpatched local privesc vulnerability with a public exploit 
    (e.g. PrintNightmare, SeriousSam/HiveNightmare, Windows Installer LPE, Juicy/Rotten/Hot Potato exploits, MS16-032, ...)
  
- ➤ Bypassing Antivirus and EDR software 
+➤ Bypassing Antivirus and EDR software 
    Examples:
    - AMSI bypass techniques + Obfuscated offensive PowerShell scripts
    - Regularly obfuscate and recompile your favorite (open source) hacking tools 
@@ -119,23 +123,30 @@ Windows local privilege escalation to become local administrator and/or "NT AUTH
    - Write your own hacking tools (e.g. shellcode loader/exec into memory)
    - ...
    
- Dumping Windows credentials from memory and registry hives 
- ----------------------------------------------------------
- ➤ Dumping the registry hives (SAM, SYSTEM, SECURITY)
+Dumping Windows credentials from memory and registry hives (requires local admin priv)
+--------------------------------------------------------------------------------------
+➤ Dumping the registry hives (SAM, SYSTEM, SECURITY)
    Examples:
    - Reg save
    - Volume Shadow Copy (VSSadmin)
    - SecretsDump (Impacket)
- ➤ Memory dumping of the LSASS process 
+   - OLD/Legacy - pwdumpX
+   
+➤ Memory dumping of the LSASS process 
    Examples:
-   - ProcDump (Windows Sysinternals)
+   - ProcDump (Sysinternals tool)
    - Task manager + "Create dump file" of lsass.exe
+   - Process Explorer (Sysinternals tool) + "Create dump" of lsass.exe
+   - Process Hacker + "Create dump file" of lsass.exe
+   - SQLDumper (included with both Microsoft SQL) 
    - SecretsDump (Impacket)
    - Mimikatz / Invoke-mimikatz.ps1
+   - Dumping lsass with rundll32 and comsvcs.dll
+   - OLD/Legacy - WCE (Windows Credentials Editor)
    - ...
 
- Dumping credentials
- --------------------
+Dumping credentials
+--------------------
    - The LaZagne application can be used to retrieve passwords stored in browsers, DBA tools (e.g. dbvis, SQLdevelopper) and Sysadmin tools (e.g. WinSCP, PuttyCM, OpenSSH, VNC, OpenVPN)
    - The script SessionGopher.ps1 can be used to find and decrypt saved session information for remote access tools (PuTTY, WinSCP, FileZilla, SuperPuTTY, RDP)
    - Dumping KeePass master password from memory using tools like 'Keethief' or 'KeePassHax'
