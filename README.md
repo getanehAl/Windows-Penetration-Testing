@@ -95,7 +95,7 @@ The output files included here are the results of tools, scripts and Windows com
 ```
 
 #### Step 4. Post-exploitation and local privilege escalation
-<i>The purpose of the post-exploitation phase is to determine the value of the systems compromised during the previous phase (e.g. sensitivity of the data stored on it, usefulness in further compromising the network) and to escalate privileges to harvest credentials (e.g. to steal the password of a privileged account from the memory of a Windows server/laptop). During this phase, the system(s) compromised can be used as a pivot to reach machines that are located in other networks. </i>
+<i>The purpose of the post-exploitation phase is to determine the value of the systems compromised during the previous phase (e.g. sensitivity of the data stored on it, usefulness in further compromising the network) and to escalate privileges to harvest credentials (e.g. to steal the password of a privileged account from the memory of a Windows server/laptop). During this phase, the system(s) compromised can be set-up as a pivot to reach machines that are located in other networks. </i>
 
 ```
 1. Windows local privilege escalation to become local administrator and/or "NT AUTHORITY\SYSTEM"
