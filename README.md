@@ -173,11 +173,8 @@ The output files included here are the results of tools, scripts and Windows com
 ➤ 'Domain Admin' credentials hunting
    Examples:
    - BloodHound
-   - Windows native commands such as:
-      > 'qwinsta /server:hostname' OR 'query user /server:hostname'
-      > Invoke-command -Scriptblock {hostname,qwinsta} -ComputerName (get-content C:\audit\tools\computers-list.txt) -Credential domain\username
-   - PowerView and various PowerShell scripts 
-      > e.g. Invoke-UserHunter -Verbose -Checkaccess -GroupName "Domain Admins" -SearchForest
+   - Windows native commands (e.g. 'qwinsta /server:hostname' OR 'query user /server:hostname')
+   - PowerView and various PowerShell scripts (e.g. Invoke-UserHunter, Get-NetLoggedon, ADrecon)
    - Windows Sysinternals command-line tool 'PsLoggedOn' (i.e. psloggedon.exe \\computername username)
 ```
 #### Step 6. Windows domain compromise (privilege escalation to become "Domain Admin")
