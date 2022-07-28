@@ -168,14 +168,18 @@ The output files included here are the results of tools, scripts and Windows com
 #### Step 5. Network lateral movement and 'Domain Admin' credentials hunting
 <i>The purpose of the lateral movement phase is to identify sensitive Windows servers and laptops on which the credentials of high privileged accounts (e.g. Domain admins) are stored in memory and then try to get access to them (for example by re-using the credentials harvested during the previous phase). </i>
 ```
-➤ Network lateral movement using RDP, PowerShell remoting, WMIexec, SMBexec, PsExec, ...
+➤ Network lateral movement using RDP, PowerShell remoting, WMIC, WMIexec, SMBexec, PsExec, ...
 ➤ Pass-The-Hash, Pass-The-Ticket and Over-Pass-The-Hash techniques 
 ➤ 'Domain Admin' credentials hunting
    Examples:
    - BloodHound
-   - PowerView and various PowerShell scripts
-   - Windows native commands such as 'qwinsta /server:hostname' and 'net session'
-   - Windows Sysinternals command-line tool 'PsLoggedOn' (e.g. psloggedon.exe \\computername username)
+   - Windows native commands such as:
+      > qwinsta /server:hostname
+      > Invoke-command -Scriptblock {hostname,qwinsta} -ComputerName (get-content C:\audit\tools\computers-list.txt) -Credential domain\username
+      > query user /server:hostname
+   - PowerView and various PowerShell scripts 
+      > e.g. Invoke-UserHunter -Verbose -Checkaccess -GroupName "Domain Admins" -SearchForest
+   - Windows Sysinternals command-line tool 'PsLoggedOn' (i.e. psloggedon.exe \\computername username)
 ```
 #### Step 6. Windows domain compromise (privilege escalation to become "Domain Admin")
 <i>The purpose of this phase is to take full control over the target Windows domain.</i>
