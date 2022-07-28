@@ -174,9 +174,8 @@ The output files included here are the results of tools, scripts and Windows com
    Examples:
    - BloodHound
    - Windows native commands such as:
-      > qwinsta /server:hostname
+      > 'qwinsta /server:hostname' OR 'query user /server:hostname'
       > Invoke-command -Scriptblock {hostname,qwinsta} -ComputerName (get-content C:\audit\tools\computers-list.txt) -Credential domain\username
-      > query user /server:hostname
    - PowerView and various PowerShell scripts 
       > e.g. Invoke-UserHunter -Verbose -Checkaccess -GroupName "Domain Admins" -SearchForest
    - Windows Sysinternals command-line tool 'PsLoggedOn' (i.e. psloggedon.exe \\computername username)
