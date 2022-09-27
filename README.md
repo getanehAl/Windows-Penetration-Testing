@@ -3,16 +3,19 @@ Technical notes and list of tools, scripts and Windows commands that I find usef
 The output files included here are the results of tools, scripts and Windows commands that I ran against a vulnerable Windows AD lab that I created to test attacks/exploits and deliver hands-on penetration testing training sessions to security auditors at my job.
 
 
-### <i>**** Classic Windows Active Directory attack paths - Internal penetration test **** </i>
+### <i>**** Classic internal penetration test methodology - Windows Active Directory attack paths - **** </i>
 
-#### Step 1. Bypassing Network Access Control (NAC) - if any
+----------------
+#### STEP 1. BYPASSING NETWORK ACCESS CONTROL (NAC) - if any
 ```
-➤ Bypass MAC address filtering solution by using/spoofing the MAC address of a whitelisted device (e.g. a printer, smart TV in meeting room)
+➤ Bypass MAC address filtering solution by using/spoofing the MAC address of a whitelisted device 
+   (e.g. a printer, smart TV in meeting room)
 ➤ Hack the captive portal authentication used to control network access
 ➤ ...
 ```
 
-#### Step 2. Reconnaissance
+-----------------
+#### STEP 2. RECONNAISSANCE 
 <i>The purpose of the reconnaissance phase is to gather as much as possible information about the target (Windows domains and internal network). It includes Windows domain(s) enumeration, DNS enumeration, targeted network scans...</i>
 ```
 1. Black-box penetration test (we start with no account)
@@ -43,7 +46,8 @@ The output files included here are the results of tools, scripts and Windows com
    - ADCollector
 ```
 
-#### Step 3. Gaining Access
+-----------------
+#### STEP 3. GAINING ACCESS
 <i>The purpose of this phase is to gain (unauthorized) access to several internal systems (e.g. servers, file shares, databases) by exploiting common security issues such as: default/weak passwords, OS security misconfiguration, insecure network protocols and unpatched known vulnerabilities.</i>
 ```
 1. Black-box penetration test (we start with no account)
@@ -94,7 +98,8 @@ The output files included here are the results of tools, scripts and Windows com
 ➤ ...
 ```
 
-#### Step 4. Post-exploitation and local privilege escalation
+---------------
+#### STEP 4. POST-EXPLOITATION and LOCAL PRIVILEGE ESCALATION
 <i>The purpose of the post-exploitation phase is to determine the value of the systems compromised during the previous phase (e.g. sensitivity of the data stored on it, usefulness in further compromising the network) and to escalate privileges to harvest credentials (e.g. to steal the password of a privileged account from the memory of a Windows server/laptop). During this phase, the system(s) compromised can be set-up as a pivot to reach machines that are located in other networks. </i>
 
 ```
@@ -165,7 +170,8 @@ The output files included here are the results of tools, scripts and Windows com
 ➤ ...
 ```
 
-#### Step 5. Network lateral movement and 'Domain Admin' credentials hunting
+-----------------
+#### STEP 5. NETWORK LATERAL MOVEMENT and 'DOMAIN ADMINs' CREDENTIALS HUNTING
 <i>The purpose of the lateral movement phase is to identify sensitive Windows servers and laptops on which the credentials of high privileged accounts (e.g. Domain admins) are stored in memory and then try to get access to them (for example by re-using the credentials harvested during the previous phase). </i>
 ```
 ➤ Network lateral movement using RDP, PowerShell remoting, WMIC, WMIexec, SMBexec, PsExec, ...
@@ -177,7 +183,9 @@ The output files included here are the results of tools, scripts and Windows com
    - PowerView and various PowerShell scripts (e.g. Invoke-UserHunter, Get-NetLoggedon, ADrecon)
    - Windows Sysinternals command-line tool 'PsLoggedOn' (i.e. psloggedon.exe \\computername username)
 ```
-#### Step 6. Windows domain compromise (privilege escalation to become "Domain Admin")
+
+-----------------
+#### STEP 6. WINDOWS DOMAIN COMPROMISE (Privilege escalation to become "Domain Admin")
 <i>The purpose of this phase is to take full control over the target Windows domain.</i>
 
 ```
@@ -202,7 +210,8 @@ The output files included here are the results of tools, scripts and Windows com
 ➤ ...
 ```
 
-#### Step 7. Forest root domain compromise (privilege escalation to become "Enterprise Admin")
+-----------------
+#### STEP 7. FOREST ROOT DOMAIN COMPROMISE (Privilege escalation to become "Enterprise Admin")
 <i>The purpose of this phase is to take full control over the Forest root domain and all the other domains in the target network.</i>
 ```
 ➤ Post-exploitation AD
@@ -220,39 +229,40 @@ The output files included here are the results of tools, scripts and Windows com
 ➤ Take over other Windows domains thanks to AD Forest Trusts and/or misconfiguration (e.g. the group 'Domain Admins' of the domain A is member of the group 'Domain Admins' of the domain B) 
 ➤ ...
 ```
+-----------------
+#### LIST OF USEFUL TOOLS & SCRIPTS
 
-#### Useful tools and scripts
-```
-➤ Windows Sysinternals (https://docs.microsoft.com/en-us/sysinternals/)
-➤ Windows native DOS commands and PowerShell commands (including AD module)
-➤ ADRecon - Active Directory gathering information tool (https://github.com/adrecon/ADRecon)
-➤ ADCollector - Tool to quickly extract valuable information from the AD environment for both attacking and defending (https://github.com/dev-2null/ADCollector)
-➤ PingCastle - Active Directory security audit tool (https://www.pingcastle.com)
-➤ BloodHound - Tool to easily identify complex Windows domain attack paths (https://github.com/BloodHoundAD/BloodHound)
-➤ Rubeus - Toolset for raw Kerberos interaction and abuses (https://github.com/GhostPack/Rubeus)
-➤ Mimikatz - Extract plaintexts passwords, hash, PIN code and kerberos tickets from memory (https://github.com/gentilkiwi/mimikatz)
-➤ Powercat - PowerShell TCP/IP swiss army knife like netcat (https://github.com/besimorhino/powercat)
-➤ Responder - LLMNR/NBTNS/mDNS poisoner and NTLMv1/2 relay (https://github.com/lgandx/Responder)
-➤ PowerSploit (incl. PowerView & PowerUp) - PowerShell offensive security framework (https://github.com/PowerShellMafia/PowerSploit)
-➤ Impacket (incl. Secretsdump, SMBrelayx & WMIexec) - Python offensive security framework (https://github.com/SecureAuthCorp/impacket)
-➤ CrackMapExec - Swiss army knife for pentesting Windows networks (https://github.com/byt3bl33d3r/CrackMapExec)
-➤ PowerSharpPack - Many usefull offensive CSharp Projects wraped into Powershell for easy usage (https://github.com/S3cur3Th1sSh1t/PowerSharpPack)
-➤ ACLight - A tool for advanced discovery of privileged accounts including Shadow Admins (https://github.com/cyberark/ACLight)
-➤ ADACLScanner - A tool with GUI used to create reports of access control lists (DACLs) and system access control lists (SACLs) in Active Directory (https://github.com/canix1/ADACLScanner).
-➤ Liza - Active Directory Security, Permission and ACL Analysis (http://www.ldapexplorer.com/en/liza.htm)
-➤ LAPSToolkit - LAPS auditing for pentesters (https://github.com/leoloobeek/LAPSToolkit)
-➤ PrivescCheck.ps1 - This script aims to enumerate common Windows configuration issues that can be leveraged for local privilege escalation (https://github.com/itm4n/PrivescCheck)
-➤ Juicy potato exploit (https://github.com/ohpe/juicy-potato)
-➤ Rotten potato exploit (https://github.com/breenmachine/RottenPotatoNG)
-➤ Hydra - Online password bruteforce tool (https://github.com/vanhauser-thc/thc-hydra)
-➤ John the Ripper - Offline password cracker (https://www.openwall.com/john/)
-➤ Hashcat - Offline password cracker (https://hashcat.net/hashcat/)
-➤ Enum4linux - Tool for enumerating information from Windows and Samba systems (https://tools.kali.org/information-gathering/enum4linux)
-➤ Metasploit penetration testing framework (https://www.metasploit.com)
-➤ Vulnerability scanners (e.g. OpenVAS, Nessus, Qualys, Nexpose, ...)
-➤ NMAP - Network port scanner and (NSE) scripts (https://nmap.org)
-➤ Various scripts (source:kali/Github/your owns)
-```
+1. Windows Sysinternals </br> (https://docs.microsoft.com/en-us/sysinternals/)
+2. Windows native DOS commands and PowerShell commands (including AD module)
+3. ADRecon - Active Directory gathering information tool </br> (https://github.com/adrecon/ADRecon)
+4. ADCollector - Tool to quickly extract valuable information from the AD environment for both attacking and defending </br> (https://github.com/dev-2null/ADCollector)
+5. PingCastle - Active Directory security audit tool </br> (https://www.pingcastle.com)
+6. BloodHound - Tool to easily identify complex Windows domain attack paths </br> (https://github.com/BloodHoundAD/BloodHound)
+7. Rubeus - Toolset for raw Kerberos interaction and abuses </br> (https://github.com/GhostPack/Rubeus)
+8. Mimikatz - Extract plaintexts passwords, hash, PIN code and kerberos tickets from memory </br> (https://github.com/gentilkiwi/mimikatz)
+9. Powercat - PowerShell TCP/IP swiss army knife like netcat </br> (https://github.com/besimorhino/powercat)
+10. Responder - LLMNR/NBTNS/mDNS poisoner and NTLMv1/2 relay </br> (https://github.com/lgandx/Responder)
+11. PowerSploit (incl. PowerView & PowerUp) - PowerShell offensive security framework </br> (https://github.com/PowerShellMafia/PowerSploit)
+12. PowerSharpPack - Many usefull offensive CSharp Projects wraped into Powershell for easy usage </br> (https://github.com/S3cur3Th1sSh1t/PowerSharpPack)
+13. Impacket (incl. Secretsdump, SMBrelayx & WMIexec) - Python offensive security framework </br> (https://github.com/SecureAuthCorp/impacket)
+14. CrackMapExec - Swiss army knife for pentesting Windows networks </br> (https://github.com/byt3bl33d3r/CrackMapExec)
+15. ACLight - A tool for advanced discovery of privileged accounts including Shadow Admins </br> (https://github.com/cyberark/ACLight)
+16. ADACLScanner - A tool with GUI used to create reports of access control lists (DACLs) and system access control lists (SACLs) in Active Directory </br> (https://github.com/canix1/ADACLScanner)
+17. Liza - Active Directory Security, Permission and ACL Analysis </br> (http://www.ldapexplorer.com/en/liza.htm)
+18. LAPSToolkit - LAPS auditing for pentesters </br> (https://github.com/leoloobeek/LAPSToolkit)
+19. PrivescCheck.ps1 - This script aims to enumerate common Windows configuration issues that can be leveraged for local privilege escalation </br>  (https://github.com/itm4n/PrivescCheck)
+20. Juicy potato exploit </br> (https://github.com/ohpe/juicy-potato)
+21. Rotten potato exploit </br> (https://github.com/breenmachine/RottenPotatoNG)
+22. Hydra - Online password bruteforce tool </br> (https://github.com/vanhauser-thc/thc-hydra)
+23. John the Ripper - Offline password cracker </br> (https://www.openwall.com/john/)
+24. Hashcat - Offline password cracker </br> (https://hashcat.net/hashcat/)
+25. Enum4linux - Tool for enumerating information from Windows and Samba systems </br> (https://tools.kali.org/information-gathering/enum4linux)
+26. Metasploit penetration testing framework </br> (https://www.metasploit.com)
+27. Sliver - Open source cross-platform adversary emulation/red team framework </br> (https://github.com/BishopFox/sliver)
+28. Vulnerability scanners (e.g. OpenVAS, Nessus, Qualys, Nexpose, ...) </br> (https://github.com/greenbone/openvas-scanner/releases) (https://www.tenable.com/) (https://www.qualys.com/) (https://www.rapid7.com/products/nexpose/)
+29. NMAP - Network port scanner and (NSE) scripts </br> (https://nmap.org)
+30. Various KALI tools & scripts </br> (https://www.kali.org/tools/all-tools/)
+31. Various tools & scripts (source:Github/your owns)
 
 #### Useful resources
 ```
