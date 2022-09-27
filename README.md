@@ -10,7 +10,7 @@ The output files included here are the results of tools, scripts and Windows com
 ```
 ➤ Bypass MAC address filtering solution by using/spoofing the MAC address of a whitelisted device 
    (e.g. a printer, smart TV in meeting room)
-➤ Hack the captive portal authentication used to control network access
+➤ Hack the captive authentication portal used to control network access
 ➤ ...
 ```
 
