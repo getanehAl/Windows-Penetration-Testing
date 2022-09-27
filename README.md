@@ -265,6 +265,7 @@ The output files included here are the results of tools, scripts and Windows com
 30. Various KALI tools & scripts </br> (https://www.kali.org/tools/all-tools/)
 31. Various tools & scripts (source:Github/your owns)
 
+----------------
 #### Useful resources
 ```
 ➤ ADsecurity website (https://adsecurity.org)
