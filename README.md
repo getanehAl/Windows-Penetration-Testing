@@ -164,8 +164,9 @@ The output files included here are the results of tools, scripts and Windows com
    Exemples:
    - Meterpreter session with 'post/multi/manage/autoroute' + socks proxy + use of proxychains
    - Cobalt Strike beacon agent + SOCKS proxy pivoting 
-➤ SSH tunnelling using Putty.exe or Plink.exe (e.g. dynamic port forwarding + use of proxychains, local port forwarding, remote port forwarding)
-➤ Remote access control software such as TeamViewer portable 
+➤ SSH tunnelling using Putty.exe or Plink.exe (e.g. local/remote port forwarding, dynamic port forwarding + use of proxychains)
+➤ Remote access control software such as TeamViewer portable, Chrome Remote Desktop, ...
+➤ Tools like Ligolo, Socat, Rpivot, ...
 ➤ Windows netsh Port Forwarding
 ➤ ...
 ```
