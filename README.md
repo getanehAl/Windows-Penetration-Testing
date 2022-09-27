@@ -266,7 +266,7 @@ The output files included here are the results of tools, scripts and Windows com
 31. Various tools & scripts (source:Github/your owns)
 
 ----------------
-#### Useful resources
+#### USEFUL RESOURCES
 ```
 ➤ ADsecurity website (https://adsecurity.org)
 ➤ MITRE (https://attack.mitre.org/tactics/enterprise/; https://attack.mitre.org/mitigations/M1015/)
