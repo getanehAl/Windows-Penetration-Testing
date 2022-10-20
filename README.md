@@ -123,8 +123,8 @@ The output files included here are the results of tools, scripts and Windows com
    Examples:
    - Use AMSI bypass techniques and obfuscated offensive PowerShell scripts
    - Use as much as possible Windows native commands and the IT admin tools already installed on the target systems (to 'blend in' among the legitimate system administrators)
-   - Regularly obfuscate and recompile your favorite (open source) hacking tools 
-   - Write your own hacking tools (e.g. shellcode loader/exec into memory)
+   - Regularly obfuscate and recompile your favorite (open source) hacking tools using packers like NimCryptv2, Codecepticon, ...
+   - Write your own hacking tools (e.g. obfuscated/encrypted shellcode loader/exec into memory)
    - Run into memory encrypted C2 agents (e.g. Cobalt Strike (commercial), Metasploit (Open SOurce), Sliver (Open Source))
    - Temporarily disable or uninstall the AV or EDR (once you are local admin or Local System)
    - Temporarily add rules in the local Windows firewall (once you are local admin or NT System) that will prevent the AV software and/or EDR agents to send alerts to the AV and/or EDR central console
