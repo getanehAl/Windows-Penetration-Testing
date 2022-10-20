@@ -68,11 +68,12 @@ The output files included here are the results of tools, scripts and Windows com
 ➤ Unpatched/obsolete systems prone to an unauthenticated Remote Code Execution (RCE) vulnerability with a public exploit available
    Examples:
    - Windows: MS17-010 (EternalBlue), CVE-2020-1472 (Zerologon, risky to run in a production environment), old MS08-067, ...
-   - Web servers: WebLogic RCE (CVE-2020-14882, CVE-2017-10271), Apache Struts RCE (CVE-2017-9805), JBoss RCE (CVE-2017-12149), Java RMI RCE, ...
+   - Web servers: WebLogic RCE (CVE-2020-14882, CVE-2022-21371, CVE-2019-2725), Apache Struts RCE (CVE-2017-9805), JBoss RCE (CVE-2017-12149), Java RMI RCE, ...
    - CMS: Telerik (CVE 2019-18935, CVE-2017-9248), Kentico (CVE-2019-10068), Drupal (DrupalGeddon2/CVE-2018-7600), DotNetNuke (CVE-2017-9822), ...
    - Citrix NetScaler: CVE-2020-8193, CVE-2019-19781
+   - Atlassian software: Jira (CVE-2019-11581), Confluence (CVE-2022-26134)
    - Applications using the Java library Log4j: CVE-2021-44228 (Log4shell)
-   - Outlook: ProxyLogon (CVE-2021-26855)
+   - Outlook: ProxyLogon (CVE-2021-26855), ProxyNotShell (CVE-2022-41040, CVE-2022-41082)
   
 2. Grey-box penetration test (we start with 1 low-privileged Windows account)
 -----------------------------------------------------------------------------
@@ -144,10 +145,12 @@ The output files included here are the results of tools, scripts and Windows com
    - Task manager + "Create dump file" of lsass.exe
    - Process Explorer (Sysinternals tool) + "Create dump" of lsass.exe
    - Process Hacker + "Create dump file" of lsass.exe
-   - SQLDumper (included with both Microsoft SQL) 
    - SecretsDump (Impacket)
    - Mimikatz / Invoke-mimikatz.ps1
    - Dumping lsass with rundll32 and comsvcs.dll
+   - HandleKatz
+   - NanoDump
+   - SQLDumper (included with both Microsoft SQL) 
    - OLD/Legacy - WCE (Windows Credentials Editor)
    - ...
 
