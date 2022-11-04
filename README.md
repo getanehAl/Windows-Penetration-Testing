@@ -192,7 +192,7 @@ The output files included here are the results of tools, scripts and Windows com
 ```
 
 -----------------
-#### STEP 6. WINDOWS DOMAIN COMPROMISE (Privilege escalation to become "Domain Admin") 🛠🧑🏼‍💻 
+#### STEP 6. WINDOWS DOMAIN COMPROMISE (Privilege escalation to become "Domain Admin") 💉🧑🏼‍💻 
 <i>The purpose of this phase is to take full control over the target Windows domain.</i>
 
 ```
