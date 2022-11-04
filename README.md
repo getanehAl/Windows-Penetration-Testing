@@ -6,7 +6,7 @@ The output files included here are the results of tools, scripts and Windows com
 ### <i>**** Classic internal penetration test methodology - Windows Active Directory attack paths **** </i>
 
 ----------------
-#### STEP 1. BYPASSING NETWORK ACCESS CONTROL (NAC) - if any 🔒🛠
+#### STEP 1. BYPASSING NETWORK ACCESS CONTROL (NAC) - if any
 ```
 ➤ Bypass MAC address filtering solution by using/spoofing the MAC address of a whitelisted device 
    (e.g. a printer, smart TV in meeting room)
