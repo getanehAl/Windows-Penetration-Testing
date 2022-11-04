@@ -6,7 +6,7 @@ The output files included here are the results of tools, scripts and Windows com
 ### <i>**** Classic internal penetration test methodology - Windows Active Directory attack paths **** </i>
 
 ----------------
-#### STEP 1. BYPASSING NETWORK ACCESS CONTROL (NAC) - if any
+#### STEP 1. BYPASSING NETWORK ACCESS CONTROL (NAC) - if any 🔒🛠
 ```
 ➤ Bypass MAC address filtering solution by using/spoofing the MAC address of a whitelisted device 
    (e.g. a printer, smart TV in meeting room)
@@ -15,7 +15,7 @@ The output files included here are the results of tools, scripts and Windows com
 ```
 
 -----------------
-#### STEP 2. RECONNAISSANCE 
+#### STEP 2. RECONNAISSANCE 🐶🕵
 <i>The purpose of the reconnaissance phase is to gather as much as possible information about the target (Windows domains and internal network). It includes Windows domain(s) enumeration, DNS enumeration, targeted network scans...</i>
 ```
 1. Black-box penetration test (we start with no account)
@@ -31,7 +31,8 @@ The output files included here are the results of tools, scripts and Windows com
    - Database servers have often a hostname like 'sqlsrv01', 'prdbserver02', 'prodorasrv08', 'devmongodb14', etc. 
    - Citrix servers have often a hostname like 'prctxsrv1', 'printctx02', 'citrixsrv02', etc.
 ➤ Targeted network scans (e.g. Nmap and NSE scripts)
-
+```
+```
 2. Grey-box penetration test (we start with 1 low-privileged Windows account)
 -----------------------------------------------------------------------------
 ➤ AD and Windows domain information gathering (enumerate accounts, groups, computers, ACLs, password policies, GPOs, Kerberos delegation, ...)
@@ -47,7 +48,7 @@ The output files included here are the results of tools, scripts and Windows com
 ```
 
 -----------------
-#### STEP 3. GAINING ACCESS
+#### STEP 3. GAINING ACCESS 🧑🏼‍💻 
 <i>The purpose of this phase is to gain (unauthorized) access to several internal systems (e.g. servers, file shares, databases) by exploiting common security issues such as: default/weak passwords, OS security misconfiguration, insecure network protocols and unpatched known vulnerabilities.</i>
 ```
 1. Black-box penetration test (we start with no account)
@@ -74,7 +75,8 @@ The output files included here are the results of tools, scripts and Windows com
    - Atlassian software: Jira (CVE-2019-11581), Confluence (CVE-2022-26134)
    - Applications using the Java library Log4j: CVE-2021-44228 (Log4shell)
    - Outlook: ProxyLogon (CVE-2021-26855), ProxyNotShell (CVE-2022-41040, CVE-2022-41082)
-  
+```
+```
 2. Grey-box penetration test (we start with 1 low-privileged Windows account)
 -----------------------------------------------------------------------------
 ➤ All the attacks listed above in the 'black-box pentest' section
@@ -100,7 +102,7 @@ The output files included here are the results of tools, scripts and Windows com
 ```
 
 ---------------
-#### STEP 4. POST-EXPLOITATION and LOCAL PRIVILEGE ESCALATION
+#### STEP 4. POST-EXPLOITATION and LOCAL PRIVILEGE ESCALATION 🛠🧑🏼‍💻 
 <i>The purpose of the post-exploitation phase is to determine the value of the systems compromised during the previous phase (e.g. sensitivity of the data stored on it, usefulness in further compromising the network) and to escalate privileges to harvest credentials (e.g. to steal the password of a privileged account from the memory of a Windows server/laptop). During this phase, the system(s) compromised can be set-up as a pivot to reach machines that are located in other networks. </i>
 
 ```
@@ -129,7 +131,8 @@ The output files included here are the results of tools, scripts and Windows com
    - Temporarily disable or uninstall the AV or EDR (once you are local admin or Local System)
    - Temporarily add rules in the local Windows firewall (once you are local admin or NT System) that will prevent the AV software and/or EDR agents to send alerts to the AV and/or EDR central console
    - ...
-   
+```
+```
 2. Dumping Windows credentials from memory and registry hives (requires local admin priv)
 -----------------------------------------------------------------------------------------
 ➤ Dumping the registry hives (SAM, SYSTEM, SECURITY)
@@ -175,7 +178,7 @@ The output files included here are the results of tools, scripts and Windows com
 ```
 
 -----------------
-#### STEP 5. NETWORK LATERAL MOVEMENT and 'DOMAIN ADMINs' CREDENTIALS HUNTING
+#### STEP 5. NETWORK LATERAL MOVEMENT and 'DOMAIN ADMINs' CREDENTIALS HUNTING 🕸🧑🏼‍💻 
 <i>The purpose of the lateral movement phase is to identify sensitive Windows servers and laptops on which the credentials of high privileged accounts (e.g. Domain admins) are stored in memory and then try to get access to them (for example by re-using the credentials harvested during the previous phase). </i>
 ```
 ➤ Network lateral movement using RDP, PowerShell remoting, WMIC, WMIexec, SMBexec, PsExec, ...
@@ -189,7 +192,7 @@ The output files included here are the results of tools, scripts and Windows com
 ```
 
 -----------------
-#### STEP 6. WINDOWS DOMAIN COMPROMISE (Privilege escalation to become "Domain Admin")
+#### STEP 6. WINDOWS DOMAIN COMPROMISE (Privilege escalation to become "Domain Admin") 🛠🧑🏼‍💻 
 <i>The purpose of this phase is to take full control over the target Windows domain.</i>
 
 ```
@@ -215,7 +218,7 @@ The output files included here are the results of tools, scripts and Windows com
 ```
 
 -----------------
-#### STEP 7. FOREST ROOT DOMAIN COMPROMISE (Privilege escalation to become "Enterprise Admin")
+#### STEP 7. FOREST ROOT DOMAIN COMPROMISE (Privilege escalation to become "Enterprise Admin") 💉🧑🏼‍💻 
 <i>The purpose of this phase is to take full control over the Forest root domain and all the other domains in the target network.</i>
 ```
 ➤ Post-exploitation AD
