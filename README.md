@@ -110,22 +110,29 @@ The output files included here are the results of tools, scripts and Windows com
 ------------------------------------------------------------------------------------------------
 ➤ Exploiting OS security misconfiguration 
    Examples:
-   - weak service permissions
-   - weak file permissions
+   - weak service permissions (file & binpath)
+   - service unquoted path
+   - autorun and weak file permissions
    - weak registry permissions
    - dll hijacking
    - weak passwords and password re-use
    - clear-text passwords stored in scripts, unattended install files, configuration files (e.g. Web.config), ...
    - AlwaysInstallElevated trick
+   - bring your own vulnerable driver
   
-➤ Exploiting an unpatched local privesc vulnerability with a public exploit 
-   (e.g. PrintNightmare, SeriousSam/HiveNightmare, Windows Installer LPE, Juicy/Rotten/Hot Potato exploits, MS16-032, ...)
- 
-➤ Bypassing Antivirus and EDR software 
-   Examples:
-   - Use AMSI bypass techniques and obfuscated offensive PowerShell scripts
+➤ Exploiting an unpatched local Windows vulnerability 
+  (e.g. KrbrelayUp, PrintNightmare, SeriousSam/HiveNightmare, Windows Installer LPE, Juicy/Rotten/Hot Potato exploits, MS16-032, ...)
+
+➤ Exploiting an unpatched vulnerability affecting a third party software running with high privileges
+```
+```
+2. Bypassing Antivirus and EDR software
+-----------------------------------------------------------------------------------------
+➤ Common AV bypass techniques
+   - Use AMSI bypass techniques and obfuscated/encrypted offensive PowerShell scripts
    - Use as much as possible Windows native commands and the IT admin tools already installed on the target systems (to 'blend in' among the legitimate system administrators)
-   - Regularly obfuscate and recompile your favorite (open source) hacking tools using packers like NimCryptv2, Codecepticon, ...
+   - Regularly obfuscate and recompile your favorite (open source) hacking tools
+   - Use PE and shellcode packers like NimCryptv2, Codecepticon, Pezor, ...
    - Write your own hacking tools (e.g. obfuscated/encrypted shellcode loader/exec into memory)
    - Run into memory encrypted C2 agents (e.g. Cobalt Strike (commercial), Metasploit (Open SOurce), Sliver (Open Source))
    - Temporarily disable or uninstall the AV or EDR (once you are local admin or Local System)
@@ -140,6 +147,7 @@ The output files included here are the results of tools, scripts and Windows com
    - Reg save
    - Volume Sheradow Copy (VSSadmin)
    - SecretsDump (Impacket)
+   - SharpSecDump
    - OLD/Legacy - pwdumpX
    
 ➤ Memory dumping of the LSASS process 
@@ -153,7 +161,7 @@ The output files included here are the results of tools, scripts and Windows com
    - Dumping lsass with rundll32 and comsvcs.dll
    - HandleKatz
    - NanoDump
-   - SQLDumper (included with both Microsoft SQL) 
+   - SQLDumper (included with Microsoft SQL) 
    - OLD/Legacy - WCE (Windows Credentials Editor)
    - ...
 
@@ -163,32 +171,32 @@ The output files included here are the results of tools, scripts and Windows com
    - The script SessionGopher.ps1 can be used to find and decrypt saved session information for remote access tools (PuTTY, WinSCP, FileZilla, SuperPuTTY, RDP)
    - Dumping KeePass master password from memory using tools like 'Keethief' or 'KeePassHax'
    - Clear-text passwords hardcoded in scripts, configuration files (e.g. Web.config, tomcat-users.xml), backup files, log files, ...
-   
-4. Network pivoting techniques 
-------------------------------
-➤ Use a C2 post-exploitation agent + SOCKS proxy pivoting
-   Exemples:
-   - Meterpreter session with 'post/multi/manage/autoroute' + socks proxy + use of proxychains
-   - Cobalt Strike beacon agent + SOCKS proxy pivoting 
-➤ SSH tunnelling using Putty.exe or Plink.exe (e.g. local/remote port forwarding, dynamic port forwarding + use of proxychains)
-➤ Remote access tools such as TeamViewer and AnyDesk portable software, Chrome Remote Desktop, ...
-➤ Tools like Ligolo, Socat, Rpivot, ...
-➤ Windows netsh Port Forwarding
-➤ ...
 ```
 
 -----------------
 #### STEP 5. NETWORK LATERAL MOVEMENT and 'DOMAIN ADMINs' CREDENTIALS HUNTING 🕸🧑🏼‍💻 
 <i>The purpose of the lateral movement phase is to identify sensitive Windows servers and laptops on which the credentials of high privileged accounts (e.g. Domain admins) are stored in memory and then try to get access to them (for example by re-using the credentials harvested during the previous phase). </i>
 ```
-➤ Network lateral movement using RDP, PowerShell remoting, WMIC, WMIexec, SMBexec, PsExec, ...
+1. Network lateral movement techniques 
+--------------------------------------
+➤ Network lateral movement using RDP, PowerShell remoting (WinRM), WMIC, WMIexec, SMBexec, PsExec, SSH, ...
 ➤ Pass-The-Hash, Pass-The-Ticket and Over-Pass-The-Hash techniques 
-➤ 'Domain Admin' credentials hunting
-   Examples:
-   - BloodHound
-   - Windows native commands (e.g. 'qwinsta /server:hostname' OR 'query user /server:hostname')
-   - PowerView and various PowerShell scripts (e.g. Invoke-UserHunter, Get-NetLoggedon, ADrecon)
-   - Windows Sysinternals command-line tool 'PsLoggedOn' (i.e. psloggedon.exe \\computername username)
+
+2. Network pivoting techniques 
+------------------------------
+➤ Use a C2 post-exploitation agent (e.g. Meterpreter, Cobalt Strike) + SOCKS proxy + proxychains
+➤ SSH tunnelling using Putty.exe or Plink.exe (e.g. local/remote port forwarding)
+➤ Remote access tools such as TeamViewer and AnyDesk portable software, Chrome Remote Desktop, VNC, ...
+➤ Tunneling/pivoting tools like Rpivot, Ligolo, Socat, ...
+➤ Pivoting with TCP tunnelling over HTTP via Webshells (e.g. Tunna webshell, reGeorg and neo-reGeorg client/webshell)
+```
+```
+3. 'Domain Admins' credentials hunting
+--------------------------------------
+➤ Windows native commands (e.g. 'qwinsta /server:hostname' OR 'query user /server:hostname')
+➤ PowerView and various PowerShell scripts (e.g. Invoke-UserHunter, Get-NetLoggedon, ADrecon)
+➤ Windows Sysinternals command-line tool 'PsLoggedOn' (i.e. psloggedon.exe \\computername username)
+➤ BloodHound
 ```
 
 -----------------
