@@ -188,7 +188,7 @@ The output files included here are the results of tools, scripts and Windows com
 ➤ SSH tunnelling using Putty.exe or Plink.exe (e.g. local/remote port forwarding)
 ➤ Remote access tools such as TeamViewer and AnyDesk portable software, Chrome Remote Desktop, VNC, ...
 ➤ Tunneling/pivoting tools like Rpivot, Ligolo, Socat, ...
-➤ Pivoting with TCP tunnelling over HTTP via Webshells (e.g. Tunna webshell, reGeorg and neo-reGeorg client/webshell)
+➤ Pivoting with TCP tunnelling over HTTP via Webshells (e.g. Tunna webshell, fulcrom webshell, reGeorg and neo-reGeorg client/webshell)
 ```
 ```
 3. 'Domain Admins' credentials hunting
