@@ -247,41 +247,50 @@ The output files included here are the results of tools, scripts and Windows com
 -----------------
 #### LIST OF USEFUL TOOLS & SCRIPTS
 
-1. Windows Sysinternals (e.g. adexplorer, procdump, procmon, autorun)  </br> (https://docs.microsoft.com/en-us/sysinternals/)
-2. Windows native DOS commands (e.g. net commands, nltest) and PowerShell commands (including AD module)
-3. ADRecon - Active Directory gathering information tool </br> (https://github.com/adrecon/ADRecon)
-4. ADCollector - Tool to quickly extract valuable information from the AD environment for both attacking and defending </br> (https://github.com/dev-2null/ADCollector)
-5. PingCastle - Active Directory security audit tool </br> (https://www.pingcastle.com)
-6. BloodHound - Tool to easily identify complex Windows domain attack paths </br> (https://github.com/BloodHoundAD/BloodHound)
-7. Impacket (e.g. Secretsdump.py, SMBrelayx.py, WMIexec.py) - Python offensive security framework </br> (https://github.com/SecureAuthCorp/impacket)
-8. Rubeus - Toolset for raw Kerberos interaction and abuses </br> (https://github.com/GhostPack/Rubeus)
-9. Responder - LLMNR/NBTNS/mDNS poisoner and NTLMv1/2 relay </br> (https://github.com/lgandx/Responder)
-10. Mimikatz - Extract plaintexts passwords, hash, PIN code and kerberos tickets from memory </br> (https://github.com/gentilkiwi/mimikatz)
-11. Powercat - PowerShell TCP/IP swiss army knife like netcat </br> (https://github.com/besimorhino/powercat)
-12. PowerSploit (incl. PowerView & PowerUp) - PowerShell offensive security framework </br> (https://github.com/PowerShellMafia/PowerSploit)
-13. PowerSharpPack - Many usefull offensive CSharp Projects wraped into Powershell for easy usage </br> (https://github.com/S3cur3Th1sSh1t/PowerSharpPack/tree/master/PowerSharpBinaries)
-14. Invoke-TheHash - It contains PowerShell functions for performing pass-the-hash WMI and SMB tasks </br> (https://github.com/Kevin-Robertson/Invoke-TheHash)
-15. CrackMapExec - Swiss army knife for pentesting Windows networks </br> (https://github.com/byt3bl33d3r/CrackMapExec)
-16. AMSI.fail - It generates obfuscated PowerShell snippets that break or disable AMSI for the current process <br> (https://amsi.fail)
-17. Nimcrypt2 - .NET, PE and raw shellcode packer/loader designed to bypass AV/EDR </br> (https://github.com/icyguider/Nimcrypt2)
-18. ACLight - A tool for advanced discovery of privileged accounts including Shadow Admins </br> (https://github.com/cyberark/ACLight)
-19. ADACLScanner - A tool with GUI used to create reports of access control lists (DACLs) and system access control lists (SACLs) in Active Directory </br> (https://github.com/canix1/ADACLScanner)
-20. Liza - Active Directory Security, Permission and ACL Analysis </br> (http://www.ldapexplorer.com/en/liza.htm)
-21. Metasploit penetration testing framework </br> (https://www.metasploit.com)
-22. Sliver - Open source cross-platform adversary emulation/red team framework </br> (https://github.com/BishopFox/sliver)
-23. LAPSToolkit - LAPS auditing for pentesters </br> (https://github.com/leoloobeek/LAPSToolkit)
-24. PrivescCheck.ps1 - This script aims to enumerate common Windows configuration issues that can be leveraged for local privilege escalation </br>  (https://github.com/itm4n/PrivescCheck)
-25. Seatbelt - C# project that performs a number of security oriented host-survey "safety checks" relevant from both offensive & defensive security perspectives </br> (https://github.com/GhostPack/Seatbelt)
-26. Juicy potato exploit </br> (https://github.com/ohpe/juicy-potato)
-27. Rotten potato exploit </br> (https://github.com/breenmachine/RottenPotatoNG)
-28. Hydra - Online password bruteforce tool </br> (https://github.com/vanhauser-thc/thc-hydra)
-29. John the Ripper - Offline password cracker </br> (https://www.openwall.com/john/)
-30. Hashcat - Offline password cracker </br> (https://hashcat.net/hashcat/)
-31. Enum4linux - Tool for enumerating information from Windows and Samba systems </br> (https://tools.kali.org/information-gathering/enum4linux)
-32. Vulnerability scanners (e.g. OpenVAS, Nessus, Qualys, Nexpose, ...) </br> (https://github.com/greenbone/openvas-scanner/releases) (https://www.tenable.com/) (https://www.qualys.com/) (https://www.rapid7.com/products/nexpose/)
-33. NMAP - Network port scanner and (NSE) scripts </br> (https://nmap.org)
-34. Various KALI tools & scripts </br> (https://www.kali.org/tools/all-tools/)
-35. Various tools & scripts (source:Github/your owns)
+| TOPIC | TOOL | URL | DESCRIPTION | 
+| :-----: | :-----: | :-----: | :------: |
+| Recon, Audit, Post-Exploitation | Windows Sysinternals | </br>https://docs.microsoft.com/en-us/sysinternals/ | adexplorer, procdump, procmon, autorun, ...  |
+| Recon, Audit, Post-Exploitation | Windows native commands | - | Windows native DOS commands (e.g. net commands, nltest) and PowerShell commands (including AD module) |
+| Recon, Audit | ADRecon | </br> https://github.com/adrecon/ADRecon | Active Directory gathering information tool |
+| Recon, Audit | ADCollector | </br> https://github.com/dev-2null/ADCollector |  Tool to quickly extract valuable information from the AD environment for both attacking and defending | 
+| Recon, Audit | NMAP | </br> https://nmap.org | Network port scanner and (NSE) scripts | 
+| Recon, Audit| PingCastle | </br> https://www.pingcastle.com | Active Directory security audit tool  |  
+| Recon, Audit | BloodHound | </br> https://github.com/BloodHoundAD/BloodHound | Tool to easily identify complex Windows domain attack paths |
+| Recon, Audit | ACLight | </br> https://github.com/cyberark/ACLight | A tool for advanced discovery of privileged accounts including Shadow Admins|
+| Recon, Audit | ADACLScanner | </br> https://github.com/canix1/ADACLScanner |A tool with GUI used to create reports of access control lists (DACLs) and system access control lists (SACLs) in Active Directory|
+| Recon, Audit | Liza | </br> http://www.ldapexplorer.com/en/liza.htm | Active Directory Security, Permission and ACL Analysis |
+| Recon, Audit | LAPSToolkit | </br> https://github.com/leoloobeek/LAPSToolkit | LAPS auditing for pentesters |
+| Gaining Access | Rubeus | </br> https://github.com/GhostPack/Rubeus | Toolset for raw Kerberos interaction and abuses |
+| Gaining Access  | Responder | </br> https://github.com/lgandx/Responder | LLMNR/NBTNS/mDNS poisoner and NTLMv1/2 relay |
+| Recon, Gaining Access | Vulnerability scanners |  </br> (https://github.com/greenbone/openvas-scanner/releases) (https://www.tenable.com/) (https://www.qualys.com/) (https://www.rapid7.com/products/nexpose/) | e.g. OpenVAS, Nessus, Qualys, Nexpose, ... | 
+| Gaining Access | Hydra | </br> https://github.com/vanhauser-thc/thc-hydra | Online password bruteforce tool | 
+| Post-Exploitation, Privesc | Mimikatz | </br> https://github.com/gentilkiwi/mimikatz | Extract plaintexts passwords, hash, PIN code and kerberos tickets from memory|
+| Post-Exploitation, Privesc | PowerSploit (incl. PowerView & PowerUp) | </br> https://github.com/PowerShellMafia/PowerSploit | PowerShell offensive security framework |
+| Post-Exploitation, Privesc | PowerSharpPack | </br> https://github.com/S3cur3Th1sSh1t/PowerSharpPack/ | Many usefull offensive CSharp Projects wraped into Powershell for easy usage |
+| AD Privesc | BloodyAD | </br> https://github.com/CravateRouge/bloodyAD |BloodyAD is an Active Directory Privilege Escalation Framework |
+| Post-Exploitation, Defense evasion | AMSI.fail | <br> https://amsi.fail | It generates obfuscated PowerShell snippets that break or disable AMSI for the current process  |
+| Post-Exploitation, Defense evasion | Nimcrypt2 | </br> https://github.com/icyguider/Nimcrypt2 | .NET, PE and raw shellcode packer/loader designed to bypass AV/EDR |
+| Post-Exploitation, Defense evasion | ProtectMyTooling | </br> https://github.com/mgeeky/ProtectMyTooling | Multi-Packer wrapper letting us daisy-chain various packers, obfuscators and other Red Team oriented weaponry.|
+| Post-Exploitation, Defense evasion | FilelessRemotePE | </br> https://github.com/D1rkMtr/FilelessRemotePE | Loading Fileless Remote PE from URI to memory with argument passing and ETW patching and NTDLL unhooking and no new thread technique|
+| Post-Exploitation, Defense evasion | Invoke-Obfuscation.ps1 | </br> https://github.com/danielbohannon/Invoke-Obfuscation | PowerShell scripts obfuscator.|
+| Post-Exploitation, Privesc | PrivescCheck.ps1  | </br> https://github.com/itm4n/PrivescCheck | This script aims to enumerate common Windows configuration issues that can be leveraged for local privilege escalation |
+| Privesc | Juicy potato exploit | </br> https://github.com/ohpe/juicy-potato | Local privesc tool |
+| Privesc | Rotten potato exploit | </br> https://github.com/breenmachine/RottenPotatoNG | Local privesc tool |
+| Post-Exploitation, Privesc  | Seatbelt | </br> https://github.com/GhostPack/Seatbelt | C# project that performs a number of security oriented host-survey "safety checks" relevant from both offensive & defensive security perspectives |
+| Post-Exploitation, Audit | John the Ripper | </br> https://www.openwall.com/john/ | Offline password cracker |
+| Post-Exploitation, Audit | Hashcat | </br> https://hashcat.net/hashcat/ | Offline password cracker |
+| Post-Exploitation C2, Network Lateral Movement, Pivoting | Metasploit | </br> https://www.metasploit.com | Penetration testing framework and post-exploitation C2 | 
+| Post-Exploitation C2, Network Lateral Movement, Pivoting | Sliver | </br> https://github.com/BishopFox/sliver| Open source cross-platform adversary emulation/red team framework |
+| Post-Exploitation C2, Network Lateral Movement, Pivoting | Cobalt Strike | </br> https://www.cobaltstrike.com | Cobalt Strike gives you a post-exploitation agent and covert channels to emulate a quiet long-term embedded actor in your customer's network |
+| Post-Exploitation C2, Network Lateral Movement, Pivoting | Havoc | </br> https://github.com/HavocFramework/Havoc| Havoc is a modern and malleable post-exploitation command and control framework|
+| Network Lateral Movement, Pivoting | Impacket Framework| </br> https://github.com/SecureAuthCorp/impacket | Python offensive security framework (e.g. Secretsdump.py, SMBrelayx.py, WMIexec.py) |
+| Network Lateral Movement, Pivoting | CrackMapExec | </br> https://github.com/byt3bl33d3r/CrackMapExec | Swiss army knife for pentesting Windows networks|
+| Network Lateral Movement, Pivoting | SharpMapExec | </br> https://github.com/cube0x0/SharpMapExec | Swiss army knife for pentesting Windows networks |
+| Network Lateral Movement, Pivoting | Powercat | </br> https://github.com/besimorhino/powercat | PowerShell TCP/IP swiss army knife like netcat | 
+| Network Lateral Movement, Pivoting | Invoke-TheHash  | </br> https://github.com/Kevin-Robertson/Invoke-TheHash | It contains PowerShell functions for performing pass-the-hash WMI and SMB tasks |
+| Network Lateral Movement, Pivoting | Rpivot  | </br> https://github.com/klsecservices/rpivot | Socks4 reverse proxy for penetration testing |
+| Network Lateral Movement, Pivoting | Ligolo  | </br> https://github.com/sysdream/ligolo | Reverse Tunneling made easy for pentesters, by pentesters |
+
 
 ----------------
 #### USEFUL RESOURCES
