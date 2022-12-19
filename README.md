@@ -129,12 +129,12 @@ The output files included here are the results of tools, scripts and Windows com
 2. Bypassing Antivirus and EDR software
 -----------------------------------------------------------------------------------------
 ➤ Common AV bypass techniques
-   - Use AMSI bypass techniques and obfuscated/encrypted offensive PowerShell scripts
+   - Fileless techniques + AMSI and ETW bypass techniques 
    - Use as much as possible Windows native commands and the IT admin tools already installed on the target systems (to 'blend in' among the legitimate system administrators)
-   - Regularly obfuscate and recompile your favorite (open source) hacking tools
-   - Use PE and shellcode packers like NimCryptv2, Codecepticon, Pezor, ...
-   - Write your own hacking tools (e.g. obfuscated/encrypted shellcode loader/exec into memory)
-   - Run into memory encrypted C2 agents (e.g. Cobalt Strike (commercial), Metasploit (Open SOurce), Sliver (Open Source))
+   - Regularly obfuscate and recompile your favorite (open source) hacking tools and scripts
+   - Use PE and shellcode packers like NimCryptv2, Inceptor, Codecepticon, Pezor, ...
+   - Write your own hacking tools (e.g. obfuscated/encrypted shellcode loader into memory)
+   - Run into memory encrypted/obfuscted C2 agents (e.g. Cobalt Strike, Metasploit, Sliver, Havoc)
    - Temporarily disable or uninstall the AV or EDR (once you are local admin or Local System)
    - Temporarily add rules in the local Windows firewall (once you are local admin or NT System) that will prevent the AV software and/or EDR agents to send alerts to the AV and/or EDR central console
    - ...
@@ -184,7 +184,7 @@ The output files included here are the results of tools, scripts and Windows com
 
 2. Network pivoting techniques 
 ------------------------------
-➤ Use a C2 post-exploitation agent (e.g. Meterpreter, Cobalt Strike) + SOCKS proxy + proxychains
+➤ Use a C2 post-exploitation agent (e.g. Meterpreter, Cobalt Strike, Sliver) + SOCKS proxy + proxychains
 ➤ SSH tunnelling using Putty.exe or Plink.exe (e.g. local/remote port forwarding)
 ➤ Remote access tools such as TeamViewer and AnyDesk portable software, Chrome Remote Desktop, VNC, ...
 ➤ Tunneling/pivoting tools like Rpivot, Ligolo, Socat, ...
