@@ -272,7 +272,8 @@ The output files included here are the results of tools, scripts and Windows com
 | Post-Exploitation, Defense evasion | Nimcrypt2 | </br> https://github.com/icyguider/Nimcrypt2 | .NET, PE and raw shellcode packer/loader designed to bypass AV/EDR |
 | Post-Exploitation, Defense evasion | ProtectMyTooling | </br> https://github.com/mgeeky/ProtectMyTooling | Multi-Packer wrapper letting us daisy-chain various packers, obfuscators and other Red Team oriented weaponry.|
 | Post-Exploitation, Defense evasion | FilelessRemotePE | </br> https://github.com/D1rkMtr/FilelessRemotePE | Loading Fileless Remote PE from URI to memory with argument passing and ETW patching and NTDLL unhooking and no new thread technique|
-| Post-Exploitation, Defense evasion | Invoke-Obfuscation.ps1 | </br> https://github.com/danielbohannon/Invoke-Obfuscation | PowerShell scripts obfuscator.|
+| Post-Exploitation, Defense evasion | Invoke-Obfuscation | </br> https://github.com/danielbohannon/Invoke-Obfuscation | PowerShell scripts obfuscator|
+| Post-Exploitation, Defense evasion | Chameleon | </br> https://github.com/klezVirus/chameleon | PowerShell scripts obfuscator|
 | Post-Exploitation, Privesc | PrivescCheck.ps1  | </br> https://github.com/itm4n/PrivescCheck | This script aims to enumerate common Windows configuration issues that can be leveraged for local privilege escalation |
 | Privesc | Juicy potato exploit | </br> https://github.com/ohpe/juicy-potato | Local privesc tool |
 | Privesc | Rotten potato exploit | </br> https://github.com/breenmachine/RottenPotatoNG | Local privesc tool |
