@@ -145,7 +145,7 @@ The output files included here are the results of tools, scripts and Windows com
 ➤ Dumping the registry hives (SAM, SYSTEM, SECURITY)
    Examples:
    - Reg save
-   - Volume Sheradow Copy (VSSadmin)
+   - Volume Shadow Copy (VSSadmin)
    - SecretsDump (Impacket)
    - SharpSecDump
    - OLD/Legacy - pwdumpX
@@ -245,7 +245,7 @@ The output files included here are the results of tools, scripts and Windows com
 ➤ ...
 ```
 -----------------
-#### LIST OF USEFUL TOOLS & SCRIPTS
+#### LIST OF SOME USEFUL TOOLS & SCRIPTS
 
 | TOPIC | TOOL | URL | DESCRIPTION | 
 | :-----: | :-----: | :-----: | :------: |
