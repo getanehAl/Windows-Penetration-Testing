@@ -161,6 +161,7 @@ The output files included here are the results of tools, scripts and Windows com
    - Dumping lsass with rundll32 and comsvcs.dll
    - HandleKatz
    - NanoDump
+   - Dumpert
    - SQLDumper (included with Microsoft SQL) 
    - OLD/Legacy - WCE (Windows Credentials Editor)
    - ...
