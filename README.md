@@ -250,7 +250,7 @@ The output files included here are the results of tools, scripts and Windows com
 
 | TOPIC | TOOL | URL | DESCRIPTION | 
 | :-----: | :-----: | :-----: | :------: |
-| Recon, Audit, Post-Exploitation | Windows Sysinternals | </br>https://docs.microsoft.com/en-us/sysinternals/ | adexplorer, procdump, procmon, autorun, ...  |
+| Recon, Audit, Post-Exploitation | Windows Sysinternals | </br>https://docs.microsoft.com/en-us/sysinternals/ | Adexplorer, procdump, procmon, autorun, ...  |
 | Recon, Audit, Post-Exploitation | Windows native commands | - | Windows native DOS commands (e.g. net commands, nltest) and PowerShell commands (including AD module) |
 | Recon, Audit | ADRecon | </br> https://github.com/adrecon/ADRecon | Active Directory gathering information tool |
 | Recon, Audit | ADCollector | </br> https://github.com/dev-2null/ADCollector |  Tool to quickly extract valuable information from the AD environment for both attacking and defending | 
@@ -262,12 +262,15 @@ The output files included here are the results of tools, scripts and Windows com
 | Recon, Audit | Liza | </br> http://www.ldapexplorer.com/en/liza.htm | Active Directory Security, Permission and ACL Analysis |
 | Recon, Audit | LAPSToolkit | </br> https://github.com/leoloobeek/LAPSToolkit | LAPS auditing for pentesters |
 | Gaining Access | Rubeus | </br> https://github.com/GhostPack/Rubeus | Toolset for raw Kerberos interaction and abuses |
-| Gaining Access  | Responder | </br> https://github.com/lgandx/Responder | LLMNR/NBTNS/mDNS poisoner and NTLMv1/2 relay |
+| Gaining Access, MITM | Responder | </br> https://github.com/lgandx/Responder | LLMNR/NBTNS/mDNS poisoner and NTLMv1/2 relay |
+| Gaining Access, MITM | Inveigh | </br> https://github.com/Kevin-Robertson/Inveigh | .NET IPv4/IPv6 machine-in-the-middle tool for penetration testers |
 | Recon, Gaining Access | Vulnerability scanners |  </br> (https://github.com/greenbone/openvas-scanner/releases) (https://www.tenable.com/) (https://www.qualys.com/) (https://www.rapid7.com/products/nexpose/) | e.g. OpenVAS, Nessus, Qualys, Nexpose, ... | 
 | Gaining Access | Hydra | </br> https://github.com/vanhauser-thc/thc-hydra | Online password bruteforce tool | 
 | Post-Exploitation, Privesc | Mimikatz | </br> https://github.com/gentilkiwi/mimikatz | Extract plaintexts passwords, hash, PIN code and kerberos tickets from memory|
+| Post-Exploitation, Privesc | Dumpert | </br> https://github.com/outflanknl/Dumpert | LSASS memory dumper using direct system calls and API unhooking |
 | Post-Exploitation, Privesc | PowerSploit (incl. PowerView & PowerUp) | </br> https://github.com/PowerShellMafia/PowerSploit | PowerShell offensive security framework |
-| Post-Exploitation, Privesc | PowerSharpPack | </br> https://github.com/S3cur3Th1sSh1t/PowerSharpPack/ | Many usefull offensive CSharp Projects wraped into Powershell for easy usage |
+| Recon, Audit, Post-Exploitation, Privesc | PowerSharpPack | </br> https://github.com/S3cur3Th1sSh1t/PowerSharpPack/ | Many usefull offensive CSharp Projects wraped into Powershell for easy usage |
+| Post-Exploitation, Privesc | Nightly builds of common C# offensive tools | </br> https://github.com/Flangvik/SharpCollection | Nightly builds of common C# offensive tools, fresh from their respective master branches built and released in a CDI fashion using Azure DevOps release pipelines |
 | AD Privesc | BloodyAD | </br> https://github.com/CravateRouge/bloodyAD |BloodyAD is an Active Directory Privilege Escalation Framework |
 | Post-Exploitation, Defense evasion | AMSI.fail | <br> https://amsi.fail | It generates obfuscated PowerShell snippets that break or disable AMSI for the current process  |
 | Post-Exploitation, Defense evasion | Nimcrypt2 | </br> https://github.com/icyguider/Nimcrypt2 | .NET, PE and raw shellcode packer/loader designed to bypass AV/EDR |
@@ -275,12 +278,13 @@ The output files included here are the results of tools, scripts and Windows com
 | Post-Exploitation, Defense evasion | FilelessRemotePE | </br> https://github.com/D1rkMtr/FilelessRemotePE | Loading Fileless Remote PE from URI to memory with argument passing and ETW patching and NTDLL unhooking and no new thread technique|
 | Post-Exploitation, Defense evasion | Invoke-Obfuscation | </br> https://github.com/danielbohannon/Invoke-Obfuscation | PowerShell scripts obfuscator|
 | Post-Exploitation, Defense evasion | Chameleon | </br> https://github.com/klezVirus/chameleon | PowerShell scripts obfuscator|
-| Post-Exploitation, Privesc | PrivescCheck.ps1  | </br> https://github.com/itm4n/PrivescCheck | This script aims to enumerate common Windows configuration issues that can be leveraged for local privilege escalation |
+| Post-Exploitation, Privesc | PrivescCheck  | </br> https://github.com/itm4n/PrivescCheck | This script aims to enumerate common Windows configuration issues that can be leveraged for local privilege escalation |
+| Post-Exploitation, Privesc | KrbRelayUp  | </br> https://github.com/Dec0ne/KrbRelayUp | KrbRelayUp - a universal no-fix local privilege escalation in windows domain environments where LDAP signing is not enforced (the default settings) |
 | Privesc | Juicy potato exploit | </br> https://github.com/ohpe/juicy-potato | Local privesc tool |
 | Privesc | Rotten potato exploit | </br> https://github.com/breenmachine/RottenPotatoNG | Local privesc tool |
 | Post-Exploitation, Privesc  | Seatbelt | </br> https://github.com/GhostPack/Seatbelt | C# project that performs a number of security oriented host-survey "safety checks" relevant from both offensive & defensive security perspectives |
-| Post-Exploitation, Audit | John the Ripper | </br> https://www.openwall.com/john/ | Offline password cracker |
-| Post-Exploitation, Audit | Hashcat | </br> https://hashcat.net/hashcat/ | Offline password cracker |
+| Password cracking | Hashat | </br> https://github.com/hashcat/hashcat/ | World's fastest and most advanced password recovery utility |
+| Password cracking | John the Ripper | </br> https://www.openwall.com/john/ | Offline password cracker |
 | Post-Exploitation C2, Network Lateral Movement, Pivoting | Metasploit | </br> https://www.metasploit.com | Penetration testing framework and post-exploitation C2 | 
 | Post-Exploitation C2, Network Lateral Movement, Pivoting | Sliver | </br> https://github.com/BishopFox/sliver| Open source cross-platform adversary emulation/red team framework |
 | Post-Exploitation C2, Network Lateral Movement, Pivoting | Cobalt Strike | </br> https://www.cobaltstrike.com | Cobalt Strike gives you a post-exploitation agent and covert channels to emulate a quiet long-term embedded actor in your customer's network |
