@@ -262,6 +262,7 @@ The output files included here are the results of tools, scripts and Windows com
 | Recon, Audit | Liza | </br> http://www.ldapexplorer.com/en/liza.htm | Active Directory Security, Permission and ACL Analysis |
 | Recon, Audit | LAPSToolkit | </br> https://github.com/leoloobeek/LAPSToolkit | LAPS auditing for pentesters |
 | Gaining Access | Rubeus | </br> https://github.com/GhostPack/Rubeus | Toolset for raw Kerberos interaction and abuses |
+| Audit, Privesc | Certify | </br> https://github.com/GhostPack/Certify | C# tool to enumerate and abuse misconfigurations in Active Directory Certificate Services (AD CS) |
 | Gaining Access, MITM | Responder | </br> https://github.com/lgandx/Responder | LLMNR/NBTNS/mDNS poisoner and NTLMv1/2 relay |
 | Gaining Access, MITM | Inveigh | </br> https://github.com/Kevin-Robertson/Inveigh | .NET IPv4/IPv6 machine-in-the-middle tool for penetration testers |
 | Recon, Gaining Access | Vulnerability scanners |  </br> (https://github.com/greenbone/openvas-scanner/releases) (https://www.tenable.com/) (https://www.qualys.com/) (https://www.rapid7.com/products/nexpose/) | e.g. OpenVAS, Nessus, Qualys, Nexpose, ... | 
