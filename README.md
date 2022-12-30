@@ -1,5 +1,5 @@
 ## Windows Active Directory penetration testing
-Technical notes, AD pentest methodology, list of tools, scripts and Windows commands that I find useful during internal penetration tests (Windows environment/Active Directory). 
+Technical notes, AD pentest methodology, list of tools, scripts and Windows commands that I find useful during internal penetration tests (Windows environment). 
 The output files included here are the results of tools, scripts and Windows commands that I ran against a vulnerable Windows AD lab that I created to test attacks/exploits and deliver hands-on penetration testing training sessions to security auditors at my job.
 
 
