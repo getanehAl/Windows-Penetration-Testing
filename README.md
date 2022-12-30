@@ -1,5 +1,5 @@
 ## Windows Active Directory penetration testing
-Technical notes and list of tools, scripts and Windows commands that I find useful during internal penetration tests (Windows environment/Active Directory).  
+Technical notes, AD pentest methodology, list of tools, scripts and Windows commands that I find useful during internal penetration tests (Windows environment/Active Directory). 
 The output files included here are the results of tools, scripts and Windows commands that I ran against a vulnerable Windows AD lab that I created to test attacks/exploits and deliver hands-on penetration testing training sessions to security auditors at my job.
 
 
@@ -265,12 +265,21 @@ The output files included here are the results of tools, scripts and Windows com
 | Audit, Privesc | Certify | </br> https://github.com/GhostPack/Certify | C# tool to enumerate and abuse misconfigurations in Active Directory Certificate Services (AD CS) |
 | Gaining Access, MITM | Responder | </br> https://github.com/lgandx/Responder | LLMNR/NBTNS/mDNS poisoner and NTLMv1/2 relay |
 | Gaining Access, MITM | Inveigh | </br> https://github.com/Kevin-Robertson/Inveigh | .NET IPv4/IPv6 machine-in-the-middle tool for penetration testers |
+| Gaining Access, MITM | Smbrelayx & Ntlmrelayx |  </br> https://github.com/fortra/impacket/tree/master/examples | SMB and NTLM relay tools which are part of the Python offensive security framework 'Impackets' |
 | Recon, Gaining Access | Vulnerability scanners |  </br> (https://github.com/greenbone/openvas-scanner/releases) (https://www.tenable.com/) (https://www.qualys.com/) (https://www.rapid7.com/products/nexpose/) | e.g. OpenVAS, Nessus, Qualys, Nexpose, ... | 
 | Gaining Access | Hydra | </br> https://github.com/vanhauser-thc/thc-hydra | Online password bruteforce tool | 
 | Post-Exploitation, Privesc | Mimikatz | </br> https://github.com/gentilkiwi/mimikatz | Extract plaintexts passwords, hash, PIN code and kerberos tickets from memory|
-| Post-Exploitation, Privesc | Dumpert | </br> https://github.com/outflanknl/Dumpert | LSASS memory dumper using direct system calls and API unhooking |
+| Post-Exploitation, Creds dumping | Dumpert | </br> https://github.com/outflanknl/Dumpert | LSASS memory dumper using direct system calls and API unhooking |
+| Post-Exploitation, Creds dumping | Nanodump | </br> https://github.com/helpsystems/nanodump | The swiss army knife of LSASS dumping |
+| Password cracking | Hashcat | </br> https://github.com/hashcat/hashcat/ | World's fastest and most advanced password recovery utility |
+| Password cracking | John the Ripper | </br> https://www.openwall.com/john/ | Offline password cracker |
 | Post-Exploitation, Privesc | PowerSploit (incl. PowerView & PowerUp) | </br> https://github.com/PowerShellMafia/PowerSploit | PowerShell offensive security framework |
 | Recon, Audit, Post-Exploitation, Privesc | PowerSharpPack | </br> https://github.com/S3cur3Th1sSh1t/PowerSharpPack/ | Many usefull offensive CSharp Projects wraped into Powershell for easy usage |
+| Post-Exploitation, Privesc | PrivescCheck  | </br> https://github.com/itm4n/PrivescCheck | This script aims to enumerate common Windows configuration issues that can be leveraged for local privilege escalation |
+| Post-Exploitation, Privesc  | Seatbelt | </br> https://github.com/GhostPack/Seatbelt | C# project that performs a number of security oriented host-survey "safety checks" relevant from both offensive & defensive security perspectives |
+| Post-Exploitation, Privesc | KrbRelayUp  | </br> https://github.com/Dec0ne/KrbRelayUp | KrbRelayUp - a universal no-fix local privilege escalation in windows domain environments where LDAP signing is not enforced (the default settings) |
+| Privesc | Juicy potato exploit | </br> https://github.com/ohpe/juicy-potato | Local privesc tool |
+| Privesc | Rotten potato exploit | </br> https://github.com/breenmachine/RottenPotatoNG | Local privesc tool |
 | Post-Exploitation, Privesc | Nightly builds of common C# offensive tools | </br> https://github.com/Flangvik/SharpCollection | Nightly builds of common C# offensive tools, fresh from their respective master branches built and released in a CDI fashion using Azure DevOps release pipelines |
 | AD Privesc | BloodyAD | </br> https://github.com/CravateRouge/bloodyAD |BloodyAD is an Active Directory Privilege Escalation Framework |
 | Post-Exploitation, Defense evasion | AMSI.fail | <br> https://amsi.fail | It generates obfuscated PowerShell snippets that break or disable AMSI for the current process  |
@@ -279,18 +288,12 @@ The output files included here are the results of tools, scripts and Windows com
 | Post-Exploitation, Defense evasion | FilelessRemotePE | </br> https://github.com/D1rkMtr/FilelessRemotePE | Loading Fileless Remote PE from URI to memory with argument passing and ETW patching and NTDLL unhooking and no new thread technique|
 | Post-Exploitation, Defense evasion | Invoke-Obfuscation | </br> https://github.com/danielbohannon/Invoke-Obfuscation | PowerShell scripts obfuscator|
 | Post-Exploitation, Defense evasion | Chameleon | </br> https://github.com/klezVirus/chameleon | PowerShell scripts obfuscator|
-| Post-Exploitation, Privesc | PrivescCheck  | </br> https://github.com/itm4n/PrivescCheck | This script aims to enumerate common Windows configuration issues that can be leveraged for local privilege escalation |
-| Post-Exploitation, Privesc | KrbRelayUp  | </br> https://github.com/Dec0ne/KrbRelayUp | KrbRelayUp - a universal no-fix local privilege escalation in windows domain environments where LDAP signing is not enforced (the default settings) |
-| Privesc | Juicy potato exploit | </br> https://github.com/ohpe/juicy-potato | Local privesc tool |
-| Privesc | Rotten potato exploit | </br> https://github.com/breenmachine/RottenPotatoNG | Local privesc tool |
-| Post-Exploitation, Privesc  | Seatbelt | </br> https://github.com/GhostPack/Seatbelt | C# project that performs a number of security oriented host-survey "safety checks" relevant from both offensive & defensive security perspectives |
-| Password cracking | Hashat | </br> https://github.com/hashcat/hashcat/ | World's fastest and most advanced password recovery utility |
-| Password cracking | John the Ripper | </br> https://www.openwall.com/john/ | Offline password cracker |
+| Post-Exploitation C2, Network Lateral Movement, Pivoting | Cobalt Strike | </br> https://www.cobaltstrike.com | Cobalt Strike gives you a post-exploitation agent and covert channels to emulate a quiet long-term embedded actor in your customer's network |
 | Post-Exploitation C2, Network Lateral Movement, Pivoting | Metasploit | </br> https://www.metasploit.com | Penetration testing framework and post-exploitation C2 | 
 | Post-Exploitation C2, Network Lateral Movement, Pivoting | Sliver | </br> https://github.com/BishopFox/sliver| Open source cross-platform adversary emulation/red team framework |
-| Post-Exploitation C2, Network Lateral Movement, Pivoting | Cobalt Strike | </br> https://www.cobaltstrike.com | Cobalt Strike gives you a post-exploitation agent and covert channels to emulate a quiet long-term embedded actor in your customer's network |
 | Post-Exploitation C2, Network Lateral Movement, Pivoting | Havoc | </br> https://github.com/HavocFramework/Havoc| Havoc is a modern and malleable post-exploitation command and control framework|
-| Network Lateral Movement, Pivoting | Impacket Framework| </br> https://github.com/SecureAuthCorp/impacket | Python offensive security framework (e.g. Secretsdump.py, SMBrelayx.py, WMIexec.py) |
+| Post-Exploitation C2, Network Lateral Movement, Pivoting | Covenant | </br> https://github.com/cobbr/Covenant| Covenant is a collaborative .NET C2 framework for red teamers|
+| Network Lateral Movement, Pivoting | Impacket Framework | </br> https://github.com/SecureAuthCorp/impacket | Python offensive security framework (e.g. WMIexec.py, SMBexec.py, Secretsdump.py) |
 | Network Lateral Movement, Pivoting | CrackMapExec | </br> https://github.com/byt3bl33d3r/CrackMapExec | Swiss army knife for pentesting Windows networks|
 | Network Lateral Movement, Pivoting | SharpMapExec | </br> https://github.com/cube0x0/SharpMapExec | Swiss army knife for pentesting Windows networks |
 | Network Lateral Movement, Pivoting | Powercat | </br> https://github.com/besimorhino/powercat | PowerShell TCP/IP swiss army knife like netcat | 
