@@ -312,5 +312,6 @@ The output files included here are the results of tools, scripts and Windows com
 ➤ Att&cking Active Directory for fun and profit (https://identityaccessdotmanagement.files.wordpress.com/2020/01/attcking-ad-for-fun-and-profit.pdf)
 ➤ Windows / Linux Local Privilege Escalation Workshop (https://github.com/sagishahar/lpeworkshop)
 ➤ CIS benchmarks (https://www.cisecurity.org/benchmark/microsoft_windows_server/)
+➤ Evaluation matrix of Command and Control (C2) frameworks (https://www.thec2matrix.com/matrix)
 ➤ ...
 ```
