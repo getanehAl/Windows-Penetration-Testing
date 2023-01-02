@@ -132,7 +132,7 @@ The output files included here are the results of tools, scripts and Windows com
    - Fileless techniques + AMSI and ETW bypass techniques 
    - Use as much as possible Windows native commands and the IT admin tools already installed on the target systems (to 'blend in' among the legitimate system administrators)
    - Regularly obfuscate and recompile your favorite (open source) hacking tools and scripts
-   - Use PE and shellcode packers like NimCryptv2, Inceptor, Codecepticon, Pezor, ...
+   - Use PE and shellcode packers like NimCryptv2, Inceptor, Pezor, ...
    - Write your own hacking tools (e.g. obfuscated/encrypted shellcode loader into memory)
    - Run into memory encrypted/obfuscted C2 agents (e.g. Cobalt Strike, Metasploit, Sliver, Havoc)
    - Temporarily disable or uninstall the AV or EDR (once you are local admin or Local System)
