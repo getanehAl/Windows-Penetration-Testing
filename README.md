@@ -145,6 +145,7 @@ The output files included here are the results of tools, scripts and Windows com
 ➤ Dumping the registry hives (SAM, SYSTEM, SECURITY)
    Examples:
    - Reg save
+   - Esentutl.exe
    - Volume Shadow Copy (VSSadmin)
    - SecretsDump (Impacket)
    - SharpSecDump
