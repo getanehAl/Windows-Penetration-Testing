@@ -182,7 +182,7 @@ The output files included here are the results of tools, scripts and Windows com
 1. Network lateral movement techniques 
 --------------------------------------
 ➤ Network lateral movement using RDP, PowerShell remoting (WinRM), WMIC, WMIexec, SMBexec, PsExec, SSH, ...
-➤ Pass-The-Hash, Pass-The-Ticket and Over-Pass-The-Hash techniques 
+➤ Pass-The-Hash, Pass-The-Ticket, Over-Pass-The-Hash and Pass-The-Certificate techniques 
 
 2. Network pivoting techniques 
 ------------------------------
