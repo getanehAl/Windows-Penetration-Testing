@@ -89,13 +89,15 @@ The output files included here are the results of tools, scripts and Windows com
 ➤ Clear-text passwords stored in AD fields (e.g. account description, comments)
 ➤ Citrix servers accessible to all Domain users + Citrix jailbreak to get a Windows CMD or PowerShell console + Local privesc 
 ➤ WsuXploit attack – Compromising Windows machines via malicious Windows Update (i.e. tru to inject 'fake' updates into non-SSL WSUS traffic)
+➤ NLTM Relay techniques + ADCS attacks
 ➤ Unpatched/obsolete systems prone to an authenticated Remote Code Execution vulnerability with a public exploit available 
    Examples:
    - Windows: 
+     - Certifried vulnerability (CVE-2022-26923)
      - noPAC / SamAccountName impersonation vulnerability (CVE-2021-42278/CVE-2021-42287), 
-     - PrintNightmare (CVE-2021-1675 & CVE-2021-34527), 
+     - PrintNightmare vulnerability (CVE-2021-1675 & CVE-2021-34527), 
+     - Drop-the-MIC vulnerabilities (CVE-2019-1040 & CVE-2019-1166)
      - KrbRelayUp local privesc technique, 
-     - ADCS + PetitPotam + NLTM Relay technique (CVE-2021-44228), 
      - ...
    - Outlook: CVE-2020-0688
 ➤ ...
