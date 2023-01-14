@@ -26,7 +26,7 @@ It generates an obfuscated and encrypted shellode loader script that will inject
 The shellcode needs to be generated with the format 'ps1' (e.g. [Byte[]] $buf = 0xfc,0x48,0x83,...)
 
 > Features
-  - Shellcode injection into the memory of the current process
+  - Shellcode injection into the memory of the current process (PowerShell)
   - AES encryption and GZip compression (based on 'Xencrypt')
   - AMSI bypass
   - Blocking Event Tracing for Windows (ETW)
