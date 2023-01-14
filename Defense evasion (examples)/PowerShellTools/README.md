@@ -15,6 +15,9 @@
   Or  
   - Invoke-PoSH-Packer -FilePath C:\path\script-to-pack.ps1 -OutFile C:\path\Packed-script.ps1
 
+> License
+  - GNU General Public License v3.0
+
 --------------------------------------
 ### Invoke-PoSH-ShellCodeLoader1.ps1
 --------------------------------------
@@ -35,6 +38,9 @@ The shellcode needs to be generated with the format 'ps1' (e.g. [Byte[]] $buf = 
   - Invoke-PoSH-ShellCodeLoader1 -FileUrl https://URL/shellCode -OutFile C:\path\Packed-ShellCodeLoader.ps1  
   Or  
   - Invoke-PoSH-ShellCodeLoader1 -FilePath C:\path\shellCode -OutFile C:\path\Packed-ShellCodeLoader.ps1
+  
+> License
+  - GNU General Public License v3.0
 
 --------------------------------------
 ### Invoke-PoSH-ShellCodeLoader2.ps1
@@ -57,5 +63,5 @@ The shellcode needs to be generated with the format 'ps1' (e.g. [Byte[]] $buf = 
   Or  
   - Invoke-PoSH-ShellCodeLoader2 -FilePath C:\path\shellCode -TargetProcess explorer -OutFile C:\path\Packed-ShellCodeLoader.ps1
 
---------------------------------------
-License: GNU General Public License v3.0
+> License
+  - GNU General Public License v3.0
