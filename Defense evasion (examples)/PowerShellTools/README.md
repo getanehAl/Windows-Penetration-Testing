@@ -18,7 +18,7 @@
 --------------------------------------
 ### Invoke-PoSH-ShellCodeLoader1.ps1
 --------------------------------------
-'Invoke-PoSH-ShellCodeLoader1' is shellcode loader generator that aims to bypass AV solutions such as Windows Defender.  
+'Invoke-PoSH-ShellCodeLoader1' is a simple shellcode loader generator that aims to bypass AV solutions such as Windows Defender.  
 It generates an obfuscated and encrypted shellode loader script that will inject the shellcode into the current process's virtual address space.  
 The shellcode needs to be generated with the format 'ps1' (e.g. [Byte[]] $buf = 0xfc,0x48,0x83,...)
 
@@ -39,7 +39,7 @@ The shellcode needs to be generated with the format 'ps1' (e.g. [Byte[]] $buf = 
 --------------------------------------
 ### Invoke-PoSH-ShellCodeLoader2.ps1
 --------------------------------------
-'Invoke-PoSH-ShellCodeLoader2' is shellcode loader generator that aims to bypass AV solutions such as Windows Defender.  
+'Invoke-PoSH-ShellCodeLoader2' is a simple shellcode loader generator that aims to bypass AV solutions such as Windows Defender.  
 It generates an obfuscated and encrypted shellode loader script that will inject the shellcode into a target process's virtual address space.  
 The shellcode needs to be generated with the format 'ps1' (e.g. [Byte[]] $buf = 0xfc,0x48,0x83,...)
 
