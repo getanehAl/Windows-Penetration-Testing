@@ -1,7 +1,7 @@
 --------------------------------------
 ### Invoke-PoSH-Packer.ps1
 --------------------------------------
-'Invoke-PoSH-Packer' is a simple PowerShell script packer that aims to bypass AV solutions such as Windows Defender.
+'Invoke-PoSH-Packer' allows to pack and encrypt offensive PowerShell scripts in order to bypass AV solutions such as Windows Defender.
 
 > Features
   - AES encryption and GZip compression (based on 'Xencrypt')
