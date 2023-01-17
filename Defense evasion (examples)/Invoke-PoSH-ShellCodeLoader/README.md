@@ -55,9 +55,9 @@ It generates an obfuscated and encrypted shellcode loader script that will injec
   - Havoc C2 Framework  
     1. Generate a new HAVOC payload with the format "Windows Shellcode" (Arch: x64 / Indirect Syscall: Enabled / Sleep Technique: WaitForSIngleObjectEx)  
     2. To convert the Havoc shellcode to the "PS1" format you need to run these commands:  
-      ```jeff@kali:~/$ xxd -p HavocShellCode | tr -d '\n' | sed 's/.\{2\}/0x&,/g' > HavocShellcode1```  
-     ```jeff@kali:~/$ sed '$ s/.$//' HavocShellcode1 > HavocShellcode2```  
-     ```jeff@kali:~/$ sed -i '1s/^/[Byte[]] $buf = /' HavocShellcode2```  
+     ```$ xxd -p HavocShellCode | tr -d '\n' | sed 's/.\{2\}/0x&,/g' > HavocShellcode1```  
+     ```$ sed '$ s/.$//' HavocShellcode1 > HavocShellcode2```  
+     ```$ sed -i '1s/^/[Byte[]] $buf = /' HavocShellcode2```  
 
 > License
   - GNU General Public License v3.0
