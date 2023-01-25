@@ -7,7 +7,9 @@
   - AMSI bypass
   - Blocking Event Tracing for Windows (ETW)
   - Disabling PowerShell history logging
-  - Basic sandbox evasion techniques (optional - exit if PowerShell session debugging is enabled + wait for 60 seconds before execution)
+  - Basic sandbox evasion techniques (optional)
+    - stop/exit if the PowerShell session is being debugged (detection based on "Test-Path Variable:PSDebugContext")
+    - wait for 60 seconds before execution
   
 > Usage
 1. Example with a PowerShell script stored locally
