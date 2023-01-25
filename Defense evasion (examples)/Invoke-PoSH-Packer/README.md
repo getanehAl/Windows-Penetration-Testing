@@ -7,13 +7,22 @@
   - AMSI bypass
   - Blocking Event Tracing for Windows (ETW)
   - Disabling PowerShell history logging
+  - Basic sandbox evasion techniques (optional - exit if PowerShell session debugging is enabled + wait for 60 seconds before execution)
   
 > Usage
+1. Example with a PowerShell script stored locally
+```
+  - Import-Module ./Invoke-PoSH-Packer.ps1
+  - Invoke-PoSH-Packer -FilePath C:\path\script-to-pack.ps1 -OutFile C:\path\Packed-script.ps1 
+  --- or ---
+  - Invoke-PoSH-Packer -FilePath C:\path\script-to-pack.ps1 -OutFile C:\path\Packed-script.ps1 -sandbox
+``` 
+2. Example with a PowerShell script stored on a remote web server
 ```
   - Import-Module ./Invoke-PoSH-Packer.ps1
   - Invoke-PoSH-Packer -FileUrl https://URL/script-to-pack.ps1 -OutFile C:\path\Packed-script.ps1  
   --- or ---
-  - Invoke-PoSH-Packer -FilePath C:\path\script-to-pack.ps1 -OutFile C:\path\Packed-script.ps1
+  - Invoke-PoSH-Packer -FileUrl https://URL/script-to-pack.ps1 -OutFile C:\path\Packed-script.ps1 -sandbox
 ```
 
 > License
