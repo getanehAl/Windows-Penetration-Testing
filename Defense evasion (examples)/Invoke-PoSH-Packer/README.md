@@ -3,7 +3,7 @@
 'Invoke-PoSH-Packer' allows to pack and encrypt offensive PowerShell scripts in order to bypass AV solutions such as Windows Defender.
 
 > Features
-  - AES encryption and GZip compression (based on 'Xencrypt')
+  - AES encryption and GZip/Deflate compression (based on 'Xencrypt')
   - AMSI bypass
   - Blocking Event Tracing for Windows (ETW)
   - Disabling PowerShell history logging
