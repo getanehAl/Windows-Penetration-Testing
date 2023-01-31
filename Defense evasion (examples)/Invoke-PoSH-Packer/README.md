@@ -2,7 +2,7 @@
 --------------------------------------
 'Invoke-PoSH-Packer' allows to pack and encrypt offensive PowerShell scripts in order to bypass AV solutions such as Windows Defender.
 
-> Features
+> FEATURES
   - AES encryption and GZip/Deflate compression (based on 'Xencrypt')
   - AMSI bypass
   - Blocking Event Tracing for Windows (ETW)
@@ -11,7 +11,7 @@
     - stop/exit if the PowerShell session is being debugged (detection based on "Test-Path Variable:PSDebugContext")
     - wait for 60 seconds before execution
   
-> Usage
+> USAGE
   - Step 1. Generate a packed & encrypted version of a PowerShell script (e.g. invoke-mimikatz.ps1, invoke-rubeus.ps1) stored locally or on a remote web server
 ```
 PS C:\> Import-Module ./Invoke-PoSH-Packer.ps1
@@ -34,5 +34,5 @@ PS C:\> Import-Module C:\temp\Packed-script.ps1
 PS C:\> Invoke-method-of-your-original-script
 ``` 
 
-> License
+> LICENSE
   - GNU General Public License v3.0
