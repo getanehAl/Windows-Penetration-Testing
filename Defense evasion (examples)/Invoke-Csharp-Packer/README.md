@@ -3,7 +3,7 @@
 'Invoke-Csharp-Packer' allows to pack and encrypt offensive (C#) .NET executable files in order to bypass AV solutions such as Windows Defender.
 It generates an obfuscated and encrypted PowerShell script that contains the (C#) .NET executable file.
 
-> Features
+> FEATURES
   - AES encryption and GZip/Deflate compression (based on 'Xencrypt')
   - AMSI bypass
   - Blocking Event Tracing for Windows (ETW)
@@ -12,7 +12,7 @@ It generates an obfuscated and encrypted PowerShell script that contains the (C#
     - stop/exit if the PowerShell session is being debugged (detection based on "Test-Path Variable:PSDebugContext")
     - wait for 60 seconds before execution
   
-> Usage
+> USAGE
   - Step 1. Generate an obfuscated & encrypted PowerShell script that contains your (C#) .NET executable file (e.g. rubeus.exe, sharpkatz.exe, winpeas.exe) stored locally or on a remote web server.
 ```
 PS C:\> Import-Module ./Invoke-Csharp-Packer.ps1
@@ -36,5 +36,5 @@ PS C:\> Import-Module C:\temp\Packed-Csharp-binary.ps1
 PS C:\> Invoke-Packed-NET-Executable "argument1","argument2","argument3",...
 ``` 
 
-> License
+> LICENSE
   - GNU General Public License v3.0
