@@ -1,3 +1,5 @@
+<i/> -------- DISCLAIMER - WORK IN PROGRESS -------- </i>
+
 ### Invoke-Csharp-Packer.ps1
 --------------------------------------
 'Invoke-Csharp-Packer' allows to pack and encrypt offensive (C#) .NET executable files in order to bypass AV solutions such as Windows Defender.
