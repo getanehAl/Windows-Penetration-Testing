@@ -1,7 +1,7 @@
 ### Invoke-PoSH-CsharpPacker v2.0
 --------------------------------------
 'Invoke-PoSH-CsharpPacker' allows to pack and encrypt offensive (C#) .NET executable files in order to bypass AV solutions such as Windows Defender.
-The (C#) .NET executable file is embedded in an obfuscated and encrypted PowerShell script.
+It generates an obfuscated and encrypted PowerShell script that contains the (C#) .NET executable file that you want to pack.
 
 _Work in progress / Tests:   
 I tested successfully my packer script with several C# tools including 'Rubeus', 'SharpKatz', 'SharSecDump', 'SharpUp' and 'SharpChromium' on a Windows 
