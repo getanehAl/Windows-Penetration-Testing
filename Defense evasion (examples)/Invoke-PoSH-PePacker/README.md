@@ -1,6 +1,6 @@
 ### Invoke-PoSH-PePacker.ps1
 --------------------------------------
-'Invoke-PoSH-PePacker' allows to pack and encrypt offensive PE files in order to bypass AV solutions such as Windows Defender.
+'Invoke-PoSH-PePacker' allows to pack and encrypt offensive PE files in order to bypass AV solutions such as Windows Defender.  
 It generates an obfuscated and encrypted PowerShell script that contains the PE file.
 
 #### FEATURES
