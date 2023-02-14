@@ -13,7 +13,7 @@
     - wait for 60 seconds before execution
   
 #### USAGE
-  - Step 1. Generate a packed & encrypted version of a PowerShell script (e.g. invoke-mimikatz.ps1, invoke-rubeus.ps1) stored locally or on a remote web server
+  - Step 1. Generate a packed & encrypted version of a PE file (e.g. mimikatz.exe, havocdemon.exe) stored locally or on a remote web server
 ```
 PS C:\> Import-Module ./Invoke-PoSH-PePacker.ps1
 PS C:\> Invoke-PoSH-PePacker -FilePath C:\path\PE-file.exe -OutFile C:\path\Packed-PE-file.ps1
