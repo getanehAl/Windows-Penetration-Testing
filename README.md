@@ -156,10 +156,9 @@ The output files included here are the results of tools, scripts and Windows com
    
 ➤ Memory dumping of the LSASS process 
    Examples:
-   - Mimikatz / Invoke-mimikatz.ps1
-   - NanoDump 
+   - Mimikatz / invoke-mimikatz.ps1
+   - NanoDump
    - SharpKatz
-   - HandleKatz
    - OLD/Legacy tools and techniques
       - ProcDump (Sysinternals tool)
       - Task manager + "Create dump file" of lsass.exe
