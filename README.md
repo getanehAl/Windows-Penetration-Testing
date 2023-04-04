@@ -156,18 +156,19 @@ The output files included here are the results of tools, scripts and Windows com
    
 ➤ Memory dumping of the LSASS process 
    Examples:
-   - ProcDump (Sysinternals tool)
-   - Task manager + "Create dump file" of lsass.exe
-   - Process Explorer (Sysinternals tool) + "Create dump" of lsass.exe
-   - Process Hacker + "Create dump file" of lsass.exe
-   - SecretsDump (Impacket)
    - Mimikatz / Invoke-mimikatz.ps1
-   - Dumping lsass with rundll32 and comsvcs.dll
+   - NanoDump 
+   - SharpKatz
    - HandleKatz
-   - NanoDump
-   - Dumpert
-   - SQLDumper (included with Microsoft SQL) 
-   - OLD/Legacy - WCE (Windows Credentials Editor)
+   - OLD/Legacy tools and techniques
+      - ProcDump (Sysinternals tool)
+      - Task manager + "Create dump file" of lsass.exe
+      - Process Explorer (Sysinternals tool) + "Create dump" of lsass.exe
+      - Process Hacker + "Create dump file" of lsass.exe
+      - Dumping lsass with rundll32 and comsvcs.dll
+      - Dumpert
+      - SQLDumper (included with Microsoft SQL) 
+      - WCE (Windows Credentials Editor)
    - ...
 
 3. Dumping other credentials
