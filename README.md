@@ -89,7 +89,8 @@ The output files included here are the results of tools, scripts and Windows com
 ➤ Clear-text passwords stored in AD fields (e.g. account description, comments)
 ➤ Citrix servers accessible to all Domain users + Citrix jailbreak to get a Windows CMD or PowerShell console + Local privesc 
 ➤ WsuXploit attack – Compromising Windows machines via malicious Windows Update (i.e. tru to inject 'fake' updates into non-SSL WSUS traffic)
-➤ NLTM Relay techniques + ADCS attacks
+➤ Find and exploit ADCS misconfiguration (very often ADCS misconfiguration can lead to a Domain Admin account compromise)
+➤ NLTM Relay techniques + ADCS attacks (i.e. ESC8 - NTLM Relay to AD CS HTTP Endpoints)
 ➤ Unpatched/obsolete systems prone to an authenticated Remote Code Execution vulnerability with a public exploit available 
    Examples:
    - Windows: 
@@ -211,11 +212,22 @@ The output files included here are the results of tools, scripts and Windows com
 ➤ Dumping from a Windows server's memory the clear-text password (or hash) of an acccount member of the group 'Domain Admins' or 'Administrators' of the Domain Controller
 ➤ Exploiting AD / Windows domain security misconfiguration
    Examples:
-   - abusing weak ACL or GPO permissions, 
-   - abusing LAPS misconfiguration, 
+   - abusing weak ACL or GPO permissions
+   - abusing LAPS misconfiguration
    - exploiting password reuse issues
-     > the same password is used to protect multiple high privileged accounts and low-privileged accounts, 
+     > the same password is used to protect multiple high privileged accounts and low-privileged accounts 
      > the same password is used to protect the default local administrator account of the Windows servers and the Domain Controllers (i.e. no hardening, no LAPS)
+➤ Exploiting Active Directory Certificate Services (ADCS) misconfiguration
+   Examples:
+   - abusing misconfigured Certificate Templates - ESC1 & ESC2
+   - abusing misconfigured Enrolment Agent Templates - ESC3
+   - abusing vulnerable Certificate Template Access Control - ESC4
+   - abusing vulnerable PKI Object Access Control - ESC5
+   - abusing "EDITF_ATTRIBUTESUBJECTALTNAME2" flag issue - ESC6
+   - abusing vulnerable Certificate Authority Access Control - ESC7
+   - abusing NTLM Relay to AD CS HTTP Endpoints – ESC8
+   - abusing "no Security Extension" issue - ESC9
+   - abusing weak Certificate Mappings - ESC10
 ➤ Compromise an account member of the default security group 'DNSAdmins' and take over the Windows domain by executing a DLL as 'NT AUTHORITY\SYSTEM' on the Domain Controller (known privesc)
 ➤ Compromise an account member of the default security groups 'Backup Operators' or 'Server Operators' and take over the Windows domain by backuping the NTDS.dit file and HKLM\SYSTEM and then extracting the password hash of 'Domain admins' accounts (known privesc)
 ➤ Compromise an account member of the default security group 'Account Operators' that can be used to privesc and take over the Windows domain (known privesc)
