@@ -285,7 +285,7 @@ The output files included here are the results of tools, scripts and Windows com
 | Recon, Gaining Access | Vulnerability scanners |  </br> (https://github.com/greenbone/openvas-scanner/releases) (https://www.tenable.com/) (https://www.qualys.com/) (https://www.rapid7.com/products/nexpose/) | e.g. OpenVAS, Nessus, Qualys, Nexpose, ... | 
 | Gaining Access | Hydra | </br> https://github.com/vanhauser-thc/thc-hydra | Online password bruteforce tool | 
 | Post-Exploitation, Privesc | Mimikatz | </br> https://github.com/gentilkiwi/mimikatz | Extract plaintexts passwords, hash, PIN code and kerberos tickets from memory|
-| Post-Exploitation, Creds dumping | Dumpert | </br> https://github.com/outflanknl/Dumpert | LSASS memory dumper using direct system calls and API unhooking |
+| Post-Exploitation, Creds dumping | SharpKatz | </br> https://github.com/b4rtik/SharpKatz | Porting in C# of mimikatz sekurlsa::logonpasswords, sekurlsa::ekeys and lsadump::dcsync commands |
 | Post-Exploitation, Creds dumping | Nanodump | </br> https://github.com/helpsystems/nanodump | The swiss army knife of LSASS dumping |
 | Password cracking | Hashcat | </br> https://github.com/hashcat/hashcat/ | World's fastest and most advanced password recovery utility |
 | Password cracking | John the Ripper | </br> https://www.openwall.com/john/ | Offline password cracker |
