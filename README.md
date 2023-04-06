@@ -10,6 +10,7 @@ The output files included here are the results of tools, scripts and Windows com
 ```
 ➤ Bypass MAC address filtering solution by using/spoofing the MAC address of a whitelisted device 
    (e.g. a printer, smart TV in meeting room)
+➤ Bypass wired network 802.1x protection (NAC) by using a device that has 2 network interfaces and tools like 'fenrir'.
 ➤ Hack the captive authentication portal used to control network access
 ➤ ...
 ```
@@ -316,7 +317,7 @@ The output files included here are the results of tools, scripts and Windows com
 | Network Lateral Movement, Pivoting | Invoke-TheHash  | </br> https://github.com/Kevin-Robertson/Invoke-TheHash | It contains PowerShell functions for performing pass-the-hash WMI and SMB tasks |
 | Network Lateral Movement, Pivoting | Rpivot  | </br> https://github.com/klsecservices/rpivot | Socks4 reverse proxy for penetration testing |
 | Network Lateral Movement, Pivoting | Ligolo  | </br> https://github.com/sysdream/ligolo | Reverse Tunneling made easy for pentesters, by pentesters |
-
+| NAC bypass | Fenrir  | </br> https://github.com/Orange-Cyberdefense/fenrir-ocd | Tool/script designed to bypass wired network 802.1x protection (NAC) |
 
 ----------------
 #### USEFUL RESOURCES
