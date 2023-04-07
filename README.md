@@ -161,7 +161,9 @@ The output files included here are the results of tools, scripts and Windows com
    - NanoDump
    - SharpKatz
    - SafetyDump
-   - OLD/Legacy tools and techniques
+   - Lsassy
+   - EDRSandblast
+   - OLD/Legacy techniques
       - ProcDump (Sysinternals tool)
       - Task manager + "Create dump file" of lsass.exe
       - Process Explorer (Sysinternals tool) + "Create dump" of lsass.exe
