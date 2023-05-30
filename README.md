@@ -213,7 +213,7 @@ The output files included here are the results of tools, scripts and Windows com
 <i>The purpose of this phase is to take full control over the target Windows domain.</i>
 
 ```
-➤ Dumping from a Windows server's memory the clear-text password (or hash) of an acccount member of the group 'Domain Admins' or 'Administrators' of the Domain Controller
+➤ Dumping from a Windows server's memory the clear-text password (or hash) of an account member of the group 'Domain Admins' or 'Administrators' of the Domain Controller
 ➤ Exploiting AD / Windows domain security misconfiguration
    Examples:
    - abusing weak ACL or GPO permissions
