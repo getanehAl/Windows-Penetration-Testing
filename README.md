@@ -209,10 +209,12 @@ The output files included here are the results of tools, scripts and Windows com
 ```
 
 -----------------
-#### STEP 6. WINDOWS DOMAIN COMPROMISE (Privilege escalation to become "Domain Admin") 💉🧑🏼‍💻 
+#### STEP 6. WINDOWS DOMAIN COMPROMISE (Privilege escalation to become "Domain Admin" + Persistence) 💉🧑🏼‍💻 
 <i>The purpose of this phase is to take full control over the target Windows domain.</i>
 
 ```
+1. Privilege escalation to become "Domain Admin"
+------------------------------------------------
 ➤ Dumping from a Windows server's memory the clear-text password (or hash) of an account member of the group 'Domain Admins' or 'Administrators' of the Domain Controller
 ➤ Exploiting AD / Windows domain security misconfiguration
    Examples:
@@ -244,22 +246,34 @@ The output files included here are the results of tools, scripts and Windows com
 ➤ Kerberos Resource-based Constrained Delegation attack
 ➤ ...
 ```
-
+```
+2. AD password dumping & cracking (NTDS) 
+-----------------------------------------
+➤ Dump and extract the password hashes of all the Windows domain accounts (file 'NTDS.DIT' + SYSTEM registry hive)
+   Examples:
+   - Ntdsutil + Secretsdump
+   - Wbadmin + Secretsdump
+   - Secretsdump
+   - CrackMapExec
+   - Mimikatz (dcsync technique)
+   - ...
+➤ Crack (with John or Hashcat) the password hashes of all the Windows domain accounts
+```
+```
+3. Creating persistence (examples)
+------------------------------------
+➤ Use the KRBTGT account’s password hash to forge of a Kerberos Golden ticket with Domain Administrator privileges
+➤ Add temporarily an account in a default AD security group such as 'Domain Admins', 'BUILTIN\Administrators' or 'Account Operators' 
+➤ Keep temporarily the password hash of a highly-privileged service account (e.g. Domain Admin) with a password set to never expire
+➤ Modify temporarily the ACLs to allow an account that you control to perform DCsync attack.
+➤ ...
+```
 -----------------
 #### STEP 7. FOREST ROOT DOMAIN COMPROMISE (Privilege escalation to become "Enterprise Admin") 💉🧑🏼‍💻 
 <i>The purpose of this phase is to take full control over the Forest root domain and all the other domains in the target network.</i>
 ```
-➤ Post-exploitation AD
-  - Dump, extract and crack the password hashes of all the Windows domain accounts (file 'NTDS.DIT' + SYSTEM registry hive)
-➤ Persistence techniques
-   Examples:
-   - Use of the KRBTGT account’s password hash to create of a Kerberos Golden ticket
-   - Add temporarily an account in a default AD security group such as 'Domain Admins', 'BUILTIN\Administrators' or 'Account Operators' 
-   - Keep temporarily the password hash of a highly-privileged service account (e.g. Domain Admin) with a password that never expire
-   - Modify temporarily ACLs
-➤ Take over the Forest root domain
-   - Forge a Kerberos Golden Ticket (TGT) with a 'SID History' for the Forest 'Enterprise Admins' group
-   - Forge an inter-realm trust ticket (cross-domain trust kerberos ticket) and then create TGS for the services LDAP/CIFS/HOST/... in the parent domain 
+➤ Forge a Kerberos Golden Ticket (TGT) with a 'SID History' for the Forest 'Enterprise Admins' group
+➤ Forge an inter-realm trust ticket (cross-domain trust kerberos ticket) and then create TGS for the services LDAP/CIFS/HOST/... in the parent domain 
 ➤ Take over other Windows domains due to password re-use across domains for high privileged accounts
 ➤ Take over other Windows domains thanks to AD Forest Trusts and/or misconfiguration (e.g. the group 'Domain Admins' of the domain A is member of the group 'Domain Admins' of the domain B) 
 ➤ ...
