@@ -146,7 +146,7 @@ The output files included here are the results of tools, scripts and Windows com
 ```
 ```
 2. Bypassing Antivirus and EDR software
------------------------------------------------------------------------------------------
+---------------------------------------
 ➤ Common AV bypass techniques
    - Fileless techniques + AMSI and ETW bypass techniques 
    - Use as much as possible Windows native commands and the IT admin tools already installed on the target systems (to 'blend in' among the legitimate system administrators)
@@ -263,7 +263,7 @@ The output files included here are the results of tools, scripts and Windows com
 ```
 ```
 2. AD password dumping & cracking (NTDS) 
------------------------------------------
+----------------------------------------
 ➤ Dump and extract the password hashes of all the Windows domain accounts (file 'NTDS.DIT' + SYSTEM registry hive)
    Examples:
    - Ntdsutil + Secretsdump
@@ -276,7 +276,7 @@ The output files included here are the results of tools, scripts and Windows com
 ```
 ```
 3. Creating persistence (examples)
-------------------------------------
+----------------------------------
 ➤ Use the KRBTGT account’s password hash to forge of a Kerberos Golden ticket with Domain Administrator privileges
 ➤ Add temporarily an account in a default AD security group such as 'Domain Admins', 'BUILTIN\Administrators' or 'Account Operators' 
 ➤ Keep temporarily the password hash of a highly-privileged service account (e.g. Domain Admin) with a password set to never expire
