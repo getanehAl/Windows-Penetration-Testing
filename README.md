@@ -7,10 +7,10 @@ The output files included here are the results of tools, scripts and Windows com
 
 ----------------
 #### STEP 1. BYPASSING NETWORK ACCESS CONTROL (NAC) - if any 🔐🕸🧑🏼‍💻
-<i>If a NAC solution is implemented, the purpose of this phase will be to bypass it to be able to access the internal network ressources and start the internal penetration test.</i>
+<i>If a NAC solution is implemented, the purpose of this phase will be to bypass it to get access to the internal network and start the internal penetration test.</i>
 ```
-1. Pre-connect scenario => NAC checks are made before granting any access to the internal network resources
------------------------------------------------------------------------------------------------------------
+1. Pre-connect scenario => NAC checks are made before granting any access to the internal network
+-------------------------------------------------------------------------------------------------
 ➤ MAC address spoofing technique
   - Bypass MAC address filtering solution by spoofing the MAC address of a whitelisted device (e.g. printer, smart TV in meeting room, VOIP phone)
 ➤ Pre-authenticated device technique
