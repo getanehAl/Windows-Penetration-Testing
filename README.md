@@ -15,7 +15,7 @@ The output files included here are the results of tools, scripts and Windows com
   - Bypass MAC address filtering solution by spoofing the MAC address of a whitelisted device (e.g. printer, smart TV in meeting room, VOIP phone)
 ➤ Pre-authenticated device technique
   - Bypass wired network 802.1x protection (NAC) by placing a rogue device (with 2 network adapters) between a pre-authenticated device and the network switch. 
-    Using scripts like 'fenrir-ocd' or 'nac_bypass-setup.sh', the rogue device will be able to log into the network and smuggle network packets.
+    Using scripts like 'fenrir-ocd' or 'nac_bypass-setup.sh', the traffic will then flow through the rogue device which will be able to log into the network and smuggle network packets.
 ➤ Captive portal bypass technique
   - Hack the captive authentication portal used to control network access
 ➤ VOIP hopping and VLAN hopping techniques
