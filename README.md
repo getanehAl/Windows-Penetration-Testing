@@ -6,7 +6,7 @@ The output files included here are the results of tools, scripts and Windows com
 ### <i>**** Classic internal penetration test methodology - Windows Active Directory attack paths **** </i>
 
 ----------------
-#### STEP 1. BYPASSING NETWORK ACCESS CONTROL (NAC) - if any
+#### STEP 1. BYPASSING NETWORK ACCESS CONTROL (NAC) - if any 🔐🕸🧑🏼‍💻
 <i>If a Network Access Control solution is implemented, the purpose of this phase will be to bypass it to be able to access the internal network and start the internal penetration test.</i>
 ```
 1. Pre-connect scenario => NAC checks are made before granting any access to the internal network resources
@@ -64,7 +64,7 @@ The output files included here are the results of tools, scripts and Windows com
 ```
 
 -----------------
-#### STEP 3. GAINING ACCESS 🧑🏼‍💻 
+#### STEP 3. GAINING ACCESS 🔓🧑🏼‍💻
 <i>The purpose of this phase is to gain (unauthorized) access to several internal systems (e.g. servers, file shares, databases) by exploiting common security issues such as: default/weak passwords, OS security misconfiguration, insecure network protocols and unpatched known vulnerabilities.</i>
 ```
 1. Black-box penetration test (we start with no account)
@@ -224,7 +224,7 @@ The output files included here are the results of tools, scripts and Windows com
 ```
 
 -----------------
-#### STEP 6. WINDOWS DOMAIN COMPROMISE (Privilege escalation to become "Domain Admin" + Persistence) 💉🧑🏼‍💻 
+#### STEP 6. WINDOWS DOMAIN COMPROMISE (Privilege escalation to become "Domain Admin" + Persistence) 🔥🧑🏼‍💻 
 <i>The purpose of this phase is to take full control over the target Windows domain.</i>
 
 ```
@@ -284,7 +284,7 @@ The output files included here are the results of tools, scripts and Windows com
 ➤ ...
 ```
 -----------------
-#### STEP 7. FOREST ROOT DOMAIN COMPROMISE (Privilege escalation to become "Enterprise Admin") 💉🧑🏼‍💻 
+#### STEP 7. FOREST ROOT DOMAIN COMPROMISE (Privilege escalation to become "Enterprise Admin") 🔥🔥🧑🏼‍💻 
 <i>The purpose of this phase is to take full control over the Forest root domain and all the other domains in the target network.</i>
 ```
 ➤ Forge a Kerberos Golden Ticket (TGT) with a 'SID History' for the Forest 'Enterprise Admins' group
