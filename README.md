@@ -7,11 +7,26 @@ The output files included here are the results of tools, scripts and Windows com
 
 ----------------
 #### STEP 1. BYPASSING NETWORK ACCESS CONTROL (NAC) - if any
+<i>If a Network Access Control solution is implemented, the purpose of this phase will be to bypass it to be able to access the internal network and start the internal penetration test.</i>
 ```
-➤ Bypass MAC address filtering solution by using/spoofing the MAC address of a whitelisted device 
-   (e.g. a printer, smart TV in meeting room)
-➤ Bypass wired network 802.1x protection (NAC) by using a device that has 2 network interfaces and tools like 'fenrir'.
-➤ Hack the captive authentication portal used to control network access
+1. Pre-connect scenario => NAC checks are made before granting any access to the internal network resources
+-----------------------------------------------------------------------------------------------------------
+➤ MAC address spoofing technique
+  - Bypass MAC address filtering solution by spoofing the MAC address of a whitelisted device (e.g. printer, smart TV in meeting room, VOIP phone)
+➤ Pre-authenticated device technique
+  - Bypass wired network 802.1x protection (NAC) by placing a rogue device (with 2 network adapters) between a pre-authenticated device and the network switch. 
+    Using scripts like 'fenrir-ocd' or 'nac_bypass-setup.sh', the rogue device will be able to log into the network and smuggle network packets.
+➤ Captive portal bypass technique
+  - Hack the captive authentication portal used to control network access
+➤ VOIP hopping and VLAN hopping techniques
+➤ ...
+```
+```
+2. Post-connect scenario => Network access is temporarily granted while NAC checks are ran against your laptop
+--------------------------------------------------------------------------------------------------------------
+➤ MAC address randomization technique
+  - Change your MAC address automatically (e.g. every minute) with a script to obtain a new IP address prior getting blocked
+    and keep accessing the network resources.
 ➤ ...
 ```
 
