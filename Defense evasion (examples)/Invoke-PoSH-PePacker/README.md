@@ -6,7 +6,7 @@ It generates an obfuscated and encrypted PowerShell script that contains the PE 
 #### FEATURES
   - AES encryption and GZip/Deflate compression (based on 'Xencrypt')
   - Reflective PE injection (based on an updated version of 'Invoke-ReflectivePEInjection')
-  - AMSI bypass
+  - AMSI bypass (pseudo random)
   - Blocking Event Tracing for Windows (ETW)
   - Disabling PowerShell history logging
   - Basic sandbox evasion techniques (optional)
