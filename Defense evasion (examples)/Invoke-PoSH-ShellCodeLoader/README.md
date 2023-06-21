@@ -1,4 +1,4 @@
-### Invoke-PoSH-ShellCodeLoader v2.0
+### Invoke-PoSH-ShellCodeLoader v2.1
 --------------------------------------
 'Invoke-PoSH-ShellCodeLoader' is a shellcode loader script generator that aims to bypass AV solutions such as Windows Defender.  
 It generates an obfuscated and encrypted shellcode loader PowerShell script that will inject the shellcode into the current process's virtual address space.  
