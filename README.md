@@ -145,28 +145,6 @@ The output files included here are the results of tools, scripts and Windows com
 ➤ Exploiting an unpatched vulnerability affecting a third party software running with high privileges
 ```
 ```
-2. Bypassing Antivirus and EDR software
----------------------------------------
-➤ Common AV bypass techniques
-   - Fileless techniques + AMSI and ETW bypass techniques
-   - Write your own hacking tools (e.g. obfuscated/encrypted shellcode loader into memory)
-   - Regularly obfuscate and recompile your favorite (open source) hacking tools and scripts
-   - Use PE and shellcode packers like ScareCrow, NimCryptv2, Inceptor, ...
-   - Run into memory encrypted/obfuscated C2 agents (e.g. Cobalt Strike, Metasploit, Sliver, Havoc)
-   - Abuse potential AV exclusions set for files, folders, processes, and process-opened files.
-   - Kill the anti-malware (AV) protected processes using "Bring Your Own Vulnerable Driver" (BYOVD) techniques
-   - Temporarily disable or uninstall the AV (once you are local admin or Local System)
-   - ...
-➤ Common EDR bypass techniques
-   - AMSI and ETW bypass techniques, NTDLL hooking techniques, direct syscalls implementation, suspended process method, ...
-   - Abuse potential EDR exclusions set for files, folders, processes, and process-opened files.
-   - Kill the anti-malware (EDR) protected processes using "Bring Your Own Vulnerable Driver" (BYOVD) techniques
-   - Temporarily disable or uninstall the EDR (once you are local admin or Local System)
-   - Temporarily add rules in the local Windows firewall (once you are local admin or NT System) that will prevent the EDR agent to send alerts to the EDR central console
-   - Use as much as possible the IT admin tools already installed on the target systems to 'blend in' among the legitimate system administrators
-   - ...
-```
-```
 2. Dumping Windows credentials from memory and registry hives (requires local admin priv)
 -----------------------------------------------------------------------------------------
 ➤ Dumping the registry hives (SAM, SYSTEM, SECURITY)
@@ -196,15 +174,37 @@ The output files included here are the results of tools, scripts and Windows com
       - SQLDumper (included with Microsoft SQL) 
       - WCE (Windows Credentials Editor)
    - ...
-
+```
+```
 3. Dumping other credentials
 ----------------------------
    - The LaZagne application can be used to retrieve passwords stored in browsers, DBA tools (e.g. dbvis, SQLdevelopper) and Sysadmin tools (e.g. WinSCP, PuttyCM, OpenSSH, VNC, OpenVPN)
    - The script SessionGopher.ps1 can be used to find and decrypt saved session information for remote access tools (PuTTY, WinSCP, FileZilla, SuperPuTTY, RDP)
-   - Dumping KeePass master password from memory using tools like 'Keethief' or 'KeePassHax'
+   - Dumping KeePass master password from memory using tools like 'Keethief', 'KeePassHax' or 'KeePwn'
    - Clear-text passwords hardcoded in scripts, configuration files (e.g. Web.config, tomcat-users.xml), backup files, log files, ...
 ```
-
+```
+4. Bypassing Antivirus and EDR software (defense evasion)
+---------------------------------------------------------
+➤ Common AV bypass techniques
+   - Fileless techniques + AMSI and ETW bypass techniques
+   - Write your own hacking tools (e.g. obfuscated/encrypted shellcode loader into memory)
+   - Regularly obfuscate and recompile your favorite (open source) hacking tools and scripts
+   - Use PE and shellcode packers like ScareCrow, NimCryptv2, Inceptor, ...
+   - Run into memory encrypted/obfuscated C2 agents (e.g. Cobalt Strike, Metasploit, Sliver, Havoc)
+   - Abuse potential AV exclusions set for files, folders, processes, and process-opened files.
+   - Kill the anti-malware (AV) protected processes using "Bring Your Own Vulnerable Driver" (BYOVD) techniques
+   - Temporarily disable or uninstall the AV (once you are local admin or Local System)
+   - ...
+➤ Common EDR bypass techniques
+   - AMSI and ETW bypass techniques, NTDLL hooking techniques, direct syscalls implementation, suspended process method, ...
+   - Abuse potential EDR exclusions set for files, folders, processes, and process-opened files.
+   - Kill the anti-malware (EDR) protected processes using "Bring Your Own Vulnerable Driver" (BYOVD) techniques
+   - Temporarily disable or uninstall the EDR (once you are local admin or Local System)
+   - Temporarily add rules in the local Windows firewall (once you are local admin or NT System) that will prevent the EDR agent to send alerts to the EDR central console
+   - Use as much as possible the IT admin tools already installed on the target systems to 'blend in' among the legitimate system administrators
+   - ...
+```
 -----------------
 #### STEP 5. NETWORK LATERAL MOVEMENT and 'DOMAIN ADMINs' CREDENTIALS HUNTING 🕸🧑🏼‍💻 
 <i>The purpose of the lateral movement phase is to identify sensitive Windows servers and laptops on which the credentials of high privileged accounts (e.g. Domain admins) are stored in memory and then try to get access to them (for example by re-using the credentials harvested during the previous phase). </i>
@@ -213,7 +213,8 @@ The output files included here are the results of tools, scripts and Windows com
 --------------------------------------
 ➤ Network lateral movement using RDP, PowerShell remoting (WinRM), WMIC, WMIexec, SMBexec, PsExec, SSH, ...
 ➤ Pass-The-Hash, Pass-The-Ticket, Over-Pass-The-Hash and Pass-The-Certificate techniques 
-
+```
+```
 2. Network pivoting techniques 
 ------------------------------
 ➤ Use a C2 post-exploitation agent (e.g. Meterpreter, Cobalt Strike, Sliver) + SOCKS proxy + proxychains
@@ -257,6 +258,7 @@ The output files included here are the results of tools, scripts and Windows com
    - abusing NTLM Relay to AD CS HTTP Endpoints – ESC8
    - abusing "no Security Extension" issue - ESC9
    - abusing weak Certificate Mappings - ESC10
+   - abusing NTLM relay to ICPR - ESC11
 ➤ Compromise an account member of the default security group 'DNSAdmins' and take over the Windows domain by executing a DLL as 'NT AUTHORITY\SYSTEM' on the Domain Controller (known privesc)
 ➤ Compromise an account member of the default security groups 'Backup Operators' or 'Server Operators' and take over the Windows domain by backuping the NTDS.dit file and HKLM\SYSTEM and then extracting the password hash of 'Domain admins' accounts (known privesc)
 ➤ Compromise an account member of the default security group 'Account Operators' that can be used to privesc and take over the Windows domain (known privesc)
