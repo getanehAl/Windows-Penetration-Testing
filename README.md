@@ -152,7 +152,7 @@ The output files included here are the results of tools, scripts and Windows com
    - Write your own hacking tools (e.g. obfuscated/encrypted shellcode loader into memory)
    - Regularly obfuscate and recompile your favorite (open source) hacking tools and scripts
    - Use PE and shellcode packers like ScareCrow, NimCryptv2, Inceptor, ...
-   - Run into memory encrypted/obfuscted C2 agents (e.g. Cobalt Strike, Metasploit, Sliver, Havoc)
+   - Run into memory encrypted/obfuscated C2 agents (e.g. Cobalt Strike, Metasploit, Sliver, Havoc)
    - Abuse potential AV exclusions set for files, folders, processes, and process-opened files.
    - Kill the anti-malware (AV) protected processes using "Bring Your Own Vulnerable Driver" (BYOVD) techniques
    - Temporarily disable or uninstall the AV (once you are local admin or Local System)
