@@ -148,14 +148,22 @@ The output files included here are the results of tools, scripts and Windows com
 2. Bypassing Antivirus and EDR software
 ---------------------------------------
 ➤ Common AV bypass techniques
-   - Fileless techniques + AMSI and ETW bypass techniques 
-   - Use as much as possible Windows native commands and the IT admin tools already installed on the target systems (to 'blend in' among the legitimate system administrators)
-   - Regularly obfuscate and recompile your favorite (open source) hacking tools and scripts
-   - Use PE and shellcode packers like NimCryptv2, Inceptor, Pezor, ...
+   - Fileless techniques + AMSI and ETW bypass techniques
    - Write your own hacking tools (e.g. obfuscated/encrypted shellcode loader into memory)
+   - Regularly obfuscate and recompile your favorite (open source) hacking tools and scripts
+   - Use PE and shellcode packers like ScareCrow, NimCryptv2, Inceptor, ...
    - Run into memory encrypted/obfuscted C2 agents (e.g. Cobalt Strike, Metasploit, Sliver, Havoc)
-   - Temporarily disable or uninstall the AV or EDR (once you are local admin or Local System)
-   - Temporarily add rules in the local Windows firewall (once you are local admin or NT System) that will prevent the AV software and/or EDR agents to send alerts to the AV and/or EDR central console
+   - Abuse potential AV exclusions set for files, folders, processes, and process-opened files.
+   - Kill the anti-malware (AV) protected processes using "Bring Your Own Vulnerable Driver" (BYOVD) techniques
+   - Temporarily disable or uninstall the AV (once you are local admin or Local System)
+   - ...
+➤ Common EDR bypass techniques
+   - AMSI and ETW bypass techniques, NTDLL hooking techniques, direct syscalls implementation, suspended process method, ...
+   - Abuse potential EDR exclusions set for files, folders, processes, and process-opened files.
+   - Kill the anti-malware (EDR) protected processes using "Bring Your Own Vulnerable Driver" (BYOVD) techniques
+   - Temporarily disable or uninstall the EDR (once you are local admin or Local System)
+   - Temporarily add rules in the local Windows firewall (once you are local admin or NT System) that will prevent the EDR agent to send alerts to the EDR central console
+   - Use as much as possible the IT admin tools already installed on the target systems to 'blend in' among the legitimate system administrators
    - ...
 ```
 ```
