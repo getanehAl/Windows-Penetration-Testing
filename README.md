@@ -187,19 +187,30 @@ The output files included here are the results of tools, scripts and Windows com
 4. Bypassing Antivirus and EDR software (defense evasion)
 ---------------------------------------------------------
 ➤ Common AV bypass techniques
-   - Fileless techniques + AMSI and ETW bypass techniques
-   - Write your own hacking tools (e.g. obfuscated/encrypted shellcode loader into memory)
+   - Use living-off-the-land and fileless techniques
+      - Run scripts, portable executable files and shellcodes directly into memory such as encrypted/obfuscated C2 agents (e.g. Cobalt Strike, Sliver, Metasploit, Havoc)
+      - Use as much as possible legitimate sysadmin tools and software that are already installed on the targeted computers
    - Regularly obfuscate and recompile your favorite (open source) hacking tools and scripts
-   - Use 'PE' packers and 'shellcode' packers that implement obfuscation, encryption and sandbox evasion techniques
-   - Run into memory encrypted/obfuscated C2 agents (e.g. Cobalt Strike, Sliver, Metasploit, Havoc)
+   - Use 'PE' packers and 'shellcode' loaders that implement defense evasion techniques such as:
+      - Obfuscation and encryption
+      - AMSI and ETW bypass
+      - Sandbox evasion techniques
+   - Write your own hacking tools (e.g. obfuscated/encrypted shellcode loader into memory)
    - Abuse potential AV exclusions set for files, folders, processes, and process-opened files
    - Kill the anti-malware (AV) protected processes using "Bring Your Own Vulnerable Driver" (BYOVD) techniques
    - Temporarily disable or uninstall the AV software (once you are local admin or Local System) if it is not protected by a password
-   - Use as much as possible legitimate software and IT admin tools not flagged as malware by AV solutions (e.g. pivoting with remote access tools like TeamViewer and AnyDesk)
    - ...
 
 ➤ Common EDR bypass techniques
-   - AMSI and ETW bypass techniques, NTDLL unhooking technique, use of direct and indirect syscalls, suspended process method, ...
+   - Use 'PE' packers and 'shellcode' loaders that implement defense evasion techniques such as:
+      - Obfuscation and encryption
+      - AMSI and ETW bypass
+      - Sandbox evasion techniques
+      - NTDLL unhooking technique
+      - use of direct syscalls
+      - use of indirect syscalls
+      - suspended process method
+      - ...
    - Abuse potential EDR exclusions set for files, folders, processes, and process-opened files
    - Kill the anti-malware (EDR) protected processes using "Bring Your Own Vulnerable Driver" (BYOVD) techniques
    - Temporarily disable or uninstall the EDR agent (once you are local admin or Local System) if it is not protected by a password
