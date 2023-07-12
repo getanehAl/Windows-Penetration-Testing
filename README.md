@@ -194,7 +194,7 @@ The output files included here are the results of tools, scripts and Windows com
    - Run into memory encrypted/obfuscated C2 agents (e.g. Cobalt Strike, Sliver, Metasploit, Havoc)
    - Abuse potential AV exclusions set for files, folders, processes, and process-opened files.
    - Kill the anti-malware (AV) protected processes using "Bring Your Own Vulnerable Driver" (BYOVD) techniques
-   - Temporarily disable or uninstall the AV (once you are local admin or Local System)
+   - Temporarily disable or uninstall the AV software (once you are local admin or Local System) if it is not protected by a password
    - Use as much as possible legitimate software and IT admin tools not flagged as malware by AV solutions (e.g. pivoting with remote access tools like TeamViewer and AnyDesk)
    - ...
 ➤ Common EDR bypass techniques
