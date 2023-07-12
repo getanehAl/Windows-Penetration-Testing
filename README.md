@@ -191,7 +191,7 @@ The output files included here are the results of tools, scripts and Windows com
       - Run scripts, portable executable files and shellcodes directly into memory such as encrypted/obfuscated C2 agents (e.g. Cobalt Strike, Sliver, Metasploit, Havoc)
       - Use as much as possible legitimate sysadmin tools and software that are already installed on the targeted computers
    - Regularly obfuscate and recompile your favorite (open source) hacking tools and scripts
-   - Use 'PE' packers and 'shellcode' loaders that implement defense evasion techniques such as:
+   - Use PE/Dll packers and shellcode loaders that implement defense evasion techniques such as:
       - Obfuscation and encryption
       - AMSI and ETW bypass
       - Sandbox evasion techniques
@@ -202,7 +202,7 @@ The output files included here are the results of tools, scripts and Windows com
    - ...
 
 ➤ Common EDR bypass techniques
-   - Use 'PE' packers and 'shellcode' loaders that implement defense evasion techniques such as:
+   - Use PE/Dll packers and shellcode loaders that implement defense evasion techniques such as:
       - Obfuscation and encryption
       - AMSI and ETW bypass
       - Sandbox evasion techniques
