@@ -192,14 +192,15 @@ The output files included here are the results of tools, scripts and Windows com
    - Regularly obfuscate and recompile your favorite (open source) hacking tools and scripts
    - Use 'PE' packers and 'shellcode' packers that implement obfuscation, encryption and sandbox evasion techniques
    - Run into memory encrypted/obfuscated C2 agents (e.g. Cobalt Strike, Sliver, Metasploit, Havoc)
-   - Abuse potential AV exclusions set for files, folders, processes, and process-opened files.
+   - Abuse potential AV exclusions set for files, folders, processes, and process-opened files
    - Kill the anti-malware (AV) protected processes using "Bring Your Own Vulnerable Driver" (BYOVD) techniques
    - Temporarily disable or uninstall the AV software (once you are local admin or Local System) if it is not protected by a password
    - Use as much as possible legitimate software and IT admin tools not flagged as malware by AV solutions (e.g. pivoting with remote access tools like TeamViewer and AnyDesk)
    - ...
+
 ➤ Common EDR bypass techniques
    - AMSI and ETW bypass techniques, NTDLL unhooking technique, use of direct and indirect syscalls, suspended process method, ...
-   - Abuse potential EDR exclusions set for files, folders, processes, and process-opened files.
+   - Abuse potential EDR exclusions set for files, folders, processes, and process-opened files
    - Kill the anti-malware (EDR) protected processes using "Bring Your Own Vulnerable Driver" (BYOVD) techniques
    - Temporarily disable or uninstall the EDR agent (once you are local admin or Local System) if it is not protected by a password
    - Temporarily add rules in the local Windows firewall (once you are local admin or NT System) that will prevent the EDR agent to send alerts to the EDR central console
