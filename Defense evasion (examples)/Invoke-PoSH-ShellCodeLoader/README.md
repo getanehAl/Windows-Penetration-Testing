@@ -12,7 +12,7 @@ It generates an obfuscated and encrypted shellcode loader PowerShell script that
   - Basic sandbox evasion techniques (optional)
     - stop/exit if the PowerShell session is being debugged (detection based on "Test-Path Variable:PSDebugContext")
     - wait for 60 seconds before execution
-  - Compatible with the shellcode of multiple C2 frameworks: Metasploit, Silver and Havoc
+  - Compatible with shellcodes of multiple C2 frameworks: Metasploit, Silver and Havoc
 
 #### USAGE
 1. Examples with a shellcode file stored locally
