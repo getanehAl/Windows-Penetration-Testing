@@ -6,13 +6,13 @@ It generates an obfuscated and encrypted shellcode loader PowerShell script that
 #### FEATURES
   - Shellcode injection into the memory of the current process (PowerShell)
   - AES encryption and GZip/Deflate compression (based on 'Xencrypt')
-  - AMSI bypass
+  - AMSI bypass (pseudo random)
   - Blocking Event Tracing for Windows (ETW)
   - Disabling PowerShell history logging
   - Basic sandbox evasion techniques (optional)
     - stop/exit if the PowerShell session is being debugged (detection based on "Test-Path Variable:PSDebugContext")
     - wait for 60 seconds before execution
-  - Compatible with shellcodes from multiple C2 frameworks (Metasploit, Silver and Havoc)
+  - Compatible with the shellcode of multiple C2 frameworks: Metasploit, Silver and Havoc
 
 #### USAGE
 1. Examples with a shellcode file stored locally
