@@ -76,8 +76,9 @@ The output files included here are the results of tools, scripts and Windows com
    Examples:
    - Web servers (e.g. Tomcat, WebLogic, JBoss) => Webshell upload
    - Jenkins, JIRA => OS command execution
-   - CMS (e.g. WordPress) => Webshell upload
+   - CMS (e.g. WordPress, DNN, Kentico, Drupal) => Webshell upload
    - Databases (e.g. MSSQL, Oracle, PostgreSQL, Sybase) => OS command execution
+   - PhpMyAdmin => Webshell upload
    - SAP => OS command execution
 ➤ Windows password spray attacks (goal: find accounts protected by an easy guessable password or even a blank password / be careful not to lock accounts)
 ➤ Anonymous access to data storage spaces (e.g. FTP/TFTP/NFS) + Windows clear-text credentials hardcoded in scripts, logs and configuration files 
