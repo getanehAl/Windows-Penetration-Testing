@@ -87,7 +87,7 @@ The output files included here are the results of tools, scripts and Windows com
    - Windows: MS17-010 (EternalBlue), CVE-2020-1472 (Zerologon, risky to run in a production environment), old MS08-067, ...
    - Web servers: WebLogic RCE (CVE-2020-14882, CVE-2022-21371, CVE-2019-2725), Apache Struts RCE (CVE-2017-9805), JBoss RCE (CVE-2017-12149), Java RMI RCE, ...
    - CMS: Telerik (CVE 2019-18935, CVE-2017-9248), Kentico (CVE-2019-10068), Drupal (DrupalGeddon2/CVE-2018-7600), DotNetNuke (CVE-2017-9822), ...
-   - Citrix NetScaler: CVE-2020-8193, CVE-2019-19781
+   - Citrix (ADC & Gateway): CVE-2023-3519, CVE-2020-8193, CVE-2019-19781
    - Atlassian software: Jira (CVE-2019-11581), Confluence (CVE-2022-26134)
    - Applications using the Java library Log4j: CVE-2021-44228 (Log4shell)
    - Outlook: ProxyLogon (CVE-2021-26855), ProxyNotShell (CVE-2022-41040, CVE-2022-41082)
@@ -132,6 +132,7 @@ The output files included here are the results of tools, scripts and Windows com
    - weak service permissions (file & binpath)
    - service unquoted path
    - autorun and weak file permissions
+   - privileged scheduled tasks and weak file permissions
    - weak registry permissions
    - dll hijacking
    - weak passwords and password re-use
@@ -140,7 +141,7 @@ The output files included here are the results of tools, scripts and Windows com
    - bring your own vulnerable driver
   
 ➤ Exploiting an unpatched local Windows vulnerability 
-  (e.g. KrbrelayUp, PrintNightmare, SeriousSam/HiveNightmare, Windows Installer LPE, Juicy/Rotten/Hot Potato exploits, MS16-032, ...)
+  (e.g. KrbrelayUp, LocalPotato, PrintNightmare, SeriousSam/HiveNightmare, Windows Installer LPE, Juicy/Rotten/Hot Potato exploits,...)
 
 ➤ Exploiting an unpatched vulnerability affecting a third party software running with high privileges
 ```
@@ -159,7 +160,7 @@ The output files included here are the results of tools, scripts and Windows com
 ➤ Memory dumping of the LSASS process 
    Examples:
    - Mimikatz / invoke-mimikatz.ps1
-   - NanoDump
+   - NanoDump / invoke-nanodump.ps1
    - SharpKatz
    - SafetyDump
    - Lsassy
@@ -235,7 +236,7 @@ The output files included here are the results of tools, scripts and Windows com
 ➤ SSH tunnelling using Putty.exe or Plink.exe (e.g. local/remote port forwarding)
 ➤ Remote access tools such as TeamViewer and AnyDesk portable software, Chrome Remote Desktop, VNC, ...
 ➤ Tunneling/pivoting tools like Rpivot, Ligolo, Socat, ...
-➤ Pivoting with TCP tunnelling over HTTP via Webshells (e.g. Tunna webshell, fulcrom webshell, reGeorg and neo-reGeorg client/webshell)
+➤ Pivoting with TCP tunnelling over HTTP via Webshells (e.g. Pivotnacci, Tunna, Fulcrom, reGeorg and neo-reGeorg webshells/clients)
 ```
 ```
 3. 'Domain Admins' credentials hunting
