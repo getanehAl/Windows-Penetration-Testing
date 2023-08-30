@@ -208,9 +208,10 @@ The output files included here are the results of tools, scripts and Windows com
       - Obfuscation and encryption
       - AMSI and ETW bypass
       - Sandbox evasion techniques
-      - NTDLL unhooking technique
+      - NTDLL unhooking techniques
       - use of direct syscalls
       - use of indirect syscalls
+      - module stomping technique
       - suspended process method
       - ...
    - Abuse potential EDR exclusions set for files, folders, processes, and process-opened files
