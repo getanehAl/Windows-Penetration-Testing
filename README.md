@@ -162,10 +162,11 @@ The output files included here are the results of tools, scripts and Windows com
    Examples:
    - Mimikatz / invoke-mimikatz.ps1
    - NanoDump / invoke-nanodump.ps1
-   - SharpKatz
    - SafetyDump
-   - Lsassy
+   - PPLBlade
    - EDRSandblast
+   - SharpKatz
+   - Lsassy
    - OLD/Legacy techniques
       - ProcDump (Sysinternals tool)
       - Task manager + "Create dump file" of lsass.exe
