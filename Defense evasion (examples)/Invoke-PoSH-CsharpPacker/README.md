@@ -5,7 +5,7 @@ It generates an obfuscated and encrypted PowerShell script that contains the (C#
 
 #### FEATURES
   - AES encryption and GZip/Deflate compression (based on 'Xencrypt')
-  - AMSI bypass (bypass AMSI for Assembly.Load())
+  - AMSI bypass <i/>(bypass AMSI for Assembly.Load())</i>
   - Blocking Event Tracing for Windows (ETW)
   - Disabling PowerShell history logging
   - Basic sandbox evasion techniques (optional)
