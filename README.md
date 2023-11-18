@@ -112,10 +112,10 @@ The output files included here are the results of tools, scripts and Windows com
    Examples:
    - Windows: 
      - Certifried vulnerability (CVE-2022-26923)
-     - noPAC / SamAccountName impersonation vulnerability (CVE-2021-42278/CVE-2021-42287), 
-     - PrintNightmare vulnerability (CVE-2021-1675 & CVE-2021-34527), 
+     - noPAC / SamAccountName impersonation vulnerability (CVE-2021-42278/CVE-2021-42287)
+     - PrintNightmare vulnerability (CVE-2021-1675 & CVE-2021-34527)
      - Drop-the-MIC vulnerabilities (CVE-2019-1040 & CVE-2019-1166)
-     - KrbRelayUp local privesc technique, 
+     - KrbRelayUp local privesc technique
      - ...
    - Outlook: CVE-2020-0688
 ➤ ...
@@ -164,9 +164,9 @@ The output files included here are the results of tools, scripts and Windows com
    - NanoDump / invoke-nanodump.ps1
    - SafetyDump
    - PPLBlade
-   - EDRSandblast
    - SharpKatz
    - Lsassy
+   - EDRSandblast
    - OLD/Legacy techniques
       - ProcDump (Sysinternals tool)
       - Task manager + "Create dump file" of lsass.exe
@@ -197,6 +197,7 @@ The output files included here are the results of tools, scripts and Windows com
    - Use PE/Dll packers and shellcode loaders that implement defense evasion techniques such as:
       - Obfuscation and encryption
       - AMSI and ETW bypass
+      - Anti-Debugging techniques
       - Sandbox evasion techniques
    - Write your own hacking tools (e.g. obfuscated/encrypted shellcode loader into memory)
    - Abuse potential AV exclusions set for files, folders, processes, and process-opened files
@@ -208,6 +209,7 @@ The output files included here are the results of tools, scripts and Windows com
    - Use PE/Dll packers and shellcode loaders that implement defense evasion techniques such as:
       - Obfuscation and encryption
       - AMSI and ETW bypass
+      - Anti-Debugging techniques
       - Sandbox evasion techniques
       - NTDLL unhooking techniques
       - use of direct syscalls
@@ -331,7 +333,7 @@ The output files included here are the results of tools, scripts and Windows com
 | Recon, Audit | ADRecon | </br> https://github.com/adrecon/ADRecon | Active Directory gathering information tool |
 | Recon, Audit | ADCollector | </br> https://github.com/dev-2null/ADCollector |  Tool to quickly extract valuable information from the AD environment for both attacking and defending | 
 | Recon, Audit | NMAP | </br> https://nmap.org | Network port scanner and (NSE) scripts | 
-| Recon, Audit| PingCastle | </br> https://www.pingcastle.com | Active Directory security audit tool  |  
+| Recon, Audit | PingCastle | </br> https://www.pingcastle.com | Active Directory security audit tool  |  
 | Recon, Audit | BloodHound | </br> https://github.com/BloodHoundAD/BloodHound | Tool to easily identify complex Windows domain attack paths |
 | Recon, Audit | ACLight | </br> https://github.com/cyberark/ACLight | A tool for advanced discovery of privileged accounts including Shadow Admins|
 | Recon, Audit | ADACLScanner | </br> https://github.com/canix1/ADACLScanner |A tool with GUI used to create reports of access control lists (DACLs) and system access control lists (SACLs) in Active Directory|
@@ -339,6 +341,8 @@ The output files included here are the results of tools, scripts and Windows com
 | Recon, Audit | LAPSToolkit | </br> https://github.com/leoloobeek/LAPSToolkit | LAPS auditing for pentesters |
 | Gaining Access | Rubeus | </br> https://github.com/GhostPack/Rubeus | Toolset for raw Kerberos interaction and abuses |
 | Audit, Privesc | Certify | </br> https://github.com/GhostPack/Certify | C# tool to enumerate and abuse misconfigurations in Active Directory Certificate Services (AD CS) |
+| Audit, Privesc | Certipy | </br> https://github.com/ly4k/Certipy | Python tool to enumerate and abuse misconfigurations in Active Directory Certificate Services (AD CS) |
+| Audit, Privesc | PassTheCert | </br> https://github.com/AlmondOffSec/PassTheCert | Proof-of-Concept tool to authenticate to an LDAP/S server with a certificate through Schannel |
 | Gaining Access, MITM | Responder | </br> https://github.com/lgandx/Responder | LLMNR/NBTNS/mDNS poisoner and NTLMv1/2 relay |
 | Gaining Access, MITM | Inveigh | </br> https://github.com/Kevin-Robertson/Inveigh | .NET IPv4/IPv6 machine-in-the-middle tool for penetration testers |
 | Gaining Access, MITM | Smbrelayx & Ntlmrelayx |  </br> https://github.com/fortra/impacket/tree/master/examples | SMB and NTLM relay tools which are part of the Python offensive security framework 'Impackets' |
@@ -374,8 +378,10 @@ The output files included here are the results of tools, scripts and Windows com
 | Network Lateral Movement, Pivoting | SharpMapExec | </br> https://github.com/cube0x0/SharpMapExec | Swiss army knife for pentesting Windows networks |
 | Network Lateral Movement, Pivoting | Powercat | </br> https://github.com/besimorhino/powercat | PowerShell TCP/IP swiss army knife like netcat | 
 | Network Lateral Movement, Pivoting | Invoke-TheHash  | </br> https://github.com/Kevin-Robertson/Invoke-TheHash | It contains PowerShell functions for performing pass-the-hash WMI and SMB tasks |
+| Network Lateral Movement, Pivoting | Chisel  | </br> https://github.com/jpillora/chisel https://github.com/shantanu561993/SharpChisel | Chisel is a fast TCP/UDP tunnel, transported over HTTP, secured via SSH |
 | Network Lateral Movement, Pivoting | Rpivot  | </br> https://github.com/klsecservices/rpivot | Socks4 reverse proxy for penetration testing |
 | Network Lateral Movement, Pivoting | Ligolo  | </br> https://github.com/sysdream/ligolo | Reverse Tunneling made easy for pentesters, by pentesters |
+| Network Lateral Movement, Pivoting | Ligolo-ng  | </br> https://github.com/nicocha30/ligolo-ng | A simple, lightweight and fast tool that allows to establish tunnels from a reverse TCP/TLS connection using a tun interface |
 | NAC bypass | Fenrir  | </br> https://github.com/Orange-Cyberdefense/fenrir-ocd | Tool/script designed to bypass wired network 802.1x protection (NAC) |
 
 ----------------
@@ -389,5 +395,6 @@ The output files included here are the results of tools, scripts and Windows com
 ➤ Windows / Linux Local Privilege Escalation Workshop (https://github.com/sagishahar/lpeworkshop)
 ➤ CIS benchmarks (https://www.cisecurity.org/benchmark/microsoft_windows_server/)
 ➤ Evaluation matrix of Command and Control (C2) frameworks (https://www.thec2matrix.com/matrix)
+➤ https://unprotect.it/
 ➤ ...
 ```
