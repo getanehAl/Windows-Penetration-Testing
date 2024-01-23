@@ -1,6 +1,6 @@
 ### C# ShellCode Loader
 --------------------------------------
-A quick and dirty C# shellcode loader (in a single .CS file) that implements the following defense evasion techniques to bypass AV solutions such as Windows Defender:
+A quick and dirty C# shellcode loader (in a single .CS file) that implements the following defense evasion techniques to bypass AV solutions:
   - NTDLL unhooking (it loads a fresh new copy of the ntdll.dll via file mapping and imports functions from this ntdll.dll)
   - Shellcode encryption (XOR)
   - AMSI bypass
