@@ -2,8 +2,8 @@
 --------------------------------------
 I shamellesly took and assembled codes from Github to have a quick and dirty C# shellcode laoder (in 1 .CS file) that implements the following defense evasion techniques:
   - NTDLL unhooking (it loads a fresh new copy of the ntdll.dll via file mapping and imports functions from this ntdll.dll)
-  - AMSI bypass
   - Shellcode encryption (XOR)
+  - AMSI bypass
   - Basic sandbox detection/evasion techniques
     - Exit if the the program is running on a computer that is not joined to a domain
     - Exit if after sleeping for 15s, time did not really passed
