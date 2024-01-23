@@ -4,7 +4,7 @@ A quick and dirty C# shellcode loader that implements several antivirus bypass a
 Note: I simply reused and modified codes from various Github projects.
 
 #### FEATURES
-  - NTDLL unhooking (it loads a fresh new copy of the ntdll.dll via file mapping and imports functions from this ntdll.dll)
+  - NTDLL unhooking (it loads a fresh new copy of ntdll.dll via file mapping and imports functions from this ntdll.dll)
   - Shellcode encryption (XOR)
   - AMSI bypass
   - Basic sandbox detection/evasion techniques
