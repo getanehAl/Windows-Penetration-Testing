@@ -1,6 +1,6 @@
 ### C# ShellCode Loader
 --------------------------------------
-I shamellesly took and assembled codes from Github to have a quick and dirty C# shellcode loader (in a single .CS file) that implements the following defense evasion techniques:
+I shamellesly took and assembled codes from Github to have a quick and dirty C# shellcode loader (in a single .CS file) that implements the following defense evasion techniques to bypass AV:
   - NTDLL unhooking (it loads a fresh new copy of the ntdll.dll via file mapping and imports functions from this ntdll.dll)
   - Shellcode encryption (XOR)
   - AMSI bypass
