@@ -12,6 +12,7 @@ A quick and dirty C# shellcode loader (in a single .CS file) that implements the
  
 <i/>Tests / Additional information</i>
 - Succesfully tested on a Windows 10 x64 laptop (target) with Windows Defender (without 'Automatic sample submission') and a shellcode generated with the Havoc C2 (in C# format & encrypted with XOR cipher algorithm)  
+- I shamellesly took and assembled codes from Github
 - Code compiled with "Developer PowerShell for VS 2022"
   - Microsoft (R) Visual C# Compiler version 4.5.0-6.23123.11
   - Command: csc /t:exe /out:C:\path\Loader.exe C:\path\Program.cs
