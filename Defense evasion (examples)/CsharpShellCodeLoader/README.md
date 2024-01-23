@@ -14,7 +14,7 @@ Note: I simply reused and modified codes from various Github projects.
     - Exit if making an uncommon API call fails (meaning the AV sandbox can't emulating it)
  
 #### TESTS
-- Succesfully tested on a Windows 10 x64 laptop (target) with Windows Defender (without 'Automatic sample submission') and a shellcode generated with the Havoc C2 (in C# format & encrypted with XOR cipher algorithm)  
+- Succesfully tested on a Windows 10 x64 laptop (target) with Windows Defender enabled (without 'Automatic sample submission') and a shellcode generated with the Havoc C2 (in C# format & encrypted with XOR cipher algorithm)  
 - Code compiled with "Developer PowerShell for VS 2022"
   - Microsoft (R) Visual C# Compiler version 4.5.0-6.23123.11
   - Command: csc /t:exe /out:C:\path\Loader.exe C:\path\Program.cs
