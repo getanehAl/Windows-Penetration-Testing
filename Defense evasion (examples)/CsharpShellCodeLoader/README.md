@@ -12,7 +12,8 @@ Note: I simply reused and modified codes from various Github projects.
     - Exit if after sleeping for 15s, time did not really passed
     - Exit if a debugger is attached
     - Exit if making an uncommon API call fails (meaning the AV sandbox can't emulating it)
- 
+  - Classic shellcode injection technique using the function 'NtCreateThreadEx' //To do next: upgrade with a better injection technique.
+
 #### TESTS
 - Succesfully tested on a Windows 10 x64 laptop (target) with Windows Defender enabled (without 'Automatic sample submission') and a shellcode generated with the Havoc C2 (in C# format & encrypted with XOR cipher algorithm)  
 - Code compiled with "Developer PowerShell for VS 2022"
