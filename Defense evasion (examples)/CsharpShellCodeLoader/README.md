@@ -14,4 +14,4 @@ I shamellesly took and assembled codes from Github to have a quick and dirty C# 
 - Code compiled with "Developer PowerShell for VS 2022"
   - Microsoft (R) Visual C# Compiler version 4.5.0-6.23123.11
   - Command: csc /t:exe /out:C:\temp\CsharpShellCodeLoader\Loader.exe C:\temp\CsharpShellCodeLoader\Program.cs
-- Succesfully tested on a Windows 10 x64 laptop (target) with Windows Defender (without 'Automatic sample submission') and a shellcode generated with the Havoc C2 (reformatted in C# format)  
+- Succesfully tested on a Windows 10 x64 laptop (target) with Windows Defender (without 'Automatic sample submission') and a shellcode generated with the Havoc C2 (in C# format & encrypted with XOR cipher algorithm)  
