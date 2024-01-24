@@ -13,7 +13,7 @@ A quick and dirty C# shellcode loader that implements several antivirus bypass a
     - Exit if the program is running on a computer that is not joined to a domain
     - Exit if after sleeping for 15s, time did not really passed
     - Exit if a debugger is attached
-    - Exit if making an uncommon API call fails (meaning the AV sandbox can't emulating it)
+    - Exit if making an uncommon API call fails (i.e. we are running in an AV sandbox that can't emulating it)
 
 #### TESTS
 - Succesfully tested on a Windows 10 x64 laptop (target) with Windows Defender enabled (without 'Automatic sample submission') and a shellcode generated with the Havoc C2 (in C# format & encrypted with XOR cipher algorithm)  
