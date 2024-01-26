@@ -25,5 +25,5 @@ A quick and dirty C# shellcode loader that implements several antivirus bypass a
   - Command: csc /t:exe /out:C:\path\Loader.exe C:\path\CsharpShellCodeLoader.cs
 - The file 'CsharpShellCodeLoader.cs' is voluntary not obfuscated. Class/function/variable names should be changed and all comments must be deleted or modified before compiling this file.
 - Your shellcode must be in C# format and then encrypted using XOR cipher. Obviously, the XOR key must be replaced in the file with the one you used.
-- Once compiled, if you want to compress and obfuscate the shellcodeloader executable you can use packers like "Confuser-Ex" but it is not mandatory to bypass most AV solutions. 
+- Once compiled, if you want to compress and obfuscate the shellcodeloader executable you can use packers like "ConfuserEx" but it is not mandatory to bypass most AV solutions. 
   
