@@ -429,7 +429,7 @@ Miscellaneous - Windows Penetration Testing & Red Teaming
   + https://www.ired.team/offensive-security-experiments/active-directory-kerberos-abuse
   + https://github.com/mantvydasb/RedTeaming-Tactics-and-Techniques
 
-➤ MITRE ATT&CK®  - A globally-accessible knowledge base of adversary tactics and techniques based on real-world observations
+➤ MITRE ATT&CK® - A globally-accessible knowledge base of adversary tactics and techniques based on real-world observations
   + https://attack.mitre.org/tactics/enterprise/;
   + https://attack.mitre.org/mitigations/M1015/ (Active Directory Configuration)
 
