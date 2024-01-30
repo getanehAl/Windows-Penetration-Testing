@@ -9,7 +9,7 @@ The output files included here are the results of tools, scripts and Windows com
 - [Step 2. Reconnaissance](#STEP-2-RECONNAISSANCE-)
 - [Step 3. Gaining access](#STEP-3-GAINING-ACCESS-)
 - [Step 4. Post-exploitation and local privilege escalation](#STEP-4-POST-EXPLOITATION-and-LOCAL-PRIVILEGE-ESCALATION-)
-- [Step 5. Network lateral movement and 'Domain Admins' credentials hunting](#STEP-5-NETWORK-LATERAL-MOVEMENT-and-DOMAIN-ADMINs-CREDENTIALS-HUNTING-)
+- [Step 5. Network lateral movement and privileged accounts hunting](#STEP-5-NETWORK-LATERAL-MOVEMENT-and-PRIVILEGED-ACCOUNTS-HUNTING-)
 - [Step 6. Windows domain compromise (Privilege escalation to become 'Domain Admin' + Persistence)](#STEP-6-WINDOWS-DOMAIN-COMPROMISE-Privilege-escalation-to-become-Domain-Admin--Persistence-)
 - [Step 7. Forest root domain compromise (Privilege escalation to become 'Enterprise Admin')](#STEP-7-FOREST-ROOT-DOMAIN-COMPROMISE-Privilege-escalation-to-become-Enterprise-Admin-)
 - [List of useful tools and scripts](#LIST-OF-USEFUL-TOOLS--SCRIPTS-)
@@ -236,8 +236,8 @@ The output files included here are the results of tools, scripts and Windows com
    - ...
 ```
 -----------------
-#### STEP 5. NETWORK LATERAL MOVEMENT and 'DOMAIN ADMINs' CREDENTIALS HUNTING 🕸🧑🏼‍💻 
-<i>The purpose of the lateral movement phase is to identify sensitive Windows servers and laptops on which the credentials of high privileged accounts (e.g. Domain admins) are stored in memory and then try to get access to them (for example by re-using the credentials harvested during the previous phase). </i>
+#### STEP 5. NETWORK LATERAL MOVEMENT and PRIVILEGED ACCOUNTS HUNTING 🕸🧑🏼‍💻 
+<i>The purpose of the lateral movement phase is to identify Windows servers and laptops on which high privileged user and service accounts are logged (e.g. administrator of all servers, administrator of all workstations/laptops, Domain Admin account). Then try to log into these Windows servers and laptops (for example by re-using the credentials harvested during the previous phase) and take over the high privileged accounts using various hacking techniques (e.g., dumping credentials from memory, token impersonation). </i>
 ```
 1. Network lateral movement techniques 
 --------------------------------------
@@ -254,14 +254,22 @@ The output files included here are the results of tools, scripts and Windows com
 ➤ Pivoting with TCP tunnelling over HTTP via Webshells (e.g. Pivotnacci, Tunna, Fulcrom, reGeorg and neo-reGeorg webshells/clients)
 ```
 ```
-3. 'Domain Admins' credentials hunting
---------------------------------------
+3. Privileged accounts hunting
+-------------------------------
 ➤ Windows native commands (e.g. 'qwinsta /server:hostname' OR 'query user /server:hostname')
 ➤ PowerView and various PowerShell scripts (e.g. Invoke-UserHunter, Get-NetLoggedon, ADrecon)
 ➤ Windows Sysinternals command-line tool 'PsLoggedOn' (i.e. psloggedon.exe \\computername username)
 ➤ BloodHound
 ```
-
+```
+4. Take over privileged accounts (requires local admin priv)
+------------------------------------------------------------
+➤ Dumping Windows credentials from memory and registry hives
+➤ Windows Token impersonation technique
+➤ RDP session hijacking technique (e.g., using the native Windows command "c:\windows\system32\tscon.exe")
+➤ Backdooring the Windows start-up folder (e.g., "\\REMOTE-COMPUTER-NAME\C$\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup\backdoor.exe")
+➤ ...
+```
 -----------------
 #### STEP 6. WINDOWS DOMAIN COMPROMISE (Privilege escalation to become "Domain Admin" + Persistence) 🔥🧑🏼‍💻 
 <i>The purpose of this phase is to take full control over the target Windows domain.</i>
