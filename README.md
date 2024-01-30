@@ -12,8 +12,10 @@ Technical notes, AD pentest methodology, list of tools, scripts and Windows comm
 - [Step 5. Network lateral movement and privileged accounts hunting](#STEP-5-NETWORK-LATERAL-MOVEMENT-and-PRIVILEGED-ACCOUNTS-HUNTING-)
 - [Step 6. Windows domain compromise (Privilege escalation to become 'Domain Admin' + Persistence)](#STEP-6-WINDOWS-DOMAIN-COMPROMISE-Privilege-escalation-to-become-Domain-Admin--Persistence-)
 - [Step 7. Forest root domain compromise (Privilege escalation to become 'Enterprise Admin')](#STEP-7-FOREST-ROOT-DOMAIN-COMPROMISE-Privilege-escalation-to-become-Enterprise-Admin-)
-- [List of useful tools and scripts](#LIST-OF-USEFUL-TOOLS--SCRIPTS)
-- [Useful resources](#USEFUL-RESOURCES)
+- Others
+  - [Defense evasion techniques - Bypassing AV and EDR solutions](#DEFENSE-EVASION-TECHNIQUES---BYPASSING-ANTIVIRUS-AND-EDR-SOLUTIONS)
+  - [List of useful tools and scripts](#LIST-OF-USEFUL-TOOLS--SCRIPTS)
+  - [Useful resources](#USEFUL-RESOURCES)
 
 ----------------
 #### STEP 1. BYPASSING NETWORK ACCESS CONTROL (NAC) - if any 🔐🕸🧑🏼‍💻
@@ -196,45 +198,7 @@ Technical notes, AD pentest methodology, list of tools, scripts and Windows comm
    - Dumping KeePass master password from memory using tools like 'Keethief', 'KeePassHax' or 'KeePwn'
    - Clear-text passwords hardcoded in scripts, configuration files (e.g. Web.config, tomcat-users.xml), backup files, log files, ...
 ```
-```
-4. Bypassing Antivirus and EDR software (defense evasion)
----------------------------------------------------------
-➤ Common AV bypass techniques
-   - Use living-off-the-land and fileless techniques
-      - Run scripts, portable executable files and shellcodes directly into memory such as encrypted/obfuscated C2 agents (e.g. Cobalt Strike, Sliver, Metasploit, Havoc)
-      - Use as much as possible legitimate sysadmin tools and software that are already installed on the targeted computers
-   - Regularly obfuscate and recompile your favorite (open source) hacking tools and scripts
-   - Use PE/Dll packers and shellcode loaders that implement defense evasion techniques such as:
-      - Obfuscation and encryption
-      - AMSI and ETW bypass
-      - Anti-Debugging techniques
-      - Sandbox evasion techniques
-   - Write your own hacking tools (e.g. obfuscated/encrypted shellcode loader into memory)
-   - Abuse potential AV exclusions set for files, folders, processes, and process-opened files
-   - Kill the anti-malware (AV) protected processes using "Bring Your Own Vulnerable Driver" (BYOVD) techniques
-   - Temporarily disable or uninstall the AV software (once you are local admin or Local System) if it is not protected by a password
-   - ...
 
-➤ Common EDR bypass techniques
-   - Use PE/Dll packers and shellcode loaders that implement defense evasion techniques such as:
-      - Obfuscation and encryption
-      - AMSI and ETW bypass
-      - Anti-Debugging techniques
-      - Sandbox evasion techniques
-      - NTDLL unhooking techniques
-      - use of direct syscalls
-      - use of indirect syscalls
-      - module stomping technique
-      - suspended process method
-      - ...
-   - Abuse potential EDR exclusions set for files, folders, processes, and process-opened files
-   - Kill the anti-malware (EDR) protected processes using "Bring Your Own Vulnerable Driver" (BYOVD) techniques
-   - Temporarily disable or uninstall the EDR agent (once you are local admin or Local System) if it is not protected by a password
-   - Temporarily add rules in the local Windows firewall (once you are local admin or NT System) that will prevent the EDR agent to send alerts to the EDR central console
-   - Use as much as possible the IT admin tools already installed on the target systems to 'blend in' among the legitimate system administrators
-   - Find server(s) in the network that have not been yet onboarded in the EDR solution
-   - ...
-```
 -----------------
 #### STEP 5. NETWORK LATERAL MOVEMENT and PRIVILEGED ACCOUNTS HUNTING 🕸🧑🏼‍💻 
 <i>The purpose of the lateral movement phase is to identify Windows servers and laptops on which high privileged user and service accounts are logged (e.g. administrator of all servers, administrator of all workstations/laptops, Domain Admin account). Then try to log into these Windows servers and laptops (for example by re-using the credentials harvested during the previous phase) and take over the high privileged accounts using various hacking techniques (e.g., dumping credentials from memory, token impersonation). </i>
@@ -255,7 +219,7 @@ Technical notes, AD pentest methodology, list of tools, scripts and Windows comm
 ```
 ```
 3. Privileged accounts hunting
--------------------------------
+------------------------------
 ➤ Windows native commands (e.g. 'qwinsta /server:hostname' OR 'query user /server:hostname')
 ➤ PowerView and various PowerShell scripts (e.g. Invoke-UserHunter, Get-NetLoggedon, ADrecon)
 ➤ Windows Sysinternals command-line tool 'PsLoggedOn' (i.e. psloggedon.exe \\computername username)
@@ -339,6 +303,48 @@ Technical notes, AD pentest methodology, list of tools, scripts and Windows comm
 ➤ Forge an inter-realm trust ticket (cross-domain trust kerberos ticket) and then create TGS for the services LDAP/CIFS/HOST/... in the parent domain 
 ➤ Take over other Windows domains due to password re-use across domains for high privileged accounts
 ➤ Take over other Windows domains thanks to AD Forest Trusts and/or misconfiguration (e.g. the group 'Domain Admins' of the domain A is member of the group 'Domain Admins' of the domain B) 
+➤ ...
+```
+-----------------
+#### DEFENSE EVASION TECHNIQUES - BYPASSING ANTIVIRUS AND EDR SOLUTIONS
+```
+1. Common antivirus bypass techniques
+-------------------------------------
+➤ Use living-off-the-land and fileless techniques
+  - Run scripts, portable executable files and shellcodes directly into memory such as encrypted/obfuscated C2 agents (e.g. Cobalt Strike, Sliver, Metasploit, Havoc)
+  - Use as much as possible legitimate sysadmin tools and software that are already installed on the targeted computers
+➤ Regularly obfuscate and recompile your favorite (open source) hacking tools and scripts
+➤ Use PE/Dll packers and shellcode loaders that implement defense evasion techniques such as:
+  - Obfuscation and encryption
+  - AMSI and ETW bypass
+  - Anti-Debugging techniques
+  - Sandbox evasion techniques
+➤ Write your own hacking tools (e.g. obfuscated/encrypted shellcode loader into memory)
+➤ Abuse potential AV exclusions set for files, folders, processes, and process-opened files
+➤ Kill the anti-malware (AV) protected processes using "Bring Your Own Vulnerable Driver" (BYOVD) techniques
+➤ Temporarily disable or uninstall the AV software (once you are local admin or Local System) if it is not protected by a password
+➤ ...
+```
+```
+2. Common Endpoint Detection & Response (EDR) bypass techniques
+---------------------------------------------------------------
+➤ Use PE/Dll packers and shellcode loaders that implement defense evasion techniques such as:
+  - Obfuscation and encryption
+  - AMSI and ETW bypass
+  - Anti-Debugging techniques
+  - Sandbox evasion techniques
+  - NTDLL unhooking techniques
+  - use of direct syscalls
+  - use of indirect syscalls
+  - module stomping technique
+  - suspended process method
+  - ...
+➤ Abuse potential EDR exclusions set for files, folders, processes, and process-opened files
+➤ Kill the anti-malware (EDR) protected processes using "Bring Your Own Vulnerable Driver" (BYOVD) techniques
+➤ Temporarily disable or uninstall the EDR agent (once you are local admin or Local System) if it is not protected by a password
+➤ Temporarily add rules in the local Windows firewall (once you are local admin or NT System) that will prevent the EDR agent to send alerts to the EDR central console
+➤ Use as much as possible the IT admin tools already installed on the target systems to 'blend in' among the legitimate system administrators
+➤ Find server(s) in the network that have not been yet onboarded in the EDR solution
 ➤ ...
 ```
 -----------------
