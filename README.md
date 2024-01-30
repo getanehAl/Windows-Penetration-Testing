@@ -2,7 +2,7 @@
 Technical notes, AD pentest methodology, list of tools, scripts and Windows commands that I find useful during internal penetration tests and assumed breach exercises (red teaming).<br>
 >The output files included here are the results of tools, scripts and Windows commands that I ran against a vulnerable Windows AD lab that I created to test attacks/exploits and deliver hands-on penetration testing training sessions to security auditors at my job.
 
-## Contents 
+### Table of contents 
 > ### <i> Classic internal penetration test methodology - Windows Active Directory attack paths </i>
 
 - [Step 1. Bypassing Network Access Control (NAC) - if any](#STEP-1-BYPASSING-NETWORK-ACCESS-CONTROL-NAC---if-any-)
