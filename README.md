@@ -5,14 +5,14 @@ The output files included here are the results of tools, scripts and Windows com
 ## Contents 
 > ### <i> Classic internal penetration test methodology - Windows Active Directory attack paths </i>
 
-- [Step 1. Bypassing Network Access Control (NAC) - if any](#STEP-1.-BYPASSING-NETWORK-ACCESS-CONTROL-(NAC)---if-any-)
-- [Step 2. Reconnaissance](#STEP-2.-RECONNAISSANCE-)
-- [Step 3. Gaining access](#STEP-3.-GAINING-ACCESS-)
-- [Step 4. Post-exploitation and local privilege escalation](#STEP-4.-POST-EXPLOITATION-and-LOCAL-PRIVILEGE-ESCALATION-)
-- [Step 5. Network lateral movement and 'Domain Admins' credentials hunting](#STEP-5.-NETWORK-LATERAL-MOVEMENT-and-'DOMAIN-ADMINs'-CREDENTIALS-HUNTING-)
-- [Step 6. Windows domain compromise (Privilege escalation to become 'Domain Admin' + Persistence)](#STEP-6.-WINDOWS-DOMAIN-COMPROMISE-(Privilege-escalation-to-become-"Domain-Admin"-+-Persistence)-)
-- [Step 7. Forest root domain compromise (Privilege escalation to become 'Enterprise Admin')](#STEP-7.-FOREST-ROOT-DOMAIN-COMPROMISE-(Privilege-escalation-to-become-"Enterprise-Admin")-)
-- [List of useful tools and scripts](#LIST-OF-USEFUL-TOOLS-&-SCRIPTS-)
+- [Step 1. Bypassing Network Access Control (NAC) - if any](#STEP-1-BYPASSING-NETWORK-ACCESS-CONTROL-NAC---if-any-)
+- [Step 2. Reconnaissance](#STEP-2-RECONNAISSANCE-)
+- [Step 3. Gaining access](#STEP-3-GAINING-ACCESS-)
+- [Step 4. Post-exploitation and local privilege escalation](#STEP-4-POST-EXPLOITATION-and-LOCAL-PRIVILEGE-ESCALATION-)
+- [Step 5. Network lateral movement and 'Domain Admins' credentials hunting](#STEP-5-NETWORK-LATERAL-MOVEMENT-and-DOMAIN-ADMINs-CREDENTIALS-HUNTING-)
+- [Step 6. Windows domain compromise (Privilege escalation to become 'Domain Admin' + Persistence)](#STEP-6-WINDOWS-DOMAIN-COMPROMISE-Privilege-escalation-to-become-Domain-Admin--Persistence-)
+- [Step 7. Forest root domain compromise (Privilege escalation to become 'Enterprise Admin')](#STEP-7-FOREST-ROOT-DOMAIN-COMPROMISE-Privilege-escalation-to-become-Enterprise-Admin-)
+- [List of useful tools and scripts](#LIST-OF-USEFUL-TOOLS--SCRIPTS-)
 - [Useful resources](#USEFUL-RESOURCES)
 
 ----------------
