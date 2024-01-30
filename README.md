@@ -2,8 +2,18 @@
 Technical notes, AD pentest methodology, list of tools, scripts and Windows commands that I find useful during internal penetration tests (Windows environment) and assumed breach exercises (red teaming).<br>
 The output files included here are the results of tools, scripts and Windows commands that I ran against a vulnerable Windows AD lab that I created to test attacks/exploits and deliver hands-on penetration testing training sessions to security auditors at my job.
 
+## Contents 
+> ### <i> Classic internal penetration test methodology - Windows Active Directory attack paths </i>
 
-### <i>**** Classic internal penetration test methodology - Windows Active Directory attack paths **** </i>
+- [Step 1. Bypassing Network Access Control (NAC) - if any](#STEP-1.-BYPASSING-NETWORK-ACCESS-CONTROL-(NAC)---if-any)
+- [Step 2. Reconnaissance](#STEP-2.-RECONNAISSANCE)
+- [Step 3. Gaining access](#STEP-3.-GAINING-ACCESS)
+- [Step 4. Post-exploitation and local privilege escalation](#STEP-4.-POST-EXPLOITATION-and-LOCAL-PRIVILEGE-ESCALATION)
+- [Step 5. Network lateral movement and 'Domain Admins' credentials hunting](#STEP-5.-NETWORK-LATERAL-MOVEMENT-and-'DOMAIN-ADMINs'-CREDENTIALS-HUNTING)
+- [Step 6. Windows domain compromise (Privilege escalation to become 'Domain Admin' + Persistence)](#STEP-6.-WINDOWS-DOMAIN-COMPROMISE-(Privilege-escalation-to-become-"Domain-Admin"-+-Persistence))
+- [Step 7. Forest root domain compromise (Privilege escalation to become 'Enterprise Admin')](#STEP-7.-FOREST-ROOT-DOMAIN-COMPROMISE-(Privilege-escalation-to-become-"Enterprise-Admin"))
+- [List of useful tools and scripts](#LIST-OF-USEFUL-TOOLS-&-SCRIPTS)
+- [Useful resources](#USEFUL-RESOURCES)
 
 ----------------
 #### STEP 1. BYPASSING NETWORK ACCESS CONTROL (NAC) - if any 🔐🕸🧑🏼‍💻
@@ -324,7 +334,7 @@ The output files included here are the results of tools, scripts and Windows com
 ➤ ...
 ```
 -----------------
-#### LIST OF SOME USEFUL TOOLS & SCRIPTS
+#### LIST OF USEFUL TOOLS & SCRIPTS
 
 | TOPIC | TOOL | URL | DESCRIPTION | 
 | :-----: | :-----: | :-----: | :------: |
