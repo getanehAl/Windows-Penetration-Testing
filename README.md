@@ -415,18 +415,26 @@ Technical notes, AD pentest methodology, list of tools, scripts and Windows comm
 ----------------
 #### USEFUL RESOURCES
 ```
-Miscellaneous - Windows security and penetration testing
---------------------------------------------------------
+Miscellaneous - Windows Penetration Testing & Red Teaming
+---------------------------------------------------------
 ➤ Active Directory and Internal Pentest Cheatsheets
   + https://swisskyrepo.github.io/InternalAllTheThings/
   + https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Active%20Directory%20Attack.md
+
 ➤ Active Directory Kill Chain Attack & Defense
   + https://github.com/infosecn1nja/AD-Attack-Defense
+
+➤ Red Teaming Tactics and Techniques
+  + https://www.ired.team
+  + https://www.ired.team/offensive-security-experiments/active-directory-kerberos-abuse
+  + https://github.com/mantvydasb/RedTeaming-Tactics-and-Techniques
+
 ➤ MITRE ATT&CK®  - A globally-accessible knowledge base of adversary tactics and techniques based on real-world observations
   + https://attack.mitre.org/tactics/enterprise/;
   + https://attack.mitre.org/mitigations/M1015/ (Active Directory Configuration)
-➤ Windows / Linux Local Privilege Escalation Workshop (https://github.com/sagishahar/lpeworkshop)
-➤ Evaluation matrix of Command and Control (C2) frameworks (https://www.thec2matrix.com/matrix)
+
+➤ Evaluation matrix of Command and Control (C2) frameworks
+  + https://www.thec2matrix.com/matrix
 ```
 ```
 Microsoft Security Guidelines
