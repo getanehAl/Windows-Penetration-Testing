@@ -424,5 +424,30 @@ Technical notes, AD pentest methodology, list of tools, scripts and Windows comm
 ➤ CIS benchmarks (https://www.cisecurity.org/benchmark/microsoft_windows_server/)
 ➤ Evaluation matrix of Command and Control (C2) frameworks (https://www.thec2matrix.com/matrix)
 ➤ https://unprotect.it/
-➤ ...
+```
+```
+Microsoft Security Guidelines
+-----------------------------
+➤ Best Practices for Securing Active Directory - https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/plan/security-best-practices/best-practices-for-securing-active-directory)
+➤ Reducing the Active Directory Attack Surface - https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/plan/security-best-practices/reducing-the-active-directory-attack-surface
+➤ Securing Domain Controllers Against Attack - https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/plan/security-best-practices/securing-domain-controllers-against-attack
+➤ Implementing Least-Privilege Administrative Models - https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/plan/security-best-practices/implementing-least-privilege-administrative-models
+➤ Monitoring Active Directory for Signs of Compromise - https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/plan/security-best-practices/monitoring-active-directory-for-signs-of-compromise
+➤ Attractive Accounts for Credential Theft - https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/plan/security-best-practices/attractive-accounts-for-credential-theft
+➤ Evolution from the legacy AD tier model / Enterprise access model - https://learn.microsoft.com/en-us/security/privileged-access-workstations/privileged-access-access-model
+➤ Tier model for partitioning administrative privileges - https://learn.microsoft.com/en-us/microsoft-identity-manager/pam/tier-model-for-partitioning-administrative-privileges
+  + Tier 0: Domain Controllers, PKI servers (ADCS), SCCM servers, Hypervisors (e.g., vCenter/ESXi), ...
+  + Tier 1: Windows Servers
+  + Tier 2: Laptops and Workstations
+➤ ACSC Essential Eight - https://learn.microsoft.com/en-us/compliance/essential-eight/e8-overview#what-are-the-essential-eight-pillars
+  + Application Control
+  + Patch Applications
+  + Configure Microsoft Office Macro Settings
+  + User Application Hardening
+  + Restrict Administrative Privileges
+  + Patch Operating Systems
+  + Multifactor authentication
+  + Regular Backups
+➤ 
+...
 ```
