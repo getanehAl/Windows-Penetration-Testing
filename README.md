@@ -415,15 +415,18 @@ Technical notes, AD pentest methodology, list of tools, scripts and Windows comm
 ----------------
 #### USEFUL RESOURCES
 ```
-➤ ADsecurity website (https://adsecurity.org)
-➤ MITRE (https://attack.mitre.org/tactics/enterprise/; https://attack.mitre.org/mitigations/M1015/)
-➤ GitHub - swisskyrepo/PayloadsAllTheThings (https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Active%20Directory%20Attack.md)
-➤ GitHub - https://github.com/infosecn1nja/AD-Attack-Defense
-➤ Att&cking Active Directory for fun and profit (https://identityaccessdotmanagement.files.wordpress.com/2020/01/attcking-ad-for-fun-and-profit.pdf)
+Miscellaneous - Windows security and penetration testing
+--------------------------------------------------------
+➤ Active Directory and Internal Pentest Cheatsheets
+  + https://swisskyrepo.github.io/InternalAllTheThings/
+  + https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Active%20Directory%20Attack.md
+➤ Active Directory Kill Chain Attack & Defense
+  + https://github.com/infosecn1nja/AD-Attack-Defense
+➤ MITRE ATT&CK®  - A globally-accessible knowledge base of adversary tactics and techniques based on real-world observations
+  + https://attack.mitre.org/tactics/enterprise/;
+  + https://attack.mitre.org/mitigations/M1015/ (Active Directory Configuration)
 ➤ Windows / Linux Local Privilege Escalation Workshop (https://github.com/sagishahar/lpeworkshop)
-➤ CIS benchmarks (https://www.cisecurity.org/benchmark/microsoft_windows_server/)
 ➤ Evaluation matrix of Command and Control (C2) frameworks (https://www.thec2matrix.com/matrix)
-➤ https://unprotect.it/
 ```
 ```
 Microsoft Security Guidelines
@@ -432,6 +435,7 @@ Microsoft Security Guidelines
 ➤ Reducing the Active Directory Attack Surface - https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/plan/security-best-practices/reducing-the-active-directory-attack-surface
 ➤ Securing Domain Controllers Against Attack - https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/plan/security-best-practices/securing-domain-controllers-against-attack
 ➤ Implementing Least-Privilege Administrative Models - https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/plan/security-best-practices/implementing-least-privilege-administrative-models
+➤ Planning a bastion environment - https://learn.microsoft.com/en-us/microsoft-identity-manager/pam/planning-bastion-environment
 ➤ Monitoring Active Directory for Signs of Compromise - https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/plan/security-best-practices/monitoring-active-directory-for-signs-of-compromise
 ➤ Attractive Accounts for Credential Theft - https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/plan/security-best-practices/attractive-accounts-for-credential-theft
 ➤ Evolution from the legacy AD tier model / Enterprise access model - https://learn.microsoft.com/en-us/security/privileged-access-workstations/privileged-access-access-model
@@ -448,6 +452,12 @@ Microsoft Security Guidelines
   + Patch Operating Systems
   + Multifactor authentication
   + Regular Backups
-➤ 
-...
+➤ ...
+```
+```
+CIS benchmarks - Windows Secure Configuration Guidelines
+--------------------------------------------------------
+➤ Windows servers - https://www.cisecurity.org/benchmark/microsoft_windows_server/
+➤ Windows laptops/workstations - https://www.cisecurity.org/benchmark/microsoft_windows_desktop
+➤ Windows SQL database servers - https://www.cisecurity.org/benchmark/microsoft_sql_server
 ```
