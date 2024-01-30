@@ -5,7 +5,7 @@ The output files included here are the results of tools, scripts and Windows com
 ## Contents 
 > ### <i> Classic internal penetration test methodology - Windows Active Directory attack paths </i>
 
-- [Step 1. Bypassing Network Access Control (NAC) - if any](#STEP-1.-BYPASSING-NETWORK-ACCESS-CONTROL-(NAC)---if-any-🔐🕸🧑🏼‍💻)
+- [Step 1. Bypassing Network Access Control (NAC) - if any](#STEP-1.-BYPASSING-NETWORK-ACCESS-CONTROL-(NAC)---if-any)
 - [Step 2. Reconnaissance](#STEP-2.-RECONNAISSANCE)
 - [Step 3. Gaining access](#STEP-3.-GAINING-ACCESS)
 - [Step 4. Post-exploitation and local privilege escalation](#STEP-4.-POST-EXPLOITATION-and-LOCAL-PRIVILEGE-ESCALATION)
