@@ -12,7 +12,7 @@ Technical notes, AD pentest methodology, list of tools, scripts and Windows comm
 - [Step 5. Network lateral movement and privileged accounts hunting](#STEP-5-NETWORK-LATERAL-MOVEMENT-and-PRIVILEGED-ACCOUNTS-HUNTING-)
 - [Step 6. Windows domain compromise (Privilege escalation to become 'Domain Admin' + Persistence)](#STEP-6-WINDOWS-DOMAIN-COMPROMISE-Privilege-escalation-to-become-Domain-Admin--Persistence-)
 - [Step 7. Forest root domain compromise (Privilege escalation to become 'Enterprise Admin')](#STEP-7-FOREST-ROOT-DOMAIN-COMPROMISE-Privilege-escalation-to-become-Enterprise-Admin-)
-- [List of useful tools and scripts](#LIST-OF-USEFUL-TOOLS--SCRIPTS-)
+- [List of useful tools and scripts](#LIST-OF-USEFUL-TOOLS--SCRIPTS)
 - [Useful resources](#USEFUL-RESOURCES)
 
 ----------------
@@ -379,6 +379,8 @@ Technical notes, AD pentest methodology, list of tools, scripts and Windows comm
 | Privesc | Juicy potato exploit | </br> https://github.com/ohpe/juicy-potato | Local privesc tool |
 | Privesc | Rotten potato exploit | </br> https://github.com/breenmachine/RottenPotatoNG | Local privesc tool |
 | Post-Exploitation, Privesc | Nightly builds of common C# offensive tools | </br> https://github.com/Flangvik/SharpCollection | Nightly builds of common C# offensive tools, fresh from their respective master branches built and released in a CDI fashion using Azure DevOps release pipelines |
+| Post-Exploitation, Privesc | SharpImpersonation | </br> https://github.com/S3cur3Th1sSh1t/SharpImpersonation | A user impersonation tool via Token or Shellcode injection |
+| Post-Exploitation, Privesc | Tokenvator | </br> https://github.com/0xbadjuju/Tokenvator | Windows Tokens impersonation tool|
 | AD Privesc | BloodyAD | </br> https://github.com/CravateRouge/bloodyAD |BloodyAD is an Active Directory Privilege Escalation Framework |
 | Post-Exploitation, Defense evasion | AMSI.fail | <br> https://amsi.fail | It generates obfuscated PowerShell snippets that break or disable AMSI for the current process  |
 | Post-Exploitation, Defense evasion | Nimcrypt2 | </br> https://github.com/icyguider/Nimcrypt2 | .NET, PE and raw shellcode packer/loader designed to bypass AV/EDR |
