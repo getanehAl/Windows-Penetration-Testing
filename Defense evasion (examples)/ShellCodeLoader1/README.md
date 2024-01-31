@@ -14,7 +14,7 @@ A quick and dirty C# shellcode loader that implements several antivirus bypass a
     - Exit if after sleeping for 15s, time did not really passed
     - Exit if a debugger is attached
     - Exit if making an uncommon API call fails (i.e. we are running in an AV sandbox that can't emulating it)
-  - Compatible with shellcodes of multiple C2 frameworks such as: Metasploit, Silver and Havoc
+  - Compatible with shellcodes of multiple C2 frameworks such as Metasploit and Havoc
     
 #### TESTS
 - Succesfully tested on a Windows 10 x64 laptop (target) with Windows Defender enabled (without 'Automatic sample submission') and shellcodes of multiple C2 frameworks (in C# format & encrypted with XOR cipher algorithm)
