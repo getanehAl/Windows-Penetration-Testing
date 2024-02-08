@@ -1,6 +1,6 @@
 ### C# ShellCode Loader 2
 --------------------------------------
-C# shellcode loader that implements several antivirus bypass and defense evasion techniques. <br> 
+Shellcode loader (written in C#) that implements several antivirus bypass and defense evasion techniques. <br> 
 
 <i/>Note: I simply reused and modified codes from various Github projects.</i>
 
