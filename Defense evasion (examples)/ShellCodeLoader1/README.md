@@ -1,11 +1,11 @@
-### C# ShellCode Loader
+### C# ShellCode Loader 1
 --------------------------------------
 A quick and dirty C# shellcode loader that implements several antivirus bypass and defense evasion techniques. <br> 
 
 <i/>Note: I simply reused and modified codes from various Github projects.</i>
 
 #### FEATURES
-  - Classic shellcode injection technique using the function 'NtCreateThreadEx'  (=>To do next: upgrade with a better injection technique)
+  - Classic shellcode injection technique using the function 'NtCreateThreadEx'
   - Shellcode encryption (XOR)
   - NTDLL unhooking (it loads a fresh new copy of ntdll.dll via file mapping and imports functions from this ntdll.dll)
   - AMSI bypass
