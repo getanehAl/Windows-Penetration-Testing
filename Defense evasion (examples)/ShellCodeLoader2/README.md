@@ -5,7 +5,7 @@ Shellcode loader (written in C#) that implements several antivirus bypass and de
 <i/>Note: I simply reused and modified codes from various Github projects.</i>
 
 #### FEATURES
-  - Classic shellcode injection technique using 'CreateThreadpoolWait'
+  - Classic shellcode injection technique using the function 'CreateThreadpoolWait'
   - Shellcode encryption (XOR)
   - ETW bypass
   - AMSI bypass
