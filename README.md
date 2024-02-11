@@ -312,14 +312,14 @@ Technical notes, AD pentest methodology, list of tools, scripts and Windows comm
 -------------------------------------
 ➤ Use living-off-the-land and fileless techniques
   - Run scripts, portable executable files and shellcodes directly into memory such as encrypted/obfuscated C2 agents (e.g. Cobalt Strike, Sliver, Metasploit, Havoc)
-  - Use as much as possible legitimate sysadmin tools and software that are already installed on the targeted computers
+  - Use 'Living Off The Land' binaries, scripts and libraries (https://lolbas-project.github.io) to perform arbitrary code execution, file operations, UAC bypass, persistence, ...
 ➤ Regularly obfuscate and recompile your favorite (open source) hacking tools and scripts
+➤ Write your own hacking tools (e.g. obfuscated/encrypted shellcode loader into memory)
 ➤ Use PE/Dll packers and shellcode loaders that implement defense evasion techniques such as:
   - Obfuscation and encryption
   - AMSI and ETW bypass
   - Anti-Debugging techniques
   - Sandbox evasion techniques
-➤ Write your own hacking tools (e.g. obfuscated/encrypted shellcode loader into memory)
 ➤ Abuse potential AV exclusions set for files, folders, processes, and process-opened files
 ➤ Kill the anti-malware (AV) protected processes using "Bring Your Own Vulnerable Driver" (BYOVD) techniques
 ➤ Temporarily disable or uninstall the AV software (once you are local admin or Local System) if it is not protected by a password
