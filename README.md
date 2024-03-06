@@ -329,7 +329,16 @@ Technical notes, AD pentest methodology, list of tools, scripts and Windows comm
 ```
 2. Common Endpoint Detection & Response (EDR) bypass techniques
 ---------------------------------------------------------------
-➤ Use as much as possible the IT admin tools already installed on the compromised systems to 'blend in' among the legitimate system administrators
+➤ Use as much as possible the Sysadmin tools already installed on the compromised systems to "blend in" among the legitimate system administrators
+➤ Genuine portable Sysadmin tools with GUI are in general less detected than command-line tools and scripts
+  For instance, to enumerate an AD it is better to use the GUI sysinternals tool "adexplorer" than native cmd/PowerShell commands
+➤ Abuse potential EDR exclusions (whitelist) set for files, folders, processes, and process-opened files
+➤ Kill the anti-malware (EDR) protected processes using "Bring Your Own Vulnerable Driver" (BYOVD) techniques
+➤ Temporarily disable or uninstall the EDR agent (once you are local admin or Local System) if it is not protected by a password
+➤ Temporarily add rules in the local Windows firewall (once you are local admin or NT System) that will prevent the EDR agent to send alerts to the EDR central console
+➤ Find and use as a pivot server(s) in the network that have not been yet onboarded in the EDR solution
+➤ Install VirtualBox or VMware Workstation on a compromised Windows laptop/workstation and run hacking tools and scripts inside a VM to avoid detection
+➤ Avoid at all cost using well known hacking tools and C2 frameworks - Write your own tools or carefully modify and obfuscate open-source ones
 ➤ Use PE/Dll packers and shellcode loaders that implement defense evasion techniques such as:
   - Obfuscation and encryption
   - AMSI and ETW bypass
@@ -340,13 +349,7 @@ Technical notes, AD pentest methodology, list of tools, scripts and Windows comm
   - use of indirect syscalls
   - module stomping technique
   - suspended process method
-  - ...
-➤ Abuse potential EDR exclusions set for files, folders, processes, and process-opened files
-➤ Kill the anti-malware (EDR) protected processes using "Bring Your Own Vulnerable Driver" (BYOVD) techniques
-➤ Temporarily disable or uninstall the EDR agent (once you are local admin or Local System) if it is not protected by a password
-➤ Temporarily add rules in the local Windows firewall (once you are local admin or NT System) that will prevent the EDR agent to send alerts to the EDR central console
-➤ Find and use server(s) in the network that have not been yet onboarded in the EDR solution
-➤ Install VirtualBox or VMware Workstation on a compromised Windows laptop/workstation and run hacking tools and scripts inside a VM to avoid detection
+  Important note: it is not the best option to use PE/Dll packers and shellcode loaders but it might work to bypass less "mature" EDR products
 ➤ ...
 ```
 -----------------
