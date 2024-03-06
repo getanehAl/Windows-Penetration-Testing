@@ -307,6 +307,8 @@ Technical notes, AD pentest methodology, list of tools, scripts and Windows comm
 ```
 -----------------
 #### DEFENSE EVASION TECHNIQUES - BYPASSING ANTIVIRUS AND EDR SOLUTIONS
+> During penetration tests, it is important to know how to bypass AV products to not be blocked when exploiting vulnerabilities.    
+> During Red Team exercises (unlike in a penetration test) it is important to be stealthy and thus to know how to bypass EDR products. In Red teaming, avoid at all costs using "noisy & easy to detect" pentest tools and techniques (e.g. network port scans, vulnerability scanners, BloodHound, creating a new Domain Admin, Metasploit C2,  Kerberoasting attacks, Mimikatz, DCsync attacks, etc.).
 ```
 1. Common antivirus bypass techniques
 -------------------------------------
@@ -336,9 +338,9 @@ Technical notes, AD pentest methodology, list of tools, scripts and Windows comm
 ➤ Kill the anti-malware (EDR) protected processes using "Bring Your Own Vulnerable Driver" (BYOVD) techniques
 ➤ Temporarily disable or uninstall the EDR agent (once you are local admin or Local System) if it is not protected by a password
 ➤ Temporarily add rules in the local Windows firewall (once you are local admin or NT System) that will prevent the EDR agent to send alerts to the EDR central console
-➤ Find server(s) in the network that have not been yet onboarded in the EDR solution and use them as a pivot (e.g. obfuscated/encrypted C2 implant + sock proxy)
+➤ Find server(s) in the network that have not been yet onboarded in the EDR solution & use them as a pivot (e.g. obfuscated/encrypted C2 implant + socks proxy)
 ➤ Install VirtualBox or VMware Workstation on a compromised Windows laptop/workstation and run hacking tools and scripts inside a VM to avoid detection
-➤ Avoid at all cost using well known hacking tools and C2 frameworks - Write your own tools or carefully modify and obfuscate open-source ones
+➤ Write your own tools/exploits when possible or carefully modify, obfuscate and test open-source ones before using them
 ➤ Use PE/Dll packers and shellcode loaders that implement defense evasion techniques such as:
   - Obfuscation and encryption
   - AMSI and ETW bypass
