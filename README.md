@@ -336,7 +336,7 @@ Technical notes, AD pentest methodology, list of tools, scripts and Windows comm
 ➤ Kill the anti-malware (EDR) protected processes using "Bring Your Own Vulnerable Driver" (BYOVD) techniques
 ➤ Temporarily disable or uninstall the EDR agent (once you are local admin or Local System) if it is not protected by a password
 ➤ Temporarily add rules in the local Windows firewall (once you are local admin or NT System) that will prevent the EDR agent to send alerts to the EDR central console
-➤ Find and use as a pivot server(s) in the network that have not been yet onboarded in the EDR solution
+➤ Find server(s) in the network that have not been yet onboarded in the EDR solution and use them as a pivot (e.g. obfuscated/encrypted C2 implant + sock proxy)
 ➤ Install VirtualBox or VMware Workstation on a compromised Windows laptop/workstation and run hacking tools and scripts inside a VM to avoid detection
 ➤ Avoid at all cost using well known hacking tools and C2 frameworks - Write your own tools or carefully modify and obfuscate open-source ones
 ➤ Use PE/Dll packers and shellcode loaders that implement defense evasion techniques such as:
