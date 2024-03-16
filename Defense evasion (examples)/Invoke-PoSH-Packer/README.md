@@ -8,7 +8,7 @@
   - Blocking Event Tracing for Windows (ETW)
   - Disabling PowerShell history logging
   - Basic sandbox evasion techniques (optional)
-    - stop/exit if the PowerShell script is not run on domain-joined Windows computer 
+    - stop/exit if the PowerShell script is not run on a domain-joined Windows computer 
     - stop/exit if the PowerShell session is being debugged (detection based on "Test-Path Variable:PSDebugContext")
     - wait for 60 seconds before execution
   
