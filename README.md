@@ -280,6 +280,8 @@ Technical notes, AD pentest methodology, list of tools, scripts and Windows comm
    Examples:
    - Ntdsutil + Secretsdump
    - Wbadmin + Secretsdump
+   - Diskshadow + Secretsdump
+   - VSSadmin + Secretsdump
    - Secretsdump
    - CrackMapExec
    - Mimikatz (dcsync technique)
@@ -290,9 +292,10 @@ Technical notes, AD pentest methodology, list of tools, scripts and Windows comm
 3. Creating persistence (examples)
 ----------------------------------
 ➤ Use the KRBTGT account’s password hash to forge of a Kerberos Golden ticket with Domain Administrator privileges
-➤ Add temporarily an account in a default AD security group such as 'Domain Admins', 'BUILTIN\Administrators' or 'Account Operators' 
 ➤ Keep temporarily the password hash of a highly-privileged service account (e.g. Domain Admin) with a password set to never expire
-➤ Modify temporarily the ACLs to allow an account that you control to perform DCsync attack.
+➤ Modify temporarily the ACLs to allow an account that you control to perform DCsync attack
+➤ Request a certificate (ADCS) for a highly-privileged account (e.g. Domain Admin) 
+➤ Add temporarily an account in a default AD security group such as 'Domain Admins', 'BUILTIN\Administrators' or 'Account Operators' 
 ➤ ...
 ```
 -----------------
@@ -308,7 +311,8 @@ Technical notes, AD pentest methodology, list of tools, scripts and Windows comm
 -----------------
 #### DEFENSE EVASION TECHNIQUES - BYPASSING ANTIVIRUS AND EDR SOLUTIONS
 > During penetration tests, it is important to know how to bypass AV products to not be blocked when exploiting vulnerabilities.    
-> During Red Team exercises (unlike in a penetration test) it is important to be stealthy and thus to know how to bypass EDR products. In Red teaming, avoid at all costs using "noisy & easy to detect" pentest tools and techniques (e.g. network port scans, vulnerability scanners, BloodHound, creating a new Domain Admin, Metasploit C2,  Kerberoasting attacks, Mimikatz, DCsync attacks, etc.).
+> During Red Team exercises (unlike in a penetration test) it is important to be stealthy and thus to know how to bypass EDR products. 
+In Red teaming, avoid at all costs using "noisy & easy to detect" pentest tools (e.g. Mimikatz, Metasploit C2, BloodHound/SharpHound) and techniques (e.g. aggressive and wide network port and vulnerability scans).
 ```
 1. Common antivirus bypass techniques
 -------------------------------------
