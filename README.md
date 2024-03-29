@@ -70,8 +70,9 @@ Technical notes, AD pentest methodology, list of tools, scripts and Windows comm
    - Sysinternals tools (e.g. ADexplorer.exe)
    - PowerView framework / SharpView
    - Powershell scripts like ADrecon.ps1
-   - BloodHound 
+   - SharpHound/RustHound + BloodHound
    - PingCastle
+   - Purple Knight
    - ADCollector
 ```
 
