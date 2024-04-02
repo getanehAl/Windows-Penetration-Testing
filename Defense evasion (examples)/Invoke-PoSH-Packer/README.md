@@ -24,7 +24,6 @@
     PS C:\> Invoke-PoSH-Packer -FilePath C:\path\script-to-pack.ps1 -OutFile C:\path\Packed-script.ps1 -sandbox
 
 [*] Or "pack/obfuscate" a PowerShell script stored on a remote web server (with or without the sandbox checks enabled)
-
     PS C:\> Invoke-PoSH-Packer -FileUrl https://URL/script-to-pack.ps1 -OutFile C:\path\Packed-script.ps1  
     --- or ---
     PS C:\> Invoke-PoSH-Packer -FileUrl https://URL/script-to-pack.ps1 -OutFile C:\path\Packed-script.ps1 -sandbox
