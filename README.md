@@ -74,6 +74,7 @@ Technical notes, AD pentest methodology, list of tools, scripts and Windows comm
    - PingCastle
    - Purple Knight
    - ADCollector
+   - ADFind
 ```
 
 -----------------
