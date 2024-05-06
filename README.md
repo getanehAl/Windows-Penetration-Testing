@@ -315,7 +315,7 @@ Technical notes, AD pentest methodology, list of tools, scripts and Windows comm
 > During penetration tests, it is important to know how to bypass antivirus solutions to be able to identify and exploit vulnerabilities without being blocked.
 > 
 > During Red Team exercises (unlike in a penetration test) it is important to be stealthy and thus to know how to bypass EDR products. 
-In Red teaming, avoid at all costs using "noisy & easy to detect" pentest tools (e.g. Mimikatz, Metasploit C2, BloodHound/SharpHound) and techniques (e.g. aggressive and wide network port and vulnerability scans).
+In Red teaming, avoid at all costs using "noisy & easy to detect" pentest tools (e.g. Mimikatz, Metasploit C2) and techniques (e.g. aggressive and wide network port and vulnerability scans).
 ```
 1. Common antivirus bypass techniques - With a low privilege account
 --------------------------------------------------------------------
