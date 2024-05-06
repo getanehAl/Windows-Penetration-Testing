@@ -334,7 +334,8 @@ In Red teaming, avoid at all costs using "noisy & easy to detect" pentest tools 
   For examples:
   - Portable SysAdmin tools: putty & plink, sysinternals tools, teamviewer, anydesk, mobaxterm, dbvisualizer, ...
   - Native OS commands/binaries: REG SAVE to extract the registry keys, WinRM for lateral movement, TSCON for RDP session hijacking, ...
-➤ If you can read the Bitlocker recovery key of your Windows laptop in Microsoft Intune (or in the AD) then you can use it to decrypt your laptop's hard drive and delete the AV files 
+➤ If you can read the Bitlocker recovery key of your Windows laptop in Microsoft Intune (or in the AD) then you can use it to decrypt your laptop's hard drive and delete the AV files
+➤ ...
 ```
 ```
 2. Common antivirus bypass techniques - With local admin privileges
@@ -367,6 +368,7 @@ In Red teaming, avoid at all costs using "noisy & easy to detect" pentest tools 
   - suspended process method
   - ...
 ➤ If you can read the Bitlocker recovery key of your Windows laptop in Microsoft Intune (or in the AD) then you can use it to decrypt your laptop's hard drive and delete the EDR files
+➤ ...
 ```
 ```
 4. Common Endpoint Detection & Response (EDR) bypass techniques - With local admin privileges
