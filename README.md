@@ -312,52 +312,72 @@ Technical notes, AD pentest methodology, list of tools, scripts and Windows comm
 ```
 -----------------
 #### DEFENSE EVASION TECHNIQUES - BYPASSING ANTIVIRUS AND EDR SOLUTIONS
-> During penetration tests, it is important to know how to bypass AV products to not be blocked when exploiting vulnerabilities.    
+> During penetration tests, it is important to know how to bypass antivirus solutions to be able to identify and exploit vulnerabilities without being blocked.
+> 
 > During Red Team exercises (unlike in a penetration test) it is important to be stealthy and thus to know how to bypass EDR products. 
 In Red teaming, avoid at all costs using "noisy & easy to detect" pentest tools (e.g. Mimikatz, Metasploit C2, BloodHound/SharpHound) and techniques (e.g. aggressive and wide network port and vulnerability scans).
 ```
-1. Common antivirus bypass techniques
--------------------------------------
+1. Common antivirus bypass techniques - With a low privilege account
+--------------------------------------------------------------------
 ➤ Use living-off-the-land and fileless techniques
-  - Run scripts, portable executable files and shellcodes directly into memory such as encrypted/obfuscated C2 agents (e.g. Cobalt Strike, Sliver, Metasploit, Havoc)
+  - Download & execute malicious PowerShell scripts (with AMSI bypass), PE files and shellcodes directly into memory such as encrypted/obfuscated C2 agents (e.g. Cobalt Strike, Sliver, Metasploit, Havoc)
   - Use 'Living Off The Land' binaries, scripts and libraries (https://lolbas-project.github.io) to perform arbitrary code execution, file operations, UAC bypass, persistence, ...
 ➤ Regularly obfuscate and recompile your favorite (open source) hacking tools and scripts
-➤ Write your own hacking tools (e.g. obfuscated/encrypted shellcode loader into memory)
+➤ Write your own hacking tools and scripts
 ➤ Use PE/Dll packers and shellcode loaders that implement defense evasion techniques such as:
-  - Obfuscation and encryption
-  - AMSI and ETW bypass
+  - Code obfuscation & payload encryption
+  - AMSI & ETW bypass
   - Anti-Debugging techniques
   - Sandbox evasion techniques
 ➤ Abuse potential AV exclusions set for files, folders, processes, and process-opened files
+➤ Use portable legitimate SysAdmin tools and native OS commands/binaries which are less likely to be blocked by AV solutions than hacking tools
+  For examples:
+  - Portable SysAdmin tools: putty & plink, sysinternals tools, teamviewer, anydesk, mobaxterm, dbvisualizer, ...
+  - Native OS commands/binaries: REG SAVE to extract the registry keys, WinRM for lateral movement, TSCON for RDP session hijacking, ...
+➤ If you can read the Bitlocker recovery key of your Windows laptop in Microsoft Intune (or in the AD) then you can use it to decrypt your laptop's hard drive and delete the AV files 
+```
+```
+2. Common antivirus bypass techniques - With local admin privileges
+-------------------------------------------------------------------
+➤ All the AV bypass techniques listed in the previous section
 ➤ Kill the anti-malware (AV) protected processes using "Bring Your Own Vulnerable Driver" (BYOVD) techniques
-➤ Temporarily disable or uninstall the AV software (once you are local admin or Local System) if it is not protected by a password
+➤ Temporarily disable or uninstall the AV software if it is not protected by a password
 ➤ Install VirtualBox or VMware Workstation on a compromised Windows laptop/workstation and run hacking tools and scripts inside a VM to avoid detection
+➤ Modify the registry keys or rename the AV executable files on a compromised Windows machine and then restart it to disable the EDR
 ➤ ...
 ```
 ```
-2. Common Endpoint Detection & Response (EDR) bypass techniques
----------------------------------------------------------------
+3. Common Endpoint Detection & Response (EDR) bypass techniques - With a low privilege account
+----------------------------------------------------------------------------------------------
 ➤ Use as much as possible the Sysadmin tools already installed on the compromised systems to "blend in" among the legitimate system administrators
-➤ Genuine portable Sysadmin tools with GUI are in general less detected than command-line tools and scripts
-  For instance, to enumerate an AD it is better to use the GUI sysinternals tool "adexplorer" than native cmd/PowerShell commands
 ➤ Abuse potential EDR exclusions (whitelist) set for files, folders, processes, and process-opened files
-➤ Kill the anti-malware (EDR) protected processes using "Bring Your Own Vulnerable Driver" (BYOVD) techniques
-➤ Temporarily disable or uninstall the EDR agent (once you are local admin or Local System) if it is not protected by a password
-➤ Temporarily add rules in the local Windows firewall (once you are local admin or NT System) that will prevent the EDR agent to send alerts to the EDR central console
 ➤ Find server(s) in the network that have not been yet onboarded in the EDR solution & use them as a pivot (e.g. obfuscated/encrypted C2 implant + socks proxy)
-➤ Install VirtualBox or VMware Workstation on a compromised Windows laptop/workstation and run hacking tools and scripts inside a VM to avoid detection
-➤ Write your own tools/exploits when possible or carefully modify, obfuscate and test open-source ones before using them
+➤ Write your own hacking tools/exploits when possible or carefully modify, obfuscate and test open-source ones before using them
+➤ Use living-off-the-land and fileless techniques
 ➤ Use PE/Dll packers and shellcode loaders that implement defense evasion techniques such as:
-  - Obfuscation and encryption
-  - AMSI and ETW bypass
+  - Code obfuscation & payload encryption
+  - AMSI & ETW bypass
   - Anti-Debugging techniques
   - Sandbox evasion techniques
+  - Import Address Table (IAT) obfuscation
   - NTDLL unhooking techniques
   - use of direct syscalls
   - use of indirect syscalls
   - module stomping technique
   - suspended process method
-  Important note: it is not the best option to use PE/Dll packers and shellcode loaders but it might work to bypass less "mature" EDR products
+  - ...
+➤ If you can read the Bitlocker recovery key of your Windows laptop in Microsoft Intune (or in the AD) then you can use it to decrypt your laptop's hard drive and delete the EDR files
+```
+```
+4. Common Endpoint Detection & Response (EDR) bypass techniques - With local admin privileges
+---------------------------------------------------------------------------------------------
+➤ All the EDR bypass techniques listed in the previous section
+➤ Kill the anti-malware (EDR) protected processes using "Bring Your Own Vulnerable Driver" (BYOVD) techniques
+➤ Disable or uninstall the EDR agent if it is not protected by a password
+➤ Add a rule in the local Windows firewall that will prevent the EDR agent to send alerts to the EDR appliance/server
+➤ Add a wrong IP address for the EDR appliance/server in the '/etc/hosts' file to prevent the EDR agent to send alerts to the EDR appliance/server
+➤ Install VirtualBox or VMware Workstation on a compromised Windows laptop/workstation and run hacking tools and scripts inside a VM to avoid detection
+➤ Modify the registry keys or rename the EDR executable files on a compromised Windows machine and then restart it to disable the EDR
 ➤ ...
 ```
 -----------------
