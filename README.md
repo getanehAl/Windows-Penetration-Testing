@@ -343,7 +343,7 @@ In Red teaming, avoid at all costs using "noisy & easy to detect" pentest tools 
 ➤ Kill the anti-malware (AV) protected processes using "Bring Your Own Vulnerable Driver" (BYOVD) techniques
 ➤ Temporarily disable or uninstall the AV software if it is not protected by a password
 ➤ Install VirtualBox or VMware Workstation on a compromised Windows laptop/workstation and run hacking tools and scripts inside a VM to avoid detection
-➤ Modify the registry keys or rename the AV executable files on a compromised Windows machine and then restart it to disable the EDR
+➤ Modify the registry keys or rename the AV executable files on a compromised Windows machine and then restart it to disable the AV software
 ➤ ...
 ```
 ```
@@ -377,7 +377,7 @@ In Red teaming, avoid at all costs using "noisy & easy to detect" pentest tools 
 ➤ Add a rule in the local Windows firewall that will prevent the EDR agent to send alerts to the EDR appliance/server
 ➤ Add a wrong IP address for the EDR appliance/server in the '/etc/hosts' file to prevent the EDR agent to send alerts to the EDR appliance/server
 ➤ Install VirtualBox or VMware Workstation on a compromised Windows laptop/workstation and run hacking tools and scripts inside a VM to avoid detection
-➤ Modify the registry keys or rename the EDR executable files on a compromised Windows machine and then restart it to disable the EDR
+➤ Modify the registry keys or rename the EDR executable files on a compromised Windows machine and then restart it to disable the EDR software
 ➤ ...
 ```
 -----------------
